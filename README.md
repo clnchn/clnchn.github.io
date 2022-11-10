@@ -3,8 +3,8 @@
 My personal webpage to practice some html/css and to record and showcast my projects and interests!
 
 # TODO: 
-Download Resume button needs to be redesigned 
-Profile Introduction needs to be reworded 
-Projeccts need to have their own links and Summary
-Delete Job Descriptions, and use it as professional milestone instead of Work Experience
-Contact section can be deleted and place information into footer
+1. Download Resume button needs to be redesigned 
+2. Profile Introduction needs to be reworded 
+3. Projeccts need to have their own links and Summary
+4. Delete Job Descriptions, and use it as professional milestone instead of Work Experience
+5. Contact section can be deleted and place information into footer
