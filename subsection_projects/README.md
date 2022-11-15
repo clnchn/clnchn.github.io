@@ -32,4 +32,7 @@ Here are some of the projects that I have worked on during my school terms and p
 - Condominium Management Services Act
 - day-to-day operations
 - Condominium Management Services Act
+3. Digital Camera Processing Pipeline: 
+- Camera Irradiance -> Optics -> Aperture -> shutter -> CMOS sensor -> Gain (ISO) -> A/D -> (RAW) -> Demosaic -> Sharpen -> White Balance -> Gamma/Curve -> Compress -> JPEG
+
 
