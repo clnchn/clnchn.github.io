@@ -1,0 +1,18 @@
+Machine Learning CNN 
+
+
+Now imagine there is an image of a bird, and you want to identify it whether it is really a bird or something other. The first thing you should do is feed the pixels of the image in the form of arrays to the input layer of the neural network (MLP networks used to classify such things). The hidden layers carry Feature Extraction by performing various calculations and operations. There are multiple hidden layers like the convolution, the ReLU, and the pooling layer that performs feature extraction from your image. So finally, there is a fully connected layer that you can see which identifies the exact object in the image. You can understand very easily from the following figure:
+
+
+Convolution: In Convolution Operation, the arrays are multiplied one by one element-wise, and the product is grouped or summed to create a new array that represents a*b.
+
+
+Pooling:  So, in the chain, convolution and pooling are applied sequentially on the data in the interest of extracting some features from the data. After the sequential convolutional and pooling layers, the data is flattened into a feed-forward neural network which is also called a Multi-Layer Perceptron.
+
+A convoluted image can be too large and so it is reduced without losing features or patterns, so pooling is done.
+
+
+
+Optimizer is used to reduce the cost calculated by cross-entropy
+The loss function is used to calculate the error
+The metrics term is used to represent the efficiency of the model
