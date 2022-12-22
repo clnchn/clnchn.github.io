@@ -1,0 +1,44 @@
+CNN
+
+What is a Convolutional Neural Network?
+A Convolutional Neural Network is a powerful neural network that uses filters to extract features from images. It also does so in such a way that position information of pixels is retained.
+What do you mean by Convolution in a CNN?
+A convolution is a mathematical operation applied on a matrix. This matrix is usually the image represented in the form of pixels/numbers. The convolution operation extracts the features from the image.
+
+Why do we need to learn Convolutional Neural Networks?
+Neural networks have led to huge breakthroughs in machine learning and are the fundamental reason behind the deep learning boom. Neural networks like CNNs have proved particularly successful in working with image data and ever since being used in ImageNet competition in 2012, they have been the frontrunners in research and industry while dealing with images.
+How are Convolutional Neural Networks better than ANN?
+While solving an image classification problem using ANN, the number of trainable parameters increases drastically with an increase in the size of the image. Convolutional Neural Networks captures the spatial features from an image, which ANNs fail to do so. 
+How can I implement Convolutional Neural Networks?
+Convolutional Neural Networks have become the go-to method for solving any image data challenge. All popular frameworks support Convolutional Neural Networks like Tensorflow-Keras and PyTorch. You can also write your own CNNs using only NumPy.
+
+What challenges could I face while implementing Convolutional Neural Networks?
+Though Convolutional Neural Networks are powerful models, there can still be some challenges while implementing them. These include:
+* Taking up a lot of processing power
+* Needing a large amount of data for training
+* Being difficult to interpret since deep learning is still a developing and rapidly changing field
+
+Which projects are covered in this course?
+In this course, we cover a variety of projects which implement Convolutional Neural Networks so that you can get a good idea of how useful CNNs are.
+They include:
+* Implementing Convolutional Neural Networks from Scratch using NumPy on the MNIST dataset
+* Implementing Convolutional Neural Networks using Keras to classify cat and dog images
+* Using PyTorch and Convolutional Neural Networks to classify apparels
+
+On what other projects would I implement Convolutional Neural Networks?
+There are many such Computer Vision tasks that you can solve using Convolutional Neural Networks. Some of them are:
+* Learn Image Classification on 3 Datasets using Convolutional Neural Networks (Convolutional Neural Networks)
+* Computer Vision Tutorial: A Step-by-Step Introduction to Image Segmentation Techniques (Part 1)
+* Build your First Image Classification Model in just 10 Minutes!
+What are the applications of Convolutional Neural Networks in the industry?
+In the industry, Convolutional Neural Networks have a variety of applications, especially in the Computer Vision domain. Examples include:
+* Facial recognition
+* Digitization of paper documents/OCR
+* IoT Devices
+ 
+I already understand Convolutional Neural Networks. What should be the next step in my learning path?
+Once you are familiar with Convolutional Neural Networks, you can move on to more advanced concepts in Computer Vision and Deep Learning. To further explore Computer Vision, you can enrol in this course: 
+Certified Computer Vision with Deep Learning Course
+Can I add this project to my resume and use it in my Interview?
+As more and more progress is being done in the field of deep learning and on IoT devices, there is going to be a lot of unstructured that we would be dealing with. This is leading to a rise in niche deep learning roles
+Convolutional Neural Networks form the foundation of more complicated tasks in Computer Vision and thus such projects would be a great addition to your Resume. Having implemented Convolutional Neural Networks using both Keras and PyTorch in the course, this would give you brownie points in the interview as well.
