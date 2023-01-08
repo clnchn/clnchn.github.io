@@ -12,3 +12,4 @@ My personal webpage to practice some html/css and to record and showcast my proj
 7. Update Education
 8. Remove Skills (done)
 9. Work Experience UI
+10. Update Resume Link
