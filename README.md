@@ -10,5 +10,5 @@ My personal webpage to practice some html/css and to record and showcast my proj
 5. Contact section can be deleted and place information into footer (done)
 6. Cannot press back button on links page (have not start)
 7. Update Education
-8. Remove Skills
+8. Remove Skills (done)
 9. Work Experience UI
