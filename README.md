@@ -9,3 +9,6 @@ My personal webpage to practice some html/css and to record and showcast my proj
 4. Delete Job Descriptions, and use it as professional milestone instead of Work Experience (done)
 5. Contact section can be deleted and place information into footer (done)
 6. Cannot press back button on links page (have not start)
+7. Update Education
+8. Remove Skills
+9. Work Experience UI
