@@ -515,6 +515,13 @@ margin-left: 10px;}
     bordeR: 1px solid #000;
     padding: 2px 10px; }
 
+  .hire .btn-hire2 {
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 2px 10px;
+    }
+
 .fancy-collapse-panel .panel-default > .panel-heading {
   padding: 0; }
 
