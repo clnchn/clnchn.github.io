@@ -670,7 +670,7 @@ margin-left: 10px;}
 
 .timeline-centered .timeline-entry .timeline-entry-inner {
   position: relative;
-  margin-left: -20px; }
+  margin-left: -40px; }
 
 .timeline-centered .timeline-entry .timeline-entry-inner .timeline-icon {
   display: block;
@@ -699,15 +699,55 @@ margin-left: 10px;}
     background: #2fa499; }
   .timeline-centered .timeline-entry .timeline-entry-inner .timeline-icon.color-none {
     background: #fff;
-    width: 20px;
-    height: 20px;
+    width: 40px;
+    height: 40px;
     margin-left: 10px; }
+
+
+    .timeline-centered .timeline-entry .timeline-entry-inner .timeline-image {
+      display: block;
+      width: 80px;
+      height: 80px;
+      background: #2c98f0;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      border-radius: 50%;
+      text-align: center;
+      -moz-box-shadow: 0 0 0 5px #f2f3f7;
+      -webkit-box-shadow: 0 0 0 5px #f2f3f7;
+      box-shadow: 0 0 0 5px #f2f3f7;
+      line-height: 70px;
+      float: left; }
+      .timeline-centered .timeline-entry .timeline-entry-inner .timeline-image img {
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        object-fit:cover;
+        margin: 0 auto; 
+        display: block;
+      
+      }
+      .timeline-centered .timeline-entry .timeline-entry-inner .timeline-image.color-2 {
+        background: #ec5453; }
+      .timeline-centered .timeline-entry .timeline-entry-inner .timeline-image.color-3 {
+        background: #f9bf3f; }
+      .timeline-centered .timeline-entry .timeline-entry-inner .timeline-image.color-4 {
+        background: #a84cb8; }
+      .timeline-centered .timeline-entry .timeline-entry-inner .timeline-image.color-5 {
+        background: #2fa499; }
+      .timeline-centered .timeline-entry .timeline-entry-inner .timeline-image.color-none {
+        background: #fff;
+        width: 40px;
+        height: 40px;
+        margin-left: 20px; }
+
 
 .timeline-centered .timeline-entry .timeline-entry-inner .timeline-label {
   position: relative;
   background: #f2f3f7;
-  padding: 1.5em;
-  margin-left: 60px;
+  padding: 1em;
+  margin-left: 95px;
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding;
   background-clip: padding-box; }
@@ -722,7 +762,7 @@ margin-left: 10px;}
   border-width: 9px 9px 9px 0;
   border-color: transparent #f2f3f7 transparent transparent;
   left: 0;
-  top: 10px;
+  top: 30px;
   margin-left: -9px; }
 
 .timeline-centered .timeline-entry .timeline-entry-inner .timeline-label p + p {
