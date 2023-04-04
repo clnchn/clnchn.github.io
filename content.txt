@@ -101,7 +101,6 @@ Feel free to reach me at jyang9788@gmail.com if you want to grab a coffee, play 
 
 
 
-I grew up in Montreal, studying in french for the first 18 years of my life. Like many of my immigrant peers, my parents would send me to weekend school to learn Chinese, mathematics, sketching, piano, badminton, basketball, whatever the offerings were for the semester. I didn’t have a specific interest towards any of those disciplines, but I would attend to them until I moved away for college. Not having specific interest has been a recurring theme for me; I feel like I am driven mostly by general curiosity. This website is where I choose to publish some of my more structured shower thoughts.
 
 I recently graduated from the University of Waterloo, where I spent most of my time leading our autonomous vehicles team, staying involved in the Data Science community, organizing useless hack hackathons and doing several internships. I currently work on conversational reasoning at Facebook.
 
