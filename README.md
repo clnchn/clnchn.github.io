@@ -11,5 +11,16 @@ My personal webpage to practice some html/css and to record and showcast my proj
 - [x] 6. Cannot press back button on links page (done)
 - [x] 7. Update Education (done)
 - [x] 8. Remove Skills (done)
-- [ ] 9. Work Experience UI change logo to company logo (have not start)
-- [ ] 10. Update Resume Link (change expected grad date)
+- [x] 9. Work Experience UI change logo to company logo (have not start)
+- [x] 10. Update Resume Link
+
+
+# TODO (Branch New Template)
+- [ ] 1. Download Resume button 
+- [ ] 2. About Me 
+- [ ] 3. What I do
+- [ ] 4. My Journey (Timeline)
+- [ ] 5. Projects
+- [ ] 6. Contact
+- [ ] 7. Navigation on Page Tabs 
+- [ ] 8. Skills
