@@ -22,5 +22,6 @@ My personal webpage to practice some html/css and to record and showcast my proj
 - [ ] 4. My Journey (Timeline)
 - [ ] 5. Projects
 - [ ] 6. Contact
-- [ ] 7. Navigation on Page Tabs 
+- [x] 7. Navigation on Page Tabs 
 - [ ] 8. Skills
+- [ ] 9. Fixed Size for each section **
