@@ -25,3 +25,4 @@ My personal webpage to practice some html/css and to record and showcast my proj
 - [x] 7. Navigation on Page Tabs 
 - [ ] 8. Skills
 - [ ] 9. Fixed Size for each section **
+- [ ] 10. Scale to screen size for device **
