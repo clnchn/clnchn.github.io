@@ -26,3 +26,19 @@ My personal webpage to practice some html/css and to record and showcast my proj
 - [ ] 8. Skills
 - [ ] 9. Fixed Size for each section **
 - [ ] 10. Scale to screen size for device **
+
+
+# TODO (Template 3.0)
+- [ ] 1. Download Resume button 
+- [ ] 2. Background Colour for about me 
+- [ ] 3. What I do
+- [ ] 4. My Journey (Timeline)
+- [ ] 5. Projects
+- [ ] 6. Contact
+- [x] 7. Navigation on Page Tabs 
+- [ ] 8. Skills
+- [ ] 9. Fixed Size for each section **
+- [ ] 10. Scale to screen size for device **
+
+
+https://www.squarespace.com/websites/create-a-portfolio/?channel=pnb&subchannel=go&campaign=pnb-go-ca-en-core_verticals-phr&subcampaign=(portfolio-en_portfolio_phr)&gad=1&gclid=CjwKCAjw6vyiBhB_EiwAQJRoppYf4mPuuv6H-HpQIN4jjvANjYHPqqmg9laLlgyT1Tik4Wbv_I03NhoCmVAQAvD_BwE&gclsrc=aw.ds
