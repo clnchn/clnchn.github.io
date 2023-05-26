@@ -136,8 +136,8 @@ label {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding-right: 30px;
-  padding-left: 30px;
+  padding-right: 50px;
+  padding-left: 50px;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -webkit-flex-direction: row;
@@ -1883,6 +1883,40 @@ label {
   transform: translate(-50%, 0px);
 }
 
+.header__resumebutton {
+    position: absolute;
+    left: 50%;
+    bottom: 24%;
+    z-index: 10;
+    -webkit-transform: translate(-50%, 0px);
+    -ms-transform: translate(-50%, 0px);
+    transform: translate(-50%, 0px);
+    font-size: 17px;
+    color: #fff;
+    
+    
+    /*
+     position: absolute;
+     left: 50%;
+     top: auto;
+     right: auto;
+     bottom: 20%;
+     z-index: 10;
+     width: 180px;
+     -webkit-transform: translate(-50%, 0px);
+     -ms-transform: translate(-50%, 0px);
+     transform: translate(-50%, 0px);
+     
+     
+     font-size: 16px;
+     line-height: 100px;
+     letter-spacing: 24px;
+     
+     */
+
+}
+
+
 .think-section__wrapper {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1948,7 +1982,7 @@ label {
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
-
+/Users/celenechen/Documents/GitHub/hl5chen.github.io/bloom.html
 .think-section__right.alt {
   margin-right: 0px;
   margin-left: 0px;
@@ -1960,7 +1994,41 @@ label {
   background-color: #000;
 }
 
+/** THINK-SECTION GENERAL **/
 .think-section__grid {
+  display: -ms-grid;
+  display: grid;
+  width: 100%;
+  grid-auto-flow: row;
+  grid-auto-columns: 1fr;
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+  -ms-grid-columns: 1fr 1fr; /* Three Columns*/
+  grid-template-columns: 1fr 1fr; /* Three Columns*/
+  -ms-grid-rows: auto auto;
+  grid-template-rows: auto auto;
+}
+
+
+/** THINK-SECTION SKILLS **/
+.think-section__grid {
+  display: -ms-grid;
+  display: grid;
+  width: 100%;
+  grid-auto-flow: row;
+  grid-auto-columns: 1fr;
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+  -ms-grid-columns: 1fr 1fr 1fr; /* Three Columns*/
+  grid-template-columns: 1fr 1fr 1fr; /* Three Columns*/
+  -ms-grid-rows: auto auto auto;
+  grid-template-rows: auto auto auto;
+}
+
+
+
+/** THINK-SECTION EDUCATION **/
+.think-section-education__grid {
   display: -ms-grid;
   display: grid;
   width: 100%;
@@ -1989,6 +2057,7 @@ label {
   grid-template-rows: auto auto auto;
 }
 
+/** THINK-SECTION GENERAL **/
 .think-section__card {
   position: relative;
   padding: 10px;
@@ -2002,6 +2071,7 @@ label {
   
 }
 
+/** THINK-SECTION PROJECT **/
 .think-section-project__card {
   position: relative;
   float: left;
@@ -2042,6 +2112,20 @@ label {
   
 }
 
+/** THINK-SECTION EDUCATION **/
+.think-section-education__card {
+  position: relative;
+  padding: 10px;
+  
+  float: left;
+  border-radius: 4px;
+  text-align: left;
+  margin-right: 5px;
+  min-height: 100px;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.08);
+  
+}
+
 .think-section__card-image {
     width: auto;
     height: 210px;
@@ -2067,10 +2151,12 @@ label {
     font-size: 16px;
     font-weight: 400;
     line-height: 22px;
-    margin-top: 10px;
+    margin-top: 1px;
     margin-left: 8px;
     color: #636363;
+    text-align: center;
 }
+
 
 .think-section__cta {
   display: -webkit-box;
@@ -2096,7 +2182,7 @@ label {
   top: 0%;
   right: 0%;
   bottom: 0%;
-  background-color: hsla(0, 0%, 100%, 0.9);
+  background-color: hsla(0, 0%, 100%, 0.4);
 }
 
 .think-content {
@@ -2420,8 +2506,8 @@ label {
   }
 
   .think-section.is--header2 {
-    padding-top: 140px;
-    padding-bottom: 140px;
+    padding-top: 180px;
+    padding-bottom: 180px;
   }
 
   .header__arrow {
@@ -3603,3 +3689,135 @@ label {
 .ecosystem-highlight__cards {
     margin: 0 auto;
 }
+
+
+/*timeline*/
+
+#timeline {
+    width: 500px;
+    height: 600px;
+    overflow: hidden;
+    margin: 40px auto;
+    position: relative;
+    background: url('http://www.csslab.cl/ejemplos/timelinr/latest/images/dot.gif') 3px top repeat-y;
+}
+    #dates {
+        width: 100px;
+        height: 600px;
+        overflow: hidden;
+        float: left;
+    }
+        #dates li {
+            list-style: none;
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            font-size: 24px;
+            padding-left: 10px;
+            background: url('http://www.csslab.cl/ejemplos/timelinr/latest/images/biggerdot.png') left center no-repeat;
+        }
+            #dates a {
+                line-height: 38px;
+                padding-bottom: 10px;
+            }
+            #dates .selected {
+                font-size: 38px;
+            }
+    
+    #issues {
+        width: 400px;
+        height: 600px;
+        overflow: hidden;
+        float: left;
+    }
+        #issues li {
+            max-width: 300px; // width: 400px;
+            height: 600px;
+            list-style: none;
+     text-align: center; // add
+
+        }
+            #issues li.selected img {
+                -webkit-transform: scale(1.1,1.1);
+                -moz-transform: scale(1.1,1.1);
+                -o-transform: scale(1.1,1.1);
+                -ms-transform: scale(1.1,1.1);
+                transform: scale(1.1,1.1);
+            }
+            #issues li img {
+                // float: left;
+        width: 200px; // add
+                margin: 10px 30px 10px 50px;
+                -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF)"; /* IE 8 */
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF);/* IE 6 & 7 */
+                zoom: 1;
+                -webkit-transition: all 2s ease-in-out;
+                -moz-transition: all 2s ease-in-out;
+                -o-transition: all 2s ease-in-out;
+                -ms-transition: all 2s ease-in-out;
+                transition: all 2s ease-in-out;
+                -webkit-transform: scale(0.7,0.7);
+                -moz-transform: scale(0.7,0.7);
+                -o-transform: scale(0.7,0.7);
+                -ms-transform: scale(0.7,0.7);
+                transform: scale(0.7,0.7);
+            }
+            #issues li h1 {
+                color: #ffcc00;
+                font-size: 48px;
+                text-align: center;
+                text-shadow: #000 1px 1px 2px;
+            }
+            #issues li p {
+                font-size: 14px;
+                margin: 10px 20px;
+                font-weight: normal;
+                line-height: 22px;
+                text-shadow: #000 1px 1px 2px;
+            }
+    
+    #grad_top,
+    #grad_bottom {
+        width: 500px;
+        height: 80px;
+        position: absolute;
+    }
+        #grad_top {
+            top: 0;
+            background: url('http://www.csslab.cl/ejemplos/timelinr/latest/images/grad_top.png') repeat-x;
+        }
+        #grad_bottom {
+            bottom: 0;
+            background: url('http://www.csslab.cl/ejemplos/timelinr/latest/images/grad_bottom.png') repeat-x;
+        }
+    
+    #next,
+    #prev {
+        position: absolute;
+        left: 45%; // left: 55%;
+        font-size: 70px;
+        width: 38px;
+        height: 22px;
+        background-position: 0 -44px;
+        background-repeat: no-repeat;
+        text-indent: -9999px;
+        overflow: hidden;
+    }
+        #next:hover,
+        #prev:hover {
+            background-position:  0 0;
+        }
+        #next {
+            bottom: 0;
+            background-image: url('http://www.csslab.cl/ejemplos/timelinr/latest/images/next_v.png');
+        }
+        #prev {
+            top: 0;
+            background-image: url('http://www.csslab.cl/ejemplos/timelinr/latest/images/prev_v.png');
+        }
+            #next.disabled,
+            #prev.disabled {
+                opacity: 0.2;
+            }
+
+
