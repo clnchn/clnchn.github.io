@@ -56,7 +56,7 @@ https://www.squarespace.com/websites/create-a-portfolio/?channel=pnb&subchannel=
 -Code
 
 
-
+![Demo](images/demo.gif)
 
 ## About Me
 I am software engineer. My name is Celene, a Computer Engineering Master student at University of Toronto. I finished my undergrad at University of Waterloo in Mechatronics Engineering. This page is a side project for me to learn some web devlepment and showcast some of my old projects. I will occassionally add new features to this page as I continue to learn, stay tuned!

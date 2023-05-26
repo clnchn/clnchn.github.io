@@ -158,6 +158,7 @@ label {
   grid-template-columns: 1fr 1fr;
   -ms-grid-rows: auto;
   grid-template-rows: auto;
+  background-color:  #decebd; /*comment out*/
 }
 
 .nav__logo-link {
@@ -1981,7 +1982,7 @@ label {
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
-
+/Users/celenechen/Documents/GitHub/hl5chen.github.io/bloom.html
 .think-section__right.alt {
   margin-right: 0px;
   margin-left: 0px;
@@ -1994,7 +1995,6 @@ label {
 }
 
 /** THINK-SECTION GENERAL **/
-
 .think-section__grid {
   display: -ms-grid;
   display: grid;
@@ -2008,19 +2008,6 @@ label {
   -ms-grid-rows: auto auto;
   grid-template-rows: auto auto;
 }
-
-.think-section__card {
-  position: relative;
-  padding: 10px;
-  
-  float: left;
-  border-radius: 4px;
-  text-align: left;
-  margin-right: 5px;
-  min-height: 100px;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,.08);
-}
-
 
 
 /** THINK-SECTION SKILLS **/
@@ -2039,8 +2026,8 @@ label {
 }
 
 
-/** THINK-SECTION EDUCATION **/
 
+/** THINK-SECTION EDUCATION **/
 .think-section-education__grid {
   display: -ms-grid;
   display: grid;
@@ -2049,26 +2036,13 @@ label {
   grid-auto-columns: 1fr;
   grid-column-gap: 16px;
   grid-row-gap: 16px;
-  -ms-grid-columns: 1fr 1fr; /* Two Columns*/
+  -ms-grid-columns: 1fr 1fr; /* Three Columns*/
   grid-template-columns: 1fr 1fr; /* Three Columns*/
   -ms-grid-rows: auto auto;
   grid-template-rows: auto auto;
 }
 
-.think-section-education__card {
-  position: relative;
-  padding: 10px;
-  float: left;
-  border-radius: 4px;
-  text-align: left;
-  margin-right: 5px;
-  min-height: 100px;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,.08);
-  
-}
-
 /** THINK-SECTION PROJECTS **/
-
 .think-section-projects__grid {
   display: -ms-grid;
   display: grid;
@@ -2083,6 +2057,35 @@ label {
   grid-template-rows: auto auto auto;
 }
 
+/** THINK-SECTION GENERAL **/
+.think-section__card {
+  position: relative;
+  padding: 10px;
+  
+  float: left;
+  border-radius: 4px;
+  text-align: left;
+  margin-right: 5px;
+  min-height: 100px;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.08);
+  
+}
+
+/** THINK-SECTION WHATIDO **/
+.think-section-whatido__card {
+  position: relative;
+  padding: 10px;
+  
+  float: left;
+  border-radius: 4px;
+  text-align: left;
+  margin-right: 5px;
+  min-height: 100px;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.08);
+  
+}
+
+/** THINK-SECTION PROJECT **/
 .think-section-project__card {
   position: relative;
   float: left;
@@ -2096,48 +2099,13 @@ label {
   
 }
 
-.think-section-project__card-title { /*eco for projects */
-  margin-top: 10px;
-  margin-left: 8px;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 24px;
-  color: #444;
-  text-align: center!important;
-}
-
-.think-section-project__card-description {
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 22px;
-  margin-top: 1px;
-  margin-left: 8px;
-  color: #636363;
-  text-align: center;
-}
-
-
-/** THINK-SECTION WHATIDO **/
-
-.think-section-whatido__grid {
-  display: -ms-grid;
-  display: grid;
-  width: 100%;
-  grid-auto-flow: row;
-  grid-auto-columns: 1fr;
-  grid-column-gap: 16px;
-  grid-row-gap: 16px;
-  -ms-grid-columns: 1fr 1fr 1fr; /* Two Columns*/
-  grid-template-columns: 1fr 1fr 1fr; /* Three Columns*/
-  -ms-grid-rows: auto auto auto;
-  grid-template-rows: auto auto auto;
-}
-
-.think-section-whatido__card {
+/** THINK-SECTION EDUCATION **/
+.think-section-education__card {
   position: relative;
   padding: 10px;
+  
   float: left;
-  border-radius: 8px;
+  border-radius: 4px;
   text-align: left;
   margin-right: 5px;
   min-height: 100px;
@@ -2147,33 +2115,8 @@ label {
 
 .think-section-whatido__card-image {
   width: auto;
-  height: 30px;
+  height: 210px;
 }
-
-.think-section-whatido__card-text {
-  position: relative;
-  z-index: 2;
-  max-width: 80ch; /* Text margin*/
-}
-
-.think-section-whatido__card-title { /*eco for projects */
-  position: relative;
-  z-index: 2;
-  max-width: 80ch; /* Text margin*/
-}
-
-.think-section-whatido__card-description {
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 22px;
-  margin-top: 1px;
-  margin-left: 8px;
-  color: #222121;
-  text-align: center;
-}
-
-
-
 
 .think-section__card-image {
     width: auto;
@@ -2185,6 +2128,27 @@ label {
   z-index: 2;
   max-width: 35ch;
 }
+
+.think-section-project__card-title { /*eco for projects */
+    margin-top: 10px;
+    margin-left: 8px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #444;
+    text-align: center!important;
+}
+
+.think-section-project__card-description {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    margin-top: 1px;
+    margin-left: 8px;
+    color: #636363;
+    text-align: center;
+}
+
 
 .think-section__cta {
   display: -webkit-box;
@@ -3413,7 +3377,7 @@ label {
   grid-row-end: span 1;
 }
 
-#education-node {
+#w-node-_9c426a8f-d15b-5da4-48e8-aba0deb123a8-f617800f {
   -ms-grid-column: span 1;
   grid-column-start: span 1;
   -ms-grid-column-span: 1;
