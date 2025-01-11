@@ -1,0 +1,704 @@
+html, body {
+    height: 100%;
+}
+
+
+.patterns {
+    width: 100vw;
+    height: 100vw;
+}
+
+.pt1 {
+    background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='100%25' width='100%25'%3E%3Cdefs%3E%3Cpattern id='doodad' width='17' height='17' viewBox='0 0 40 40' patternUnits='userSpaceOnUse' patternTransform='rotate(135)'%3E%3Crect width='100%25' height='100%25' fill='rgba(247, 250, 252,1)'/%3E%3Cpath d='M-20 31l20-20l20 20l20-20l20 20l20-20l20 20v-2l-20-20l-20 20l-20-20l-20 20l-20-20l-20 20zM-20-9l20-20l20 20l20-20l20 20l20-20l20 20v-2l-20-20l-20 20l-20-20l-20 20l-20-20l-20 20zM-20 71l20-20l20 20l20-20l20 20l20-20l20 20v-2l-20-20l-20 20l-20-20l-20 20l-20-20l-20 20z ' fill='rgba(195, 218, 254,1)'/%3E%3Cpath d='M0 34.5l20-20l20 20l20-20l20 20l20-20l20 20v-1l-20-20l-20 20l-20-20l-20 20l-20-20l-20 20zM0-5.5l20-20l20 20l20-20l20 20l20-20l20 20v-1l-20-20l-20 20l-20-20l-20 20l-20-20l-20 20zM0 74.5l20-20l20 20l20-20l20 20l20-20l20 20v- 1l-20-20l-20 20l-20-20l-20 20l-20-20l-20 20z ' fill='rgba(214, 188, 250,1)'/%3E%3Cpath d='M-20 31l20-20v-2l-20 20zM20 31l20-20v-2l-20 20z' fill='rgba(195, 218, 254,1)'/%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23doodad)' height='200%25' width='200%25'/%3E%3C/svg%3E ");
+}
+
+.dropdown {
+    margin-top: 8px;
+    margin-left: 8px;
+    text-align: right; 
+    position: fixed; 
+    top:0; 
+}
+
+.dropdown-menu {
+    background-color: light purple;
+}
+
+.dropdown {
+    margin-top: 8px;
+    margin-left: 8px;
+    text-align: right; 
+    position: fixed; 
+    top:0; 
+}
+
+.fa-solid {
+    color: #000000;
+    font-size: 2em;
+    margin-left: 15%;
+}
+
+.btn {
+    padding: 0%;
+    margin-right: 1%;
+}
+
+.btn-secondary {
+    color: transparent; 
+    background-color: transparent; 
+    border-color:transparent;  
+    padding:0%;
+    margin: 0; 
+}
+
+#dropdownMenuButton {
+    color: transparent; 
+    background-color: transparent; 
+    border-color:transparent;  
+}
+
+@keyframes float {
+    0% {
+        box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+        transform: translatey(0px);
+    }
+    50% {
+        box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+        transform: translatey(-12px);
+    }
+    100% {
+        box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+        transform: translatey(0px);
+    }
+}
+
+
+.container {
+    box-shadow: 0 5px 15px 0px;
+    transform: translatey(0px);
+    animation: float 5s ease-in-out infinite;
+} 
+
+.container1 {
+    border-radius: 25%;
+    width: 80%;
+    overflow: hidden;
+    background-color: #b9b3e8d3;
+}
+
+.opening {
+    margin-top: 5%;
+    margin-bottom: 1%;
+}
+
+.intro {
+    text-align: center;
+    font-family: 'Lilita One', cursive;
+    color: rgb(57, 54, 60);
+}
+
+.aboutintro {
+    font-family: 'Raleway', sans-serif;
+    margin-bottom: 1em;
+    width: 80%; /* Ensure text container fits within the viewport */
+    margin: 0 auto; /* Center text block */
+    margin-bottom: 1rem;
+}
+
+.intro2 {
+    margin-top: 2%;
+    text-align: center;
+    font-family: 'Passion One', cursive;
+    color: rgb(51, 49, 55);
+}
+
+#first {
+    font-size: 2.5em;
+    opacity: 1.0;
+}
+
+#second {
+    font-size: 1.5em;
+}
+
+.headshot {
+    margin-top: 1%;
+    width: 35%;
+    min-width: 200px;;
+    border-radius: 20%;
+    height: 80%;
+    margin-bottom: 3%;
+}
+
+#contact { 
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-top: 2%;
+    display: grid;
+    gap: 2.0rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.links {
+    width: auto;
+    margin-right: 6%;
+    margin-left: 6%;
+    background-color: rgba(63, 137, 255, 0.821);
+    color: white;
+    padding: 1rem;
+    height: 5rem;
+    border-radius: 30%;
+    position: relative;
+}
+
+.connect {    
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    font-family: 'Passion One', cursive;
+    font-size: 2rem;
+    color: rgb(58, 58, 58);
+}
+
+.icon {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.3rem;
+    color: rgb(58, 58, 58);
+}
+
+.github {
+    left: 48%;
+}
+
+.linkedin {
+    left: 64%;
+}
+
+.email {
+    left: 67%;
+}
+
+.resume {
+    width: auto;
+    margin-right: 6%;
+    margin-left: 6%;
+    border-radius: 30%;
+    height: 5rem;
+    background-color: rgba(230, 139, 206, 0.843);
+    color: rgb(48, 46, 46);
+    padding: 1rem;
+    gap: 3rem;
+    position: relative;
+}
+
+.downloadres {
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    font-family: 'Passion One', cursive;
+    font-size: 2rem;
+    color: rgb(58, 58, 58);
+    white-space: nowrap
+}
+
+.arrow {
+    left: 67%;
+}
+
+/* General Reset */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container Styling */
+#aboutmlink {
+    display: flex;
+    flex-direction: column; /* Stack items vertically on mobile */
+    align-items: center; /* Center items horizontally */
+    background-color: #39dacad1;
+    border-radius: 10%;
+    box-shadow: 0 5px 15px 0px;
+    transition: transform 0.3s ease;
+    margin: 5% auto; /* Center container horizontally and add vertical margin */
+    padding: 2%; /* Padding for responsiveness */
+    width: 90%; /* Ensure container fits within viewport */
+    max-width: 1200px; /* Max width to prevent stretching on large screens */
+    box-sizing: border-box; /* Ensure padding is included in width */
+    overflow: hidden; /* Prevent content from overflowing */
+}
+
+/* Hover Effect */
+#aboutmlink:hover {
+    transform: scale(1.1);
+}
+
+/* Image Styling */
+.aboutMeImage {
+    display: flex;
+    align-items: center; /* Center the image vertically within this container */
+    justify-content: center; /* Center the image horizontally within this container */
+    margin: 2% auto; /* Center image container and adjust margins */
+    width: 100%; /* Ensure image container fits within the parent */
+    max-width: 300px; /* Prevent image from being too large */
+    padding-right: 2rem; /* Add horizontal space between image and text */
+}
+
+.aboutMeImage img {
+    max-width: 100%; /* Ensure image does not overflow */
+    height: auto; /* Maintain image aspect ratio */
+}
+
+/* Text Styling */
+.abouttext {
+    text-align: center; /* Center text */
+    padding: 10px;
+    width: 100%; /* Ensure text container fits within the viewport */
+    max-width: 800px; /* Prevent text container from stretching too much */
+    margin: 0 auto; /* Center the text container */
+}
+
+.aboutitle {
+    font-family: 'Lilita One', cursive;
+    font-size: 2.2rem; /* Adjust font size for responsiveness */
+    margin-bottom: 1em; /* Space below the title */
+}
+
+.aboutinfo {
+    font-family: 'Raleway', sans-serif;
+    margin-bottom: 1em;
+    width: 100%; /* Ensure text container fits within the viewport */
+    margin: 0 auto; /* Center text block */
+    margin-bottom: 1rem;
+}
+
+/* Medium and Large Screens */
+@media screen and (min-width: 768px) {
+    #aboutmlink {
+        flex-direction: row; /* Keep items in a row on larger screens */
+        align-items: flex-start; /* Align items to the top */
+        margin: 5% auto; /* Center container and add vertical margin */
+        padding: 2%; /* Adjust padding for larger screens */
+    }
+
+    .aboutMeImage {
+        padding-right: 3rem; /* Increase horizontal space on larger screens */
+        padding-left: 1rem;
+        margin: auto;
+    }
+
+    .abouttext {
+        text-align: left; /* Align text to the left on larger screens */
+    }
+}
+
+/* Mobile Screens */
+@media screen and (max-width: 767px) {
+    #aboutmlink {
+        flex-direction: column; /* Stack items vertically on small screens */
+        margin: 5% auto; /* Center container and add vertical margin */
+        padding: 2%; /* Adjust padding for smaller screens */
+        width: 85%; /* Ensure container fits within viewport */
+        margin-bottom: 10%;
+    }
+
+    .aboutMeImage {
+        margin: 2% auto; /* Center image container */
+        padding-right: 0; /* Remove extra padding on mobile */
+        padding: 6%;
+    }
+
+    .abouttext {
+        text-align: center; /* Center text on mobile */
+        margin: 2% 0; /* Adjust margins for mobile */
+    }
+
+    .aboutitle {
+        font-size: 1.7rem; /* Adjust font size for smaller screens */
+    }
+
+    .aboutinfo {
+        width: 100%; /* Ensure text takes full width */
+        margin: 0.5em 0; /* Adjust margin for mobile */
+    }
+}
+
+.experiences{
+    background-color: rgba(85, 216, 249, 0.894);
+    margin-right: 20%;
+    margin-left: 20%;
+    margin-top: 5%;
+    padding: 8px;
+    border-radius: 35%;
+    text-align: center;
+    box-shadow: 0 5px 15px 0px;
+} 
+
+.expSectionContainer{
+    margin-top: 2%; 
+    margin-bottom: 1%; 
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+.exparrows {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.exptitle{
+    font-family: 'Patua One', cursive;
+    margin-left: 10%;
+}
+
+.exptitle{ 
+    font-family: 'Patua One', cursive;
+    color: black;
+    font-size: 2.0rem;
+    margin: 0 auto;
+}
+
+.experiences-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 2rem;
+    max-width: 1200px;
+}
+
+.exp-container{
+    margin-top: 5%;
+    display: grid;
+    grid-template-rows: repeat(1fr);
+}
+
+.expinfo {
+    display: flex;   
+    justify-content: center; 
+    text-align: center;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+.exptext{
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.1rem;
+} 
+
+.expeval{
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.1rem;
+} 
+
+.expdemo {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    margin: 0 auto;
+    width: auto;
+}
+
+.expgif{
+    margin: 0 auto;
+    background-color: rgb(89, 86, 86);
+    padding: 4px; 
+    border-radius: 6%;
+    object-fit: contain;
+    max-width: 340px;
+}
+
+/*Referral*/
+
+.referrals{
+    background-color: rgba(85, 216, 249, 0.894);
+    margin-right: 20%;
+    margin-left: 20%;
+    margin-top: 5%;
+    padding: 8px;
+    border-radius: 35%;
+    text-align: center;
+    box-shadow: 0 5px 15px 0px;
+} 
+
+.referral-container {
+    /*display: flex;*/
+    /*flex-wrap: wrap;*/
+    /*gap: 2rem;*/
+    justify-content: center;
+    margin: 0 auto; 
+    padding: 2rem;
+    max-width: 1200px;
+}
+
+.refinfo {
+    display: flex;  
+    justify-content: center; 
+    text-align: center;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+.reftext{
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.1rem;
+} 
+
+.refSectionContainer{
+    margin-top: 2%; 
+    margin-bottom: 1%; 
+    /*display: grid;
+    grid-template-columns: 1fr 2fr 1fr;*/
+    margin-left: 15%;
+    margin-right: 15%;
+}
+.refarrows {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reftitle{
+    font-family: 'Patua One', cursive;
+    margin-left: 10%;
+}
+
+.reftitle{ 
+    font-family: 'Patua One', cursive;
+    color: black;
+    font-size: 2.0rem;
+    margin: 0 auto;
+}
+
+.ref-container{
+    margin-top: 5%;
+    /*display: grid;
+    grid-template-rows: repeat(1fr);*/
+}
+
+.ref-left-side{
+    border-radius: 20%;
+    padding: 10px;
+    margin: 0 auto;
+    margin-top: 4%;
+    margin-right: 30%; 
+    margin-left: 0%; 
+    /*display: grid;
+    grid-template-columns: 1.5fr 2fr;
+    box-shadow: 0 5px 15px 0px;*/
+    min-width: 500px;
+}
+
+.ref-right-side{
+    border-radius: 20%;
+    padding: 10px;
+    margin: 0 auto;
+    margin-top: 4%;
+    margin-right: 0%; 
+    margin-left: 30%; 
+    /*display: grid;
+    grid-template-columns: 1.5fr 2fr;
+    box-shadow: 0 5px 15px 0px;*/
+    min-width: 500px;
+}
+
+/*Side Projects*/
+
+.side-projects{
+    background-color: rgba(243, 167, 81, 0.76);
+    margin-right: 20%;
+    margin-left: 20%;
+    margin-top: 5%;
+    padding: 8px;
+    border-radius: 35%;
+    text-align: center;
+    box-shadow: 0 5px 15px 0px;
+} 
+
+.spSectionContainer{
+    margin-top: 2%; 
+    margin-bottom: 1%; 
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.sparrows {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fa-angle-down{
+    margin-top: 12%; 
+    color: black;
+    animation: bounce 2s ease infinite;
+    margin-right: 10%;
+}
+
+.sptitle{
+    font-family: 'Patua One', cursive;
+    margin-left: 10%;
+}
+
+.side-project-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 2rem;
+    max-width: 1200px;
+}
+
+.sc-website{
+    background-color: #ffbb1cd2;
+}
+
+.lct-website{
+    background-color: #e29fd8d2;
+}
+
+.task-list{
+    background-color: #4cd3f1
+}
+
+.cat-finder{
+    background-color: #34dda8d2;
+}
+
+.pizza {
+    background-color: #9397edd2;
+}
+
+.left-side{
+    border-radius: 20%;
+    padding: 30px;
+    margin: 0 auto;
+    margin-top: 4%;
+    margin-right: 30%; 
+    margin-left: 0%; 
+    display: grid;
+    grid-template-columns: 1.5fr 2fr;
+    box-shadow: 0 5px 15px 0px;
+    min-width: 500px;
+}
+
+.right-side{
+    border-radius: 20%;
+    padding: 30px;
+    margin: 0 auto;
+    margin-top: 4%;
+    margin-right: 0%; 
+    margin-left: 30%; 
+    display: grid;
+    grid-template-columns: 1.5fr 2fr;
+    box-shadow: 0 5px 15px 0px;
+    min-width: 500px;
+}
+
+.sp-container{
+    margin-top: 5%;
+    display: grid;
+    grid-template-rows: repeat(1fr);
+}
+
+.spinfo {
+    display: flex;   
+    justify-content: center; 
+    text-align: center;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+.title-icon{
+    padding-bottom: 5%;
+}
+
+.sptitle{ 
+    font-family: 'Patua One', cursive;
+    color: black;
+    font-size: 2.0rem;
+    margin: 0 auto;
+}
+
+.fa-arrow-up-right-from-square:hover {
+    transform: scale(1.35);
+}
+
+.languages{
+    font-family: 'Fira Code', monospace;
+}
+
+.sptext{
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.1rem;
+} 
+
+.spdemo {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    margin: 0 auto;
+    width: auto;
+}
+
+.spgif{
+    margin: 0 auto;
+    background-color: rgb(89, 86, 86);
+    padding: 4px; 
+    border-radius: 6%;
+    object-fit: contain;
+    max-width: 340px;
+}
+
+/* side projects on smaller screens */
+@media (max-width: 900px) {
+    .left-side{
+        grid-template-columns: 1fr; 
+        min-width: auto; 
+        margin-right: 0;
+        margin-left: 0; 
+        width: 100%; 
+        justify-content: center;
+    }
+
+    .right-side{
+        grid-template-columns: 1fr; 
+        min-width: auto; 
+        margin-right: 0;
+        margin-left: 0; 
+        width: 100%; 
+        justify-content: center;
+    }
+
+    .sp-container {
+        margin-top: 0; 
+    }
+
+    .spinfo {
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .spdemo {
+        width: 92%;
+        margin: 0 auto;
+        margin-top: 10px; 
+    }
+
+    .spgif {
+        max-width: 100%; /* Fit the image inside the .scdemo */
+        width: 100%; /* Fill the available width */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
