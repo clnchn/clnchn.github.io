@@ -1,0 +1,5 @@
+
+I encountered this issue while doing my Parallel Programming Homework, I think this deserves a more careful read, so I'm putting this in here. 
+
+
+https://eng.libretexts.org/Bookshelves/Computer_Science/Programming_and_Computation_Fundamentals/Book%3A_High_Performance_Computing_(Severance)/03%3A_Programming_and_Tuning_Software/3.02%3A_Timing_and_Profiling
