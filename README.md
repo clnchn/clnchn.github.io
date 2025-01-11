@@ -1,3 +1,3 @@
 # personal-website
-My personal website including demos and links to all of my side projects!
+My personal website with all of my side projects!
 
