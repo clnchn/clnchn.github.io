@@ -1214,9 +1214,17 @@ body.dark-theme .home__description b {
 
 .testimonial__rating {
    display: flex;
-   column-gap: .25rem;
-   color: var(--first-color);
-   font-size: 1.25rem;
+   align-items: center;
+   gap: 0.5rem;
+   color: #FFD700; /* Golden yellow color */
+   font-size: 1rem;
+   font-weight: var(--font-medium);
+}
+
+.testimonial__rating i {
+   font-size: 1.2rem;
+   vertical-align: middle;
+   color: #FFD700; /* Golden yellow color */
 }
 
 .testimonial__description {
