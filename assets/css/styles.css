@@ -331,7 +331,7 @@ img {
 
 .home__description {
   text-align: left;
-  margin-bottom: 8rem;
+  margin-bottom: 12rem;
 }
 
 .home__description b {
@@ -1003,6 +1003,7 @@ body.dark-theme .home__description b {
 
   .home__scroll {
     margin: 0;
+    margin-top: 2.5rem;
   }
 
   .about__container {
