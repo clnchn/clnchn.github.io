@@ -1107,21 +1107,22 @@ body.dark-theme .home__description b {
   position: relative;
   justify-self: center;
   transition: box-shadow 0.4s, border-color 0.4s;
-  border: 3px solid transparent; /* Initial border for transition */
+  border: 35px solid transparent;
   box-shadow: 0 0 0 0 rgba(0,0,0,0);
   border-radius: 1.5rem;
 }
 
 .home__image:hover {
-  border-color: var(--first-color); /* Accent color border on hover */
-  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.15); /* Soft shadow for pop effect */
+  border-color: var(--first-color);
+  box-shadow: 0 20px 60px 0 rgba(0,0,0,0.25);
   z-index: 2;
   transition: box-shadow 0.4s, border-color 0.4s;
 }
 
 /* Optional: Add a glowing effect */
 .home__image:hover {
-  box-shadow: 0 0 0 4px hsla(210, 98%, 50%, 0.15), 0 8px 32px 0 rgba(0,0,0,0.15);
+  box-shadow: 0 0 0 60px hsla(210, 98%, 50%, 0.15), 
+              0 20px 60px 0 rgba(0,0,0,0.25);
 }
 
 .home__img {
@@ -1132,12 +1133,13 @@ body.dark-theme .home__description b {
 .home__shadow {
   width: 280px;
   height: 360px;
-  background-color: var(--body-color);
+  background-color: var(--black-color);
   position: absolute;
   top: -2rem;
   right: -2rem;
   border-radius: 2.5rem;
   z-index: -1;
+  opacity: 0.8;
 }
 
 .home__arrow {
@@ -1703,4 +1705,10 @@ body.dark-theme {
 
 .dark-theme .contact__form-input::placeholder {
   color: var(--text-color-light);
+}
+
+/* Dark theme adjustment */
+.dark-theme .home__shadow {
+  background-color: #000000;
+  opacity: 0.9;
 }
