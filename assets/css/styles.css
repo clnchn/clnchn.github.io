@@ -1643,3 +1643,13 @@ body.dark-theme .highlight {
    background-color: var(--first-color);
    color: var(--white-color);
 }
+
+.testimonial__rating--excellent {
+   color: #22c55e; /* Green color */
+}
+
+.testimonial__rating--excellent i {
+   color: #22c55e; /* Green color */
+   font-size: 1.2rem;
+   vertical-align: middle;
+}
