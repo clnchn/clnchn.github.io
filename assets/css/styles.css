@@ -40,13 +40,13 @@
   --z-fixed: 100;
 
   /* Improved Dark theme colors */
-  --body-color-dark: #1a1f2c;
-  --container-color-dark: #232b3b;
+  --body-color-dark: #0a0f1c; /* Dark navy blue for main background */
+  --container-color-dark: #141b2d; /* Slightly lighter navy for containers */
   --title-color-dark: #FFFFFF;
   --text-color-dark: #E4E6EB;
-  --border-color-dark: #2d3446;
-  --nav-bg-dark: #232b3b;
-  --button-bg-dark: #2d3446;
+  --border-color-dark: #1e293b;
+  --nav-bg-dark: #141b2d;
+  --button-bg-dark: #1e293b;
   --button-text-dark: #FFFFFF;
   --button-hover-dark: #3d8bfd;
 }
@@ -201,6 +201,7 @@ img {
 
 .dark-theme .header {
   background-color: var(--nav-bg-dark);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 }
 
 .nav {
@@ -1652,4 +1653,54 @@ body.dark-theme .highlight {
    color: #22c55e; /* Green color */
    font-size: 1.2rem;
    vertical-align: middle;
+}
+
+/* Dark theme specific styles */
+body.dark-theme {
+  background-color: var(--body-color-dark);
+  color: var(--text-color-dark);
+}
+
+.dark-theme .section:nth-of-type(even) {
+  background-color: var(--container-color-dark);
+}
+
+.dark-theme .services__card,
+.dark-theme .projects__card,
+.dark-theme .testimonial__card,
+.dark-theme .contact__info,
+.dark-theme .contact__form-container {
+  background-color: var(--container-color-dark);
+  border: 1px solid var(--border-color-dark);
+}
+
+.dark-theme .nav__link {
+  color: var(--text-color-dark);
+}
+
+.dark-theme .nav__link:hover {
+  color: var(--title-color-dark);
+}
+
+.dark-theme .button {
+  background-color: var(--button-bg-dark);
+  color: var(--button-text-dark);
+}
+
+.dark-theme .button:hover {
+  background-color: var(--button-hover-dark);
+}
+
+.dark-theme .contact__form-input {
+  background-color: var(--button-bg-dark);
+  color: var(--text-color-dark);
+  border-color: var(--border-color-dark);
+}
+
+.dark-theme .contact__form-input:focus {
+  border-color: var(--first-color);
+}
+
+.dark-theme .contact__form-input::placeholder {
+  color: var(--text-color-light);
 }
