@@ -466,6 +466,7 @@ body.dark-theme .home__description b {
   display: flex;
   gap: 1.5rem;
   margin-top: 3rem;
+  justify-content: center;
 }
 
 /*=============== SERVICES ===============*/
