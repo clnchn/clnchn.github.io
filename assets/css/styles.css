@@ -557,7 +557,9 @@ body.dark-theme .home__description b {
 
 .projects__card {
   padding: 1rem 1rem 2rem;
-  transition: background-color .4s;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 1;
+  transform: scale(1);
 }
 
 .projects__card:hover {
@@ -1579,4 +1581,49 @@ body.dark-theme .highlight {
   color: #bbb;
   box-shadow: none;
   transform: none;
+}
+
+/* Add to your existing CSS */
+.projects__filters {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;
+   gap: 1rem;
+   margin-bottom: 2rem;
+   padding: 0 1rem;
+}
+
+.projects__filter-btn {
+   padding: 0.5rem 1.25rem;
+   background-color: var(--container-color);
+   color: var(--text-color);
+   font-weight: var(--font-medium);
+   border-radius: 4rem;
+   cursor: pointer;
+   transition: background-color .4s, color .4s;
+   border: none;
+   outline: none;
+}
+
+.projects__filter-btn:hover {
+   background-color: var(--black-color);
+   color: var(--white-color);
+}
+
+.projects__filter-btn.active {
+   background-color: var(--black-color);
+   color: var(--white-color);
+}
+
+/* Dark theme support */
+.dark-theme .projects__filter-btn {
+   background-color: var(--container-color-dark);
+   color: var(--text-color-dark);
+}
+
+.dark-theme .projects__filter-btn:hover,
+.dark-theme .projects__filter-btn.active {
+   background-color: var(--button-bg-dark);
+   color: var(--button-text-dark);
 }

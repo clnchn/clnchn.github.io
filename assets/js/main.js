@@ -406,3 +406,46 @@ document.addEventListener('DOMContentLoaded', function() {
     if (e.target === modalOverlay) closeModal();
   });
 });
+
+/*=============== PROJECT FILTERING ===============*/
+document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('.projects__filter-btn');
+    const projectCards = document.querySelectorAll('.projects__card');
+
+    // Function to filter projects
+    function filterProjects(filterValue) {
+        projectCards.forEach(card => {
+            const subtitle = card.querySelector('.projects__subtitle').textContent.trim();
+            
+            if (filterValue === 'all' || subtitle === filterValue) {
+                card.style.display = 'block';
+                // Add a small delay for animation
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'scale(1)';
+                }, 50);
+            } else {
+                card.style.opacity = '0';
+                card.style.transform = 'scale(0.8)';
+                // Wait for animation to complete before hiding
+                setTimeout(() => {
+                    card.style.display = 'none';
+                }, 300);
+            }
+        });
+    }
+
+    // Add click event listeners to filter buttons
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove active class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            // Add active class to clicked button
+            button.classList.add('active');
+            
+            // Get filter value and apply filter
+            const filterValue = button.getAttribute('data-filter');
+            filterProjects(filterValue);
+        });
+    });
+});
