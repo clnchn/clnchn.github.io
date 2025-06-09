@@ -1488,118 +1488,133 @@ body.dark-theme .highlight {
   }
 }
 
+/* Project Modal Styles */
 .project-modal-overlay {
   position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: rgba(0,0,0,0.6);
   z-index: 9999;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 2rem;
 }
 
 .project-modal {
   background: #fff;
   color: #222;
   border-radius: 1.5rem;
-  max-width: 800px;
-  width: 95vw;
+  width: 90vw;
+  max-width: 1000px; /* Increased from 800px */
+  max-height: 90vh; /* Added max-height */
   padding: 2.5rem 2rem 2rem 2rem;
   position: relative;
   box-shadow: 0 8px 32px rgba(0,0,0,0.25);
   animation: fadeInModal 0.3s;
-}
-
-@keyframes fadeInModal {
-  from { transform: translateY(40px) scale(0.98); opacity: 0; }
-  to { transform: translateY(0) scale(1); opacity: 1; }
+  overflow-y: auto; /* Added scrolling */
 }
 
 .project-modal-close {
   position: absolute;
-  top: 1rem; right: 1rem;
+  top: 1rem;
+  right: 1rem;
   background: none;
   border: none;
   font-size: 2rem;
   color: #888;
   cursor: pointer;
   z-index: 2;
+  transition: color 0.3s;
+}
+
+.project-modal-close:hover {
+  color: var(--first-color);
 }
 
 .project-modal-img {
   width: 100%;
-  max-width: 400px;
-  height: 260px;
+  max-width: 500px; /* Slightly increased from 400px */
+  height: 300px; /* Increased from 260px */
   object-fit: contain;
   border-radius: 1rem;
   background: #f5f5f5;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   display: block;
-  margin-bottom: 1rem;
+  margin: 0 auto 1.5rem auto; /* Centered the image */
+}
+
+.project-modal-content {
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .project-modal-content h2 {
   margin-top: 0;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.75rem;
+  color: var(--title-color);
 }
 
 .project-modal-content p {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  color: var(--text-color);
 }
 
 .project-modal-content ul {
-  margin: 0.5rem 0 0 1.2rem;
+  margin: 0.5rem 0 1.5rem 1.2rem;
   padding: 0;
 }
 
+.project-modal-content li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+/* Dark theme adjustments */
+.dark-theme .project-modal {
+  background: var(--container-color-dark);
+  color: var(--text-color-dark);
+}
+
+.dark-theme .project-modal-content h2 {
+  color: var(--title-color-dark);
+}
+
+.dark-theme .project-modal-content p,
+.dark-theme .project-modal-content li {
+  color: var(--text-color-dark);
+}
+
+/* Responsive adjustments */
 @media (max-width: 900px) {
-  .project-modal { max-width: 98vw; }
-  .project-modal-img { max-height: 180px; }
+  .project-modal {
+    width: 95vw;
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+  }
+  
+  .project-modal-img {
+    max-width: 90%;
+    height: 250px;
+  }
 }
+
 @media (max-width: 600px) {
-  .project-modal { padding: 1rem 0.5rem 1.5rem 0.5rem; }
-  .project-modal-img { max-width: 95vw; height: 160px; }
-}
-
-.project-modal-slider {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-}
-.project-modal-slider-btn {
-  background: #fff;
-  color: #ff6b35; /* Accent color, matches your theme */
-  border: none;
-  border-radius: 50%;
-  width: 2.5rem;
-  height: 2.5rem;
-  font-size: 1.5rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 0.5rem;
-  transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.1s;
-  outline: none;
-}
-
-.project-modal-slider-btn:hover,
-.project-modal-slider-btn:focus {
-  background: #ff6b35;
-  color: #fff;
-  box-shadow: 0 4px 16px rgba(255,107,53,0.15);
-  transform: scale(1.08);
-}
-
-.project-modal-slider-btn:disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
-  background: #f0f0f0;
-  color: #bbb;
-  box-shadow: none;
-  transform: none;
+  .project-modal {
+    padding: 1.5rem 1rem 1rem 1rem;
+  }
+  
+  .project-modal-img {
+    max-width: 95%;
+    height: 200px;
+  }
+  
+  .project-modal-content h2 {
+    font-size: 1.5rem;
+  }
 }
 
 /* Add to your existing CSS */
