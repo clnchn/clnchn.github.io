@@ -1515,6 +1515,49 @@ body.dark-theme .highlight {
   box-shadow: 0 8px 32px rgba(0,0,0,0.25);
   animation: fadeInModal 0.3s;
   overflow-y: auto; /* Added scrolling */
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: var(--first-color) transparent; /* For Firefox */
+}
+
+/* Webkit scrollbar styles (Chrome, Safari, Edge) */
+.project-modal::-webkit-scrollbar {
+  width: 8px;
+  background: transparent;
+}
+
+.project-modal::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 4px;
+  margin: 0.5rem;
+}
+
+.project-modal::-webkit-scrollbar-thumb {
+  background: var(--first-color);
+  border-radius: 4px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+.project-modal::-webkit-scrollbar-thumb:hover {
+  background: var(--first-color-alt);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+/* Dark theme scrollbar adjustments */
+.dark-theme .project-modal::-webkit-scrollbar-thumb {
+  background: var(--first-color);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+.dark-theme .project-modal::-webkit-scrollbar-thumb:hover {
+  background: var(--first-color-alt);
+}
+
+/* Optional: Add smooth scrolling to the modal */
+.project-modal {
+  scroll-behavior: smooth;
 }
 
 .project-modal-close {
