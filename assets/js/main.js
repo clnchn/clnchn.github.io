@@ -235,10 +235,25 @@ document.addEventListener('DOMContentLoaded', function() {
   const projectDetails = [
     {
       img: 'assets/img/project-1.jpg',
-      title: 'Restaurant Website',
-      desc: 'A modern restaurant website with online menu and reservation system.',
-      tech: 'HTML, CSS, JavaScript',
-      features: ['Responsive design', 'Online booking', 'Menu gallery']
+      images: [
+        'assets/img/project-1.jpg',
+        'assets/img/restaurant-reviewer-1.png',
+        'assets/img/restaurant-reviewer-2.png',
+        'assets/img/restaurant-reviewer-3.png'
+      ],
+      title: 'Restaurant Reviewer',
+      desc: 'An AI-powered restaurant recommendation tool that combines Retrieval-Augmented Generation (RAG) with local AI Agent to deliver smart, location-based dining insights. The system analyzes user preferences, reviews, and location data to provide personalized restaurant recommendations.',
+      tech: 'Python, LangChain, OpenAI API, FastAPI, React, PostgreSQL, Docker',
+      features: [
+        'AI-powered restaurant recommendations using RAG',
+        'Location-based search and filtering',
+        'Personalized user preferences and history',
+        'Real-time review analysis and sentiment detection',
+        'Interactive map integration',
+        'User authentication and profile management',
+        'Responsive web interface',
+        'Docker containerization for easy deployment'
+      ]
     },
     {
       img: 'assets/img/project-2.jpg',
