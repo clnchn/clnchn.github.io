@@ -1594,25 +1594,55 @@ body.dark-theme .highlight {
   margin: 0 auto;
 }
 
-.project-modal-content h2 {
+.project-modal-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.project-modal-header h2 {
   margin-top: 0;
   margin-bottom: 1rem;
   font-size: 1.75rem;
   color: var(--title-color);
 }
 
-.project-modal-content p {
-  margin-bottom: 1.5rem;
+.project-modal-header p {
+  margin-bottom: 0;
   line-height: 1.6;
   color: var(--text-color);
+  font-size: 1.1rem;
 }
 
-.project-modal-content ul {
-  margin: 0.5rem 0 1.5rem 1.2rem;
+.project-modal-slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.project-modal-details {
+  margin-top: 2rem;
+}
+
+.project-modal-details > div {
+  margin-bottom: 1.5rem;
+}
+
+.project-modal-details b {
+  color: var(--title-color);
+  font-size: 1.1rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.project-modal-details ul {
+  margin: 0.5rem 0 0 1.2rem;
   padding: 0;
 }
 
-.project-modal-content li {
+.project-modal-details li {
   margin-bottom: 0.5rem;
   line-height: 1.5;
 }
@@ -1623,13 +1653,16 @@ body.dark-theme .highlight {
   color: var(--text-color-dark);
 }
 
-.dark-theme .project-modal-content h2 {
+.dark-theme .project-modal-header h2 {
   color: var(--title-color-dark);
 }
 
-.dark-theme .project-modal-content p,
-.dark-theme .project-modal-content li {
+.dark-theme .project-modal-header p {
   color: var(--text-color-dark);
+}
+
+.dark-theme .project-modal-details b {
+  color: var(--title-color-dark);
 }
 
 /* Responsive adjustments */
@@ -1643,6 +1676,14 @@ body.dark-theme .highlight {
     max-width: 90%;
     height: 250px;
   }
+  
+  .project-modal-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .project-modal-header p {
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 600px) {
@@ -1655,8 +1696,16 @@ body.dark-theme .highlight {
     height: 200px;
   }
   
-  .project-modal-content h2 {
-    font-size: 1.5rem;
+  .project-modal-header {
+    margin-bottom: 1.5rem;
+  }
+  
+  .project-modal-header h2 {
+    font-size: 1.25rem;
+  }
+  
+  .project-modal-details {
+    margin-top: 1.5rem;
   }
 }
 
