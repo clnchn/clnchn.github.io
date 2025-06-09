@@ -1618,7 +1618,7 @@ body.dark-theme .highlight {
   align-items: center;
   justify-content: center;
   gap: 1.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 0.75rem;
   position: relative;
 }
 
@@ -1826,7 +1826,7 @@ body.dark-theme {
   align-items: center;
   justify-content: center;
   gap: 1.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 0.75rem;
   position: relative;
 }
 
@@ -1929,5 +1929,62 @@ body.dark-theme {
   
   .project-modal-slider-btn:last-child {
     right: -0.5rem;
+  }
+}
+
+/* Project Modal Buttons */
+.project-modal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 0.75rem 0 1.5rem 0;
+}
+
+.project-modal-buttons .projects__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-color);
+  font-size: var(--small-font-size);
+  font-weight: var(--font-medium);
+  transition: color 0.4s;
+  padding: 0.5rem 1rem;
+}
+
+.project-modal-buttons .projects__link:hover {
+  color: var(--first-color);
+}
+
+.project-modal-buttons .projects__link i {
+  font-size: 1.2rem;
+}
+
+/* Dark theme adjustments */
+.dark-theme .project-modal-buttons .projects__link {
+  color: var(--text-color-dark);
+}
+
+.dark-theme .project-modal-buttons .projects__link:hover {
+  color: var(--first-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .project-modal-buttons {
+    gap: 0.75rem;
+    margin: 0.5rem 0 1rem 0;
+  }
+  
+  .project-modal-slider {
+    margin-bottom: 0.5rem;
+  }
+  
+  .project-modal-buttons .projects__link {
+    font-size: var(--smaller-font-size);
+    padding: 0.4rem 0.8rem;
+  }
+  
+  .project-modal-buttons .projects__link i {
+    font-size: 1.1rem;
   }
 }

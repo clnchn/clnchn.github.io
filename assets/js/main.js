@@ -253,42 +253,54 @@ document.addEventListener('DOMContentLoaded', function() {
         'User authentication and profile management',
         'Responsive web interface',
         'Docker containerization for easy deployment'
-      ]
+      ],
+      github: 'https://github.com/your-repo',
+      demo: 'https://your-demo-link.com'
     },
     {
       img: 'assets/img/project-2.jpg',
       title: 'Yoga App',
       desc: 'A mobile-friendly yoga app for daily routines and progress tracking.',
       tech: 'React, CSS, Firebase',
-      features: ['User authentication', 'Routine tracking', 'Progress analytics']
+      features: ['User authentication', 'Routine tracking', 'Progress analytics'],
+      github: 'https://github.com/your-repo',
+      demo: 'https://your-demo-link.com'
     },
     {
       img: 'assets/img/project-3.jpg',
       title: 'Fast Food App',
       desc: 'A fast food ordering app with real-time order tracking.',
       tech: 'Flutter, Firebase',
-      features: ['Order management', 'Push notifications', 'Live tracking']
+      features: ['Order management', 'Push notifications', 'Live tracking'],
+      github: 'https://github.com/your-repo',
+      demo: 'https://your-demo-link.com'
     },
     {
       img: 'assets/img/iScore.jpg',
       title: 'iScore - Colour Musician',
       desc: 'A smart scoring application designed to automate and enhance the evaluation process for sports and academic competitions.',
       tech: 'Python, OpenCV, Flask',
-      features: ['Automated scoring', 'Color detection', 'Result analytics']
+      features: ['Automated scoring', 'Color detection', 'Result analytics'],
+      github: 'https://github.com/your-repo',
+      demo: 'https://your-demo-link.com'
     },
     {
       img: 'assets/img/omr.png',
       title: 'Optical Music Recognition',
       desc: 'A deep learning system that converts images of sheet music into digital music notation, enabling automated music transcription.',
       tech: 'Python, TensorFlow, Keras',
-      features: ['Sheet music recognition', 'MIDI export', 'Batch processing']
+      features: ['Sheet music recognition', 'MIDI export', 'Batch processing'],
+      github: 'https://github.com/your-repo',
+      demo: 'https://your-demo-link.com'
     },
     {
       img: 'assets/img/Line-following.gif',
       title: 'Line Follower Robot',
       desc: 'An autonomous robot designed to follow a visual line path using sensors and real-time feedback control algorithms.',
       tech: 'Arduino, C++, IR Sensors',
-      features: ['Line following', 'Obstacle avoidance', 'PID control']
+      features: ['Line following', 'Obstacle avoidance', 'PID control'],
+      github: 'https://github.com/your-repo',
+      demo: 'https://your-demo-link.com'
     },
     {
       img: 'assets/img/SNR.gif',
@@ -301,7 +313,9 @@ document.addEventListener('DOMContentLoaded', function() {
         'AI-based path planning',
         'Autonomous obstacle avoidance',
         'Real-time remote monitoring'
-      ]
+      ],
+      github: 'https://github.com/your-repo',
+      demo: 'https://your-demo-link.com'
     },
     {
       img: 'assets/img/ignis-2.png',
@@ -320,7 +334,9 @@ document.addEventListener('DOMContentLoaded', function() {
         'AI-based risk assessment',
         'Firefighter safety alerts',
         'Edge device deployment'
-      ]
+      ],
+      github: 'https://github.com/your-repo',
+      demo: 'https://your-demo-link.com'
     },
     {
       img: 'assets/img/OnlineAlbum.png',
@@ -333,7 +349,9 @@ document.addEventListener('DOMContentLoaded', function() {
         'Story sharing',
         'Location tagging',
         'Social media integration'
-      ]
+      ],
+      github: 'https://github.com/your-repo',
+      demo: 'https://your-demo-link.com'
     },
     {
       images: [
@@ -349,7 +367,9 @@ document.addEventListener('DOMContentLoaded', function() {
         'Convolutional neural network architecture',
         'Data augmentation',
         'Evaluation metrics and visualization'
-      ]
+      ],
+      github: 'https://github.com/your-repo',
+      demo: 'https://your-demo-link.com'
     },
     {
       img: 'assets/img/stock-trading-system.jpg',
@@ -361,7 +381,9 @@ document.addEventListener('DOMContentLoaded', function() {
         'Factory Pattern for order creation',
         'Strategy Pattern for market and limit orders',
         'Market simulator for realistic trading scenarios'
-      ]
+      ],
+      github: 'https://github.com/your-repo',
+      demo: 'https://your-demo-link.com'
     }
   ];
 
@@ -370,13 +392,32 @@ document.addEventListener('DOMContentLoaded', function() {
     btn.addEventListener('click', function(e) {
       e.preventDefault();
       const data = projectDetails[idx] || projectDetails[0];
-      currentImages = data.images || [data.img]; // fallback for old projects
+      currentImages = data.images || [data.img];
       currentImgIdx = 0;
       updateModalImage();
       modalTitle.textContent = data.title;
       modalDesc.textContent = data.desc;
       modalTech.innerHTML = `<b>Tech Stack:</b> <span>${data.tech}</span>`;
       modalFeatures.innerHTML = `<b>Features:</b><ul>${data.features.map(f => `<li>${f}</li>`).join('')}</ul>`;
+      
+      // Update button links
+      const githubLink = document.getElementById('project-modal-github');
+      const demoLink = document.getElementById('project-modal-demo');
+      
+      if (data.github) {
+        githubLink.href = data.github;
+        githubLink.style.display = 'inline-flex';
+      } else {
+        githubLink.style.display = 'none';
+      }
+      
+      if (data.demo) {
+        demoLink.href = data.demo;
+        demoLink.style.display = 'inline-flex';
+      } else {
+        demoLink.style.display = 'none';
+      }
+      
       modalOverlay.style.display = 'flex';
       document.body.style.overflow = 'hidden';
     });
