@@ -1727,3 +1727,115 @@ body.dark-theme {
   background-color: #000000;
   opacity: 0.9;
 }
+
+/* Project Modal Slider Styles */
+.project-modal-slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.project-modal-slider-btn {
+  background: var(--container-color);
+  color: var(--first-color);
+  border: 2px solid var(--first-color);
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.project-modal-slider-btn:hover {
+  background: var(--first-color);
+  color: var(--white-color);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.project-modal-slider-btn:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.project-modal-slider-btn:disabled {
+  background: var(--container-color);
+  color: var(--text-color-light);
+  border-color: var(--text-color-light);
+  cursor: not-allowed;
+  box-shadow: none;
+  opacity: 0.5;
+}
+
+/* Position the buttons */
+.project-modal-slider-btn:first-child {
+  left: -1.5rem;
+}
+
+.project-modal-slider-btn:last-child {
+  right: -1.5rem;
+}
+
+/* Dark theme adjustments */
+.dark-theme .project-modal-slider-btn {
+  background: var(--container-color-dark);
+  color: var(--first-color);
+  border-color: var(--first-color);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.dark-theme .project-modal-slider-btn:hover {
+  background: var(--first-color);
+  color: var(--white-color);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+}
+
+.dark-theme .project-modal-slider-btn:disabled {
+  background: var(--container-color-dark);
+  color: var(--text-color-dark);
+  border-color: var(--text-color-dark);
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .project-modal-slider-btn {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.25rem;
+  }
+  
+  .project-modal-slider-btn:first-child {
+    left: -1rem;
+  }
+  
+  .project-modal-slider-btn:last-child {
+    right: -1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .project-modal-slider-btn {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1rem;
+  }
+  
+  .project-modal-slider-btn:first-child {
+    left: -0.5rem;
+  }
+  
+  .project-modal-slider-btn:last-child {
+    right: -0.5rem;
+  }
+}
