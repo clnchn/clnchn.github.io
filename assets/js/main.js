@@ -238,12 +238,11 @@ document.addEventListener('DOMContentLoaded', function() {
       images: [
         'assets/img/project-1.jpg',
         'assets/img/restaurant-reviewer-1.png',
-        'assets/img/restaurant-reviewer-2.png',
-        'assets/img/restaurant-reviewer-3.png'
+        'assets/img/restaurant-reviewer-2.png'
       ],
       title: 'Restaurant Reviewer',
       desc: 'An AI-powered restaurant recommendation tool that combines Retrieval-Augmented Generation (RAG) with local AI Agent to deliver smart, location-based dining insights. The system analyzes user preferences, reviews, and location data to provide personalized restaurant recommendations.',
-      tech: 'Python, LangChain, OpenAI API, FastAPI, React, PostgreSQL, Docker',
+      tech: 'Python, LangChain, OpenAI API, FastAPI, React',
       features: [
         'AI-powered restaurant recommendations using RAG',
         'Location-based search and filtering',
