@@ -289,7 +289,7 @@ Model Architectures:
 
 Evaluation Method: 10-fold Cross-Validation
 Dataset: HOMUS Dataset`,
-      features: ['Sheet music recognition', 'MIDI export', 'Batch processing'],
+      features: ['Handwritten Music Symbol Recognition-                 Classifies 32 different types of handwritten musical symbols.', 'Model Comparison - Benchmarks multiple high-performing CNNs to identify the most effective architecture.', 'Ensemble Learning - Combines multiple models to boost recognition accuracy.'],
       github: 'https://github.com/your-repo',
       demo: 'https://your-demo-link.com'
     },
