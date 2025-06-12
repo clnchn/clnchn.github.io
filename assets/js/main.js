@@ -237,22 +237,19 @@ document.addEventListener('DOMContentLoaded', function() {
     {
       img: 'assets/img/project-1.jpg',
       images: [
-        'assets/img/project-1.jpg',
+        'assets/img/restaurant-reviewer-0.png',
         'assets/img/restaurant-reviewer-1.png',
         'assets/img/restaurant-reviewer-2.png'
       ],
       title: 'Restaurant Reviewer',
       desc: 'An AI-powered restaurant recommendation tool that combines Retrieval-Augmented Generation (RAG) with local AI Agent to deliver smart, location-based dining insights. The system analyzes user preferences, reviews, and location data to provide personalized restaurant recommendations.',
-      tech: 'Python, LangChain, OpenAI API, FastAPI, React',
+      tech: 'Python, LangChain, Ollama (mxbai-embed-large), ChromaDB, Pandas',
       features: [
         'AI-powered restaurant recommendations using RAG',
-        'Location-based search and filtering',
-        'Personalized user preferences and history',
-        'Real-time review analysis and sentiment detection',
-        'Interactive map integration',
-        'User authentication and profile management',
-        'Responsive web interface',
-        'Docker containerization for easy deployment'
+        'Realistic Review Parsing- Loads and processes restaurant reviews from a real-world CSV dataset with metadata like rating and date.',
+        'Smart Embedding with Ollama - Uses a local, high-quality embedding model (mxbai-embed-large) to transform reviews into dense vector representations.',
+        'Semantic Retrieval Engine - Retrieves the most relevant reviews for a given query using vector similarity, not just keyword matching.',
+        'Persistent Vector Store - Chroma stores embeddings locally, allowing reusability without reprocessing on every run.'
       ],
       github: 'https://github.com/your-repo',
       demo: 'https://your-demo-link.com',
@@ -269,7 +266,7 @@ document.addEventListener('DOMContentLoaded', function() {
       desc: 'A mobile-friendly yoga app for daily routines and progress tracking.',
       tech: 'React, CSS, Firebase',
       features: ['User authentication', 'Routine tracking', 'Progress analytics'],
-      github: 'https://github.com/your-repo',
+      github: 'https://github.com/clnchn/MachineLearningProjects/tree/main/RestaurantReviewer_LocalAIAgentWithRAG',
       demo: 'https://your-demo-link.com'
     },
     {
