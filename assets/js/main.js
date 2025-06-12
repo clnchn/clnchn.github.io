@@ -272,8 +272,23 @@ document.addEventListener('DOMContentLoaded', function() {
     {
       img: 'assets/img/omr.png',
       title: 'Optical Music Recognition',
-      desc: 'A deep learning system that converts images of sheet music into digital music notation, enabling automated music transcription.',
-      tech: 'Python, TensorFlow, Keras',
+      desc: 'This project investigates the application of deep learning to Optical Music Recognition (OMR), focusing on identifying handwritten musical symbols from images. By evaluating and fine-tuning top-performing convolutional neural networks (CNNs), the study aims to improve symbol classification accuracy on the HOMUS dataset. Ensemble models are also explored to enhance performance beyond individual architectures.',
+      tech: `Programming Language:
+• Python
+
+Libraries & Frameworks:
+• TensorFlow / Keras – for building and training CNN models
+• NumPy, Pandas – for data handling and preprocessing
+• Matplotlib / Seaborn – for visualization
+
+Model Architectures:
+• Inception v3
+• Inception-ResNet v2
+• Xception
+• NASNet
+
+Evaluation Method: 10-fold Cross-Validation
+Dataset: HOMUS Dataset`,
       features: ['Sheet music recognition', 'MIDI export', 'Batch processing'],
       github: 'https://github.com/your-repo',
       demo: 'https://your-demo-link.com'
