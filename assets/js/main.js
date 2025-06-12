@@ -245,11 +245,11 @@ document.addEventListener('DOMContentLoaded', function() {
       desc: 'An AI-powered restaurant recommendation tool that combines Retrieval-Augmented Generation (RAG) with local AI Agent to deliver smart, location-based dining insights. The system analyzes user preferences, reviews, and location data to provide personalized restaurant recommendations.',
       tech: 'Python, LangChain, Ollama (mxbai-embed-large), ChromaDB, Pandas',
       features: [
-        'AI-powered restaurant recommendations using RAG',
-        'Realistic Review Parsing- Loads and processes restaurant reviews from a real-world CSV dataset with metadata like rating and date.',
-        'Smart Embedding with Ollama - Uses a local, high-quality embedding model (mxbai-embed-large) to transform reviews into dense vector representations.',
-        'Semantic Retrieval Engine - Retrieves the most relevant reviews for a given query using vector similarity, not just keyword matching.',
-        'Persistent Vector Store - Chroma stores embeddings locally, allowing reusability without reprocessing on every run.'
+        '• AI-powered restaurant recommendations using RAG',
+        '• Realistic Review Parsing - Loads and processes restaurant reviews from a real-world CSV dataset with metadata like rating and date.',
+        '• Smart Embedding with Ollama - Uses a local, high-quality embedding model (mxbai-embed-large) to transform reviews into dense vector representations.',
+        '• Semantic Retrieval Engine - Retrieves the most relevant reviews for a given query using vector similarity, not just keyword matching.',
+        '• Persistent Vector Store - Chroma stores embeddings locally, allowing reusability without reprocessing on every run.'
       ],
       github: 'https://github.com/clnchn/MachineLearningProjects/tree/main/RestaurantReviewer_LocalAIAgentWithRAG',
       demo: 'https://your-demo-link.com',
