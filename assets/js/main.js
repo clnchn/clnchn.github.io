@@ -226,6 +226,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const modalDesc = document.getElementById('project-modal-description');
   const modalTech = document.getElementById('project-modal-techstack');
   const modalFeatures = document.getElementById('project-modal-features');
+  const modalBriefs = document.getElementById('project-modal-briefs');
   const prevBtn = document.getElementById('project-modal-prev');
   const nextBtn = document.getElementById('project-modal-next');
   let currentImgIdx = 0;
@@ -254,7 +255,13 @@ document.addEventListener('DOMContentLoaded', function() {
         'Docker containerization for easy deployment'
       ],
       github: 'https://github.com/your-repo',
-      demo: 'https://your-demo-link.com'
+      demo: 'https://your-demo-link.com',
+      briefs: [
+        "Developed an AI-powered restaurant recommendation system using RAG and local AI Agent",
+        "Implemented real-time review analysis and sentiment detection",
+        "Created a responsive web interface with interactive map integration",
+        "Deployed the application using Docker for easy scaling and maintenance"
+      ]
     },
     {
       img: 'assets/img/project-2.jpg',
@@ -398,6 +405,11 @@ document.addEventListener('DOMContentLoaded', function() {
       modalDesc.textContent = data.desc;
       modalTech.innerHTML = `<b>Tech Stack:</b> <span>${data.tech}</span>`;
       modalFeatures.innerHTML = `<b>Features:</b><ul>${data.features.map(f => `<li>${f}</li>`).join('')}</ul>`;
+      
+      // Update briefs
+      const briefsList = data.briefs ? data.briefs.map(brief => `<li>${brief}</li>`).join('') : '';
+      document.getElementById('project-modal-briefs').innerHTML = 
+          `<b>Project Briefs:</b><ul>${briefsList}</ul>`;
       
       // Update button links
       const githubLink = document.getElementById('project-modal-github');

@@ -1634,7 +1634,7 @@ body.dark-theme .highlight {
   color: var(--title-color);
   font-size: 1.1rem;
   display: block;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
 .project-modal-details ul {
@@ -1643,8 +1643,14 @@ body.dark-theme .highlight {
 }
 
 .project-modal-details li {
-  margin-bottom: 0.5rem;
-  line-height: 1.5;
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+  position: relative;
+  padding-left: 0.5rem;
+}
+
+.project-modal-details li:last-child {
+  margin-bottom: 0;
 }
 
 /* Dark theme adjustments */
