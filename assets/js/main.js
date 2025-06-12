@@ -261,24 +261,6 @@ document.addEventListener('DOMContentLoaded', function() {
       ]
     },
     {
-      img: 'assets/img/project-2.jpg',
-      title: 'Yoga App',
-      desc: 'A mobile-friendly yoga app for daily routines and progress tracking.',
-      tech: 'React, CSS, Firebase',
-      features: ['User authentication', 'Routine tracking', 'Progress analytics'],
-      github: 'https://github.com/clnchn/MachineLearningProjects/tree/main/RestaurantReviewer_LocalAIAgentWithRAG',
-      demo: 'https://your-demo-link.com'
-    },
-    {
-      img: 'assets/img/project-3.jpg',
-      title: 'Fast Food App',
-      desc: 'A fast food ordering app with real-time order tracking.',
-      tech: 'Flutter, Firebase',
-      features: ['Order management', 'Push notifications', 'Live tracking'],
-      github: 'https://github.com/your-repo',
-      demo: 'https://your-demo-link.com'
-    },
-    {
       img: 'assets/img/iScore.jpg',
       title: 'iScore - Colour Musician',
       desc: 'A smart scoring application designed to automate and enhance the evaluation process for sports and academic competitions.',
@@ -385,6 +367,24 @@ document.addEventListener('DOMContentLoaded', function() {
         'Strategy Pattern for market and limit orders',
         'Market simulator for realistic trading scenarios'
       ],
+      github: 'https://github.com/your-repo',
+      demo: 'https://your-demo-link.com'
+    },
+    {
+      img: 'assets/img/project-2.jpg',
+      title: 'Yoga App',
+      desc: 'A mobile-friendly yoga app for daily routines and progress tracking.',
+      tech: 'React, CSS, Firebase',
+      features: ['User authentication', 'Routine tracking', 'Progress analytics'],
+      github: 'https://github.com/clnchn/MachineLearningProjects/tree/main/RestaurantReviewer_LocalAIAgentWithRAG',
+      demo: 'https://your-demo-link.com'
+    },
+    {
+      img: 'assets/img/project-3.jpg',
+      title: 'Fast Food App',
+      desc: 'A fast food ordering app with real-time order tracking.',
+      tech: 'Flutter, Firebase',
+      features: ['Order management', 'Push notifications', 'Live tracking'],
       github: 'https://github.com/your-repo',
       demo: 'https://your-demo-link.com'
     }
