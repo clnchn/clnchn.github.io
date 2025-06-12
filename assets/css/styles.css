@@ -1627,91 +1627,66 @@ body.dark-theme .highlight {
 }
 
 .project-modal-details > div {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  position: relative;
 }
 
 .project-modal-details b {
   color: var(--title-color);
-  font-size: 1.1rem;
+  font-size: 1.25rem;
+  font-weight: var(--font-semi-bold);
   display: block;
-  margin-bottom: 0.75rem;
-}
-
-.project-modal-details ul {
-  margin: 0.5rem 0 0 1.2rem;
-  padding: 0;
-}
-
-.project-modal-details li {
-  margin-bottom: 0.75rem;
-  line-height: 1.6;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
   position: relative;
-  padding-left: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-.project-modal-details li:last-child {
-  margin-bottom: 0;
+/* Add decorative line under section titles */
+.project-modal-details b::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  height: 2px;
+  background-color: var(--first-color);
+  transition: width 0.3s ease;
+}
+
+/* Hover effect for section titles */
+.project-modal-details > div:hover b::after {
+  width: 100px;
 }
 
 /* Dark theme adjustments */
-.dark-theme .project-modal {
-  background: var(--container-color-dark);
-  color: var(--text-color-dark);
-}
-
-.dark-theme .project-modal-header h2 {
-  color: var(--title-color-dark);
-}
-
-.dark-theme .project-modal-header p {
-  color: var(--text-color-dark);
-}
-
 .dark-theme .project-modal-details b {
   color: var(--title-color-dark);
 }
 
-/* Responsive adjustments */
-@media (max-width: 900px) {
-  .project-modal {
-    width: 95vw;
-    padding: 2rem 1.5rem 1.5rem 1.5rem;
-  }
-  
-  .project-modal-img {
-    max-width: 90%;
-    height: 250px;
-  }
-  
-  .project-modal-header h2 {
-    font-size: 1.5rem;
-  }
-  
-  .project-modal-header p {
-    font-size: 1rem;
-  }
+.dark-theme .project-modal-details b::after {
+  background-color: var(--first-color);
 }
 
+/* Responsive adjustments */
 @media (max-width: 600px) {
-  .project-modal {
-    padding: 1.5rem 1rem 1rem 1rem;
-  }
-  
-  .project-modal-img {
-    max-width: 95%;
-    height: 200px;
-  }
-  
-  .project-modal-header {
+  .project-modal-details > div {
     margin-bottom: 1.5rem;
   }
   
-  .project-modal-header h2 {
-    font-size: 1.25rem;
+  .project-modal-details b {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.4rem;
   }
   
-  .project-modal-details {
-    margin-top: 1.5rem;
+  .project-modal-details b::after {
+    width: 40px;
+  }
+  
+  .project-modal-details > div:hover b::after {
+    width: 80px;
   }
 }
 
