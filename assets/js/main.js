@@ -289,9 +289,17 @@ Model Architectures:
 
 Evaluation Method: 10-fold Cross-Validation
 Dataset: HOMUS Dataset`,
-      features: ['Handwritten Music Symbol Recognition-                 Classifies 32 different types of handwritten musical symbols.', 'Model Comparison - Benchmarks multiple high-performing CNNs to identify the most effective architecture.', 'Ensemble Learning - Combines multiple models to boost recognition accuracy.'],
+      features: ['• Handwritten Music Symbol Recognition - Classifies 32 different types of handwritten musical symbols.', 
+                '• Model Comparison - Benchmarks multiple high-performing CNNs to identify the most effective architecture.', 
+                '• Ensemble Learning - Combines multiple models to boost recognition accuracy.'],
       github: 'https://github.com/your-repo',
-      demo: 'https://your-demo-link.com'
+      demo: 'https://your-demo-link.com',
+      briefs: [
+        "The project addresses the challenge of recognizing handwritten musical notation by treating it as a multiclass image classification problem. Using the HOMUS dataset, the team evaluates and fine-tunes four prominent CNN architectures—Inception v3, Inception-ResNet v2, Xception, and NASNet.",
+        "Each model's performance is assessed via 10-fold cross-validation, with Xception and Inception v3 emerging as top performers.",
+        "Ensemble models combining these architectures further enhance recognition accuracy, achieving up to 95.45%, nearly matching the state-of-the-art benchmark of 95.55%.",
+        "Misclassifications are mostly due to visual similarity among a few classes, suggesting a targeted classifier could offer future improvements."
+      ]
     },
     {
       img: 'assets/img/Line-following.gif',
@@ -526,5 +534,5 @@ document.addEventListener('DOMContentLoaded', function() {
             const filterValue = button.getAttribute('data-filter');
             filterProjects(filterValue);
         });
-    });
+  });
 });
