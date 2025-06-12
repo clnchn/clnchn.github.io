@@ -251,7 +251,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'Semantic Retrieval Engine - Retrieves the most relevant reviews for a given query using vector similarity, not just keyword matching.',
         'Persistent Vector Store - Chroma stores embeddings locally, allowing reusability without reprocessing on every run.'
       ],
-      github: 'https://github.com/your-repo',
+      github: 'https://github.com/clnchn/MachineLearningProjects/tree/main/RestaurantReviewer_LocalAIAgentWithRAG',
       demo: 'https://your-demo-link.com',
       briefs: [
         "Developed an AI-powered restaurant recommendation system using RAG and local AI Agent",
