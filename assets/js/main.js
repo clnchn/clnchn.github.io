@@ -234,38 +234,121 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Placeholder data for each project (index matches order in HTML)
   const projectDetails = [
+    // Fast Food App (hidden)
+    /*
     {
-      img: 'assets/img/project-1.jpg',
-      images: [
-        'assets/img/restaurant-reviewer-0.png',
-        'assets/img/restaurant-reviewer-1.png',
-        'assets/img/restaurant-reviewer-2.png'
-      ],
-      title: 'Restaurant Reviewer',
-      desc: 'An AI-powered restaurant recommendation tool that combines Retrieval-Augmented Generation (RAG) with local AI Agent to deliver smart, location-based dining insights. The system analyzes user preferences, reviews, and location data to provide personalized restaurant recommendations.',
-      tech: 'Python, LangChain, Ollama (mxbai-embed-large), ChromaDB, Pandas',
-      features: [
-        '• AI-powered restaurant recommendations using RAG',
-        '• Realistic Review Parsing - Loads and processes restaurant reviews from a real-world CSV dataset with metadata like rating and date.',
-        '• Smart Embedding with Ollama - Uses a local, high-quality embedding model (mxbai-embed-large) to transform reviews into dense vector representations.',
-        '• Semantic Retrieval Engine - Retrieves the most relevant reviews for a given query using vector similarity, not just keyword matching.',
-        '• Persistent Vector Store - Chroma stores embeddings locally, allowing reusability without reprocessing on every run.'
-      ],
+      img: 'assets/img/project-3.jpg',
+      title: 'Fast Food App',
+      desc: 'A fast food ordering app with real-time order tracking.',
+      tech: 'Flutter, Firebase',
+      features: ['Order management', 'Push notifications', 'Live tracking'],
+      github: 'https://github.com/your-repo',
+      demo: 'https://your-demo-link.com'
+    },
+    */
+    
+    // Yoga App (hidden)
+    /*
+    {
+      img: 'assets/img/project-2.jpg',
+      title: 'Yoga App',
+      desc: 'A mobile-friendly yoga app for daily routines and progress tracking.',
+      tech: 'React, CSS, Firebase',
+      features: ['User authentication', 'Routine tracking', 'Progress analytics'],
       github: 'https://github.com/clnchn/MachineLearningProjects/tree/main/RestaurantReviewer_LocalAIAgentWithRAG',
-      demo: 'https://your-demo-link.com',
-      briefs: [
-        "Developed an AI-powered restaurant recommendation system using RAG and local AI Agent",
-        "Implemented real-time review analysis and sentiment detection",
-        "Created a responsive web interface with interactive map integration",
-        "Deployed the application using Docker for easy scaling and maintenance"
-      ]
+      demo: 'https://your-demo-link.com'
+    },
+    */
+    
+    {
+      img: 'assets/img/stock-trading-system.jpg',
+      title: 'Stock Trading System',
+      desc: 'A multithreaded C++ stock trading system implementing the Factory Pattern and Strategy Pattern for traders placing market and limit orders, with a market simulator.',
+      tech: 'C++, Multithreading, Factory Pattern, Strategy Pattern',
+      features: [
+        'Multithreaded order processing',
+        'Factory Pattern for order creation',
+        'Strategy Pattern for market and limit orders',
+        'Market simulator for realistic trading scenarios'
+      ],
+      github: 'https://github.com/your-repo',
+      demo: 'https://your-demo-link.com'
     },
     {
-      img: 'assets/img/iScore.jpg',
-      title: 'iScore - Colour Musician',
-      desc: 'A smart scoring application designed to automate and enhance the evaluation process for sports and academic competitions.',
-      tech: 'Python, OpenCV, Flask',
-      features: ['Automated scoring', 'Color detection', 'Result analytics'],
+      images: [
+        'assets/img/animalclassifier.png',
+        'assets/img/animalclassifier-2.png'
+      ],
+      title: 'Animal Classifier',
+      desc: 'A convolutional neural network (CNN) for animal classification using the LHI-Animal-Faces dataset. The model distinguishes between 19 animal classes and one human faces class, enabling robust multi-class image recognition.',
+      tech: 'Python, TensorFlow, Keras, CNN, LHI-Animal-Faces Dataset',
+      features: [
+        '20-class image classification',
+        '19 animal classes + 1 human class',
+        'Convolutional neural network architecture',
+        'Data augmentation',
+        'Evaluation metrics and visualization'
+      ],
+      github: 'https://github.com/your-repo',
+      demo: 'https://your-demo-link.com'
+    },
+    {
+      img: 'assets/img/OnlineAlbum.png',
+      title: 'OdysseySteps: Travel Diary',
+      desc: 'A digital travel diary and photo album platform for documenting journeys, sharing stories, and organizing memories with interactive maps and galleries.',
+      tech: 'React, Node.js, MongoDB, Mapbox, Cloudinary',
+      features: [
+        'Interactive travel map',
+        'Photo and video album',
+        'Story sharing',
+        'Location tagging',
+        'Social media integration'
+      ],
+      github: 'https://github.com/your-repo',
+      demo: 'https://your-demo-link.com'
+    },
+    {
+      img: 'assets/img/ignis-2.png',
+      images: [
+        'assets/img/ignisgif.gif',
+        'assets/img/ignis-2.png',
+        'assets/img/ignis-3.png',
+        'assets/img/ignis-poster.png'
+      ],
+      title: 'IGNIS: Augmented Flashover Prediction',
+      desc: 'A real-time AI-powered system for predicting flashover events in firefighting scenarios using computer vision and sensor data fusion.',
+      tech: 'Python, OpenCV, Deep Learning, Sensor Fusion, NVIDIA Jetson Nano, Arducam Stereo Camera',
+      features: [
+        'Real-time flashover prediction',
+        'Thermal and visual data fusion',
+        'AI-based risk assessment',
+        'Firefighter safety alerts',
+        'Edge device deployment'
+      ],
+      github: 'https://github.com/your-repo',
+      demo: 'https://your-demo-link.com'
+    },
+    {
+      img: 'assets/img/SNR.gif',
+      title: 'Multi-Terrain Autonomous S&R',
+      desc: 'An autonomous search and rescue robot capable of navigating diverse terrains using advanced sensor fusion and AI-driven path planning.',
+      tech: 'ROS, Python, LIDAR, GPS, Deep Learning',
+      features: [
+        'Multi-terrain navigation',
+        'Sensor fusion (LIDAR, GPS, IMU)',
+        'AI-based path planning',
+        'Autonomous obstacle avoidance',
+        'Real-time remote monitoring'
+      ],
+      github: 'https://github.com/your-repo',
+      demo: 'https://your-demo-link.com'
+    },
+    {
+      img: 'assets/img/Line-following.gif',
+      title: 'Line Follower Robot',
+      desc: 'An autonomous robot designed to follow a visual line path using sensors and real-time feedback control algorithms.',
+      tech: 'Arduino, C++, IR Sensors',
+      features: ['Line following', 'Obstacle avoidance', 'PID control'],
       github: 'https://github.com/your-repo',
       demo: 'https://your-demo-link.com'
     },
@@ -302,114 +385,39 @@ Dataset: HOMUS Dataset`,
       ]
     },
     {
-      img: 'assets/img/Line-following.gif',
-      title: 'Line Follower Robot',
-      desc: 'An autonomous robot designed to follow a visual line path using sensors and real-time feedback control algorithms.',
-      tech: 'Arduino, C++, IR Sensors',
-      features: ['Line following', 'Obstacle avoidance', 'PID control'],
+      img: 'assets/img/iScore.jpg',
+      title: 'iScore - Colour Musician',
+      desc: 'A smart scoring application designed to automate and enhance the evaluation process for sports and academic competitions.',
+      tech: 'Python, OpenCV, Flask',
+      features: ['Automated scoring', 'Color detection', 'Result analytics'],
       github: 'https://github.com/your-repo',
       demo: 'https://your-demo-link.com'
     },
     {
-      img: 'assets/img/SNR.gif',
-      title: 'Multi-Terrain Autonomous S&R',
-      desc: 'An autonomous search and rescue robot capable of navigating diverse terrains using advanced sensor fusion and AI-driven path planning.',
-      tech: 'ROS, Python, LIDAR, GPS, Deep Learning',
-      features: [
-        'Multi-terrain navigation',
-        'Sensor fusion (LIDAR, GPS, IMU)',
-        'AI-based path planning',
-        'Autonomous obstacle avoidance',
-        'Real-time remote monitoring'
-      ],
-      github: 'https://github.com/your-repo',
-      demo: 'https://your-demo-link.com'
-    },
-    {
-      img: 'assets/img/ignis-2.png',
+      img: 'assets/img/project-1.jpg',
       images: [
-        'assets/img/ignisgif.gif',
-        'assets/img/ignis-2.png',
-        'assets/img/ignis-3.png',
-        'assets/img/ignis-poster.png'
+        'assets/img/restaurant-reviewer-0.png',
+        'assets/img/restaurant-reviewer-1.png',
+        'assets/img/restaurant-reviewer-2.png'
       ],
-      title: 'IGNIS: Augmented Flashover Prediction',
-      desc: 'A real-time AI-powered system for predicting flashover events in firefighting scenarios using computer vision and sensor data fusion.',
-      tech: 'Python, OpenCV, Deep Learning, Sensor Fusion, NVIDIA Jetson Nano, Arducam Stereo Camera',
+      title: 'Restaurant Reviewer',
+      desc: 'An AI-powered restaurant recommendation tool that combines Retrieval-Augmented Generation (RAG) with local AI Agent to deliver smart, location-based dining insights. The system analyzes user preferences, reviews, and location data to provide personalized restaurant recommendations.',
+      tech: 'Python, LangChain, Ollama (mxbai-embed-large), ChromaDB, Pandas',
       features: [
-        'Real-time flashover prediction',
-        'Thermal and visual data fusion',
-        'AI-based risk assessment',
-        'Firefighter safety alerts',
-        'Edge device deployment'
+        '• AI-powered restaurant recommendations using RAG',
+        '• Realistic Review Parsing - Loads and processes restaurant reviews from a real-world CSV dataset with metadata like rating and date.',
+        '• Smart Embedding with Ollama - Uses a local, high-quality embedding model (mxbai-embed-large) to transform reviews into dense vector representations.',
+        '• Semantic Retrieval Engine - Retrieves the most relevant reviews for a given query using vector similarity, not just keyword matching.',
+        '• Persistent Vector Store - Chroma stores embeddings locally, allowing reusability without reprocessing on every run.'
       ],
-      github: 'https://github.com/your-repo',
-      demo: 'https://your-demo-link.com'
-    },
-    {
-      img: 'assets/img/OnlineAlbum.png',
-      title: 'OdysseySteps: Travel Diary',
-      desc: 'A digital travel diary and photo album platform for documenting journeys, sharing stories, and organizing memories with interactive maps and galleries.',
-      tech: 'React, Node.js, MongoDB, Mapbox, Cloudinary',
-      features: [
-        'Interactive travel map',
-        'Photo and video album',
-        'Story sharing',
-        'Location tagging',
-        'Social media integration'
-      ],
-      github: 'https://github.com/your-repo',
-      demo: 'https://your-demo-link.com'
-    },
-    {
-      images: [
-        'assets/img/animalclassifier.png',
-        'assets/img/animalclassifier-2.png'
-      ],
-      title: 'Animal Classifier',
-      desc: 'A convolutional neural network (CNN) for animal classification using the LHI-Animal-Faces dataset. The model distinguishes between 19 animal classes and one human faces class, enabling robust multi-class image recognition.',
-      tech: 'Python, TensorFlow, Keras, CNN, LHI-Animal-Faces Dataset',
-      features: [
-        '20-class image classification',
-        '19 animal classes + 1 human class',
-        'Convolutional neural network architecture',
-        'Data augmentation',
-        'Evaluation metrics and visualization'
-      ],
-      github: 'https://github.com/your-repo',
-      demo: 'https://your-demo-link.com'
-    },
-    {
-      img: 'assets/img/stock-trading-system.jpg',
-      title: 'Stock Trading System',
-      desc: 'A multithreaded C++ stock trading system implementing the Factory Pattern and Strategy Pattern for traders placing market and limit orders, with a market simulator.',
-      tech: 'C++, Multithreading, Factory Pattern, Strategy Pattern',
-      features: [
-        'Multithreaded order processing',
-        'Factory Pattern for order creation',
-        'Strategy Pattern for market and limit orders',
-        'Market simulator for realistic trading scenarios'
-      ],
-      github: 'https://github.com/your-repo',
-      demo: 'https://your-demo-link.com'
-    },
-    {
-      img: 'assets/img/project-2.jpg',
-      title: 'Yoga App',
-      desc: 'A mobile-friendly yoga app for daily routines and progress tracking.',
-      tech: 'React, CSS, Firebase',
-      features: ['User authentication', 'Routine tracking', 'Progress analytics'],
       github: 'https://github.com/clnchn/MachineLearningProjects/tree/main/RestaurantReviewer_LocalAIAgentWithRAG',
-      demo: 'https://your-demo-link.com'
-    },
-    {
-      img: 'assets/img/project-3.jpg',
-      title: 'Fast Food App',
-      desc: 'A fast food ordering app with real-time order tracking.',
-      tech: 'Flutter, Firebase',
-      features: ['Order management', 'Push notifications', 'Live tracking'],
-      github: 'https://github.com/your-repo',
-      demo: 'https://your-demo-link.com'
+      demo: 'https://your-demo-link.com',
+      briefs: [
+        "Developed an AI-powered restaurant recommendation system using RAG and local AI Agent",
+        "Implemented real-time review analysis and sentiment detection",
+        "Created a responsive web interface with interactive map integration",
+        "Deployed the application using Docker for easy scaling and maintenance"
+      ]
     }
   ];
 
