@@ -419,7 +419,12 @@ Dataset: HOMUS Dataset`,
         "Deployed the application using Docker for easy scaling and maintenance"
       ]
     }
-  ];
+  ].map(project => {
+    if (project.demo === 'https://dribbble.com/') {
+      return { ...project, demo: 'not-linked.html' };
+    }
+    return project;
+  });
 
   // Open modal on project button click
   document.querySelectorAll('.projects__button').forEach((btn, idx) => {
