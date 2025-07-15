@@ -271,8 +271,8 @@ document.addEventListener('DOMContentLoaded', function() {
         'Strategy Pattern for market and limit orders',
         'Market simulator for realistic trading scenarios'
       ],
-      github: 'https://github.com/your-repo',
-      demo: 'https://your-demo-link.com'
+      github: 'https://github.com/clnchn/MachineLearningProjects/tree/main/Stock%20Trading%20System',
+      demo: 'https://github.com/clnchn/MachineLearningProjects/tree/main/Stock%20Trading%20System'
     },
     {
       images: [
@@ -329,8 +329,8 @@ document.addEventListener('DOMContentLoaded', function() {
         'Firefighter safety alerts',
         'Edge device deployment'
       ],
-      github: 'https://github.com/your-repo',
-      demo: 'https://your-demo-link.com'
+      github: 'https://github.com/clnchn/flashoverprediction',
+      demo: 'https://ignistechnology.wordpress.com/'
     },
     {
       img: 'assets/img/SNR.gif',
@@ -344,8 +344,8 @@ document.addEventListener('DOMContentLoaded', function() {
         'Autonomous obstacle avoidance',
         'Real-time remote monitoring'
       ],
-      github: 'https://github.com/your-repo',
-      demo: 'https://your-demo-link.com'
+      github: 'https://github.com/clnchn',
+      demo: ''
     },
     {
       img: 'assets/img/Line-following.gif',
@@ -353,8 +353,8 @@ document.addEventListener('DOMContentLoaded', function() {
       desc: 'An autonomous robot designed to follow a visual line path using sensors and real-time feedback control algorithms.',
       tech: 'Arduino, C++, IR Sensors',
       features: ['Line following', 'Obstacle avoidance', 'PID control'],
-      github: 'https://github.com/your-repo',
-      demo: 'https://your-demo-link.com'
+      github: 'https://github.com/clnchn',
+      demo: ''
     },
     {
       img: 'assets/img/omr.png',
@@ -394,8 +394,8 @@ Dataset: HOMUS Dataset`,
       desc: 'A smart scoring application designed to automate and enhance the evaluation process for sports and academic competitions.',
       tech: 'Python, OpenCV, Flask',
       features: ['Automated scoring', 'Color detection', 'Result analytics'],
-      github: 'https://github.com/your-repo',
-      demo: 'https://your-demo-link.com'
+      github: 'https://github.com/clnchn',
+      demo: ''
     },
     {
       img: 'assets/img/project-1.jpg',
@@ -415,7 +415,7 @@ Dataset: HOMUS Dataset`,
         '• Persistent Vector Store - Chroma stores embeddings locally, allowing reusability without reprocessing on every run.'
       ],
       github: 'https://github.com/clnchn/MachineLearningProjects/tree/main/RestaurantReviewer_LocalAIAgentWithRAG',
-      demo: 'https://your-demo-link.com',
+      demo: '',
       briefs: [
         "Developed an AI-powered restaurant recommendation system using RAG and local AI Agent",
         "Implemented real-time review analysis and sentiment detection",
