@@ -294,18 +294,22 @@ document.addEventListener('DOMContentLoaded', function() {
     },
     {
       img: 'assets/img/OnlineAlbum.png',
+      images: [
+        'assets/img/OnlineAlbum.png',
+        'assets/img/travel1.png',
+        'assets/img/travel3.png',
+        'assets/img/travel4.png'
+      ],
       title: 'OdysseySteps: Travel Diary',
       desc: 'A digital travel diary and photo album platform for documenting journeys, sharing stories, and organizing memories with interactive maps and galleries.',
-      tech: 'React, Node.js, MongoDB, Mapbox, Cloudinary',
+      tech: 'Flask, AWS EC2,lambda, HTML5, CSS, Javascript, MySQL, Python',
       features: [
         'Interactive travel map',
         'Photo and video album',
-        'Story sharing',
-        'Location tagging',
-        'Social media integration'
+        'Location tagging'
       ],
-      github: 'https://github.com/your-repo',
-      demo: 'https://your-demo-link.com'
+      github: 'https://github.com/clnchn/ECE1779/tree/main',
+      demo: 'assets/docs/OdysseySteps.pdf'
     },
     {
       img: 'assets/img/ignis-2.png',
