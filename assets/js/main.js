@@ -290,24 +290,6 @@ document.addEventListener('DOMContentLoaded', function() {
       demo: 'https://github.com/clnchn/MachineLearningProjects/tree/main/Traffic%20Light%20Handling'
     },
     {
-      images: [
-        'assets/img/animalclassifier.png',
-        'assets/img/animalclassifier-2.png'
-      ],
-      title: 'Animal Classifier',
-      desc: 'A convolutional neural network (CNN) for animal classification using the LHI-Animal-Faces dataset. The model distinguishes between 19 animal classes and one human faces class, enabling robust multi-class image recognition.',
-      tech: 'Python, TensorFlow, Keras, CNN, LHI-Animal-Faces Dataset',
-      features: [
-        '20-class image classification',
-        '19 animal classes + 1 human class',
-        'Convolutional neural network architecture',
-        'Data augmentation',
-        'Evaluation metrics and visualization'
-      ],
-      github: 'not-linked.html',
-      demo: 'not-linked.html'
-    },
-    {
       img: 'assets/img/OnlineAlbum.png',
       images: [
         'assets/img/OnlineAlbum.png',
@@ -370,6 +352,57 @@ document.addEventListener('DOMContentLoaded', function() {
       features: ['Line following', 'Obstacle avoidance', 'PID control'],
       github: 'https://github.com/clnchn',
       demo: ''
+    },
+    {
+      images: [
+        'assets/img/animalclassifier.png',
+        'assets/img/animalclassifier-2.png'
+      ],
+      title: 'Animal Classifier',
+      desc: 'A convolutional neural network (CNN) for animal classification using the LHI-Animal-Faces dataset. The model distinguishes between 19 animal classes and one human faces class, enabling robust multi-class image recognition.',
+      tech: 'Python, TensorFlow, Keras, CNN, LHI-Animal-Faces Dataset',
+      features: [
+        '20-class image classification',
+        'Convolutional neural network architecture',
+        'Data augmentation',
+        'Evaluation metrics and visualization'
+      ],
+      github: 'https://github.com/clnchn/UofT-F22-AER1515-RobotPerception/blob/main/AER1515_Assignment1/code/train.py',
+      demo: 'https://github.com/clnchn/UofT-F22-AER1515-RobotPerception/blob/main/AER1515_Assignment1/AER1515_Assignment1Report.pdf',
+      briefs: [
+        "For this project, I implemented and extended a convolutional neural network (CNN) using PyTorch to perform multi-class image classification on the LHI-Animal-Faces dataset. Starting off by training a baseline binary classifier (original: 4 conv layers, 3 max-pools, 2 FC layers, ReLU activations) for cats and dogs, then modified the code to support all 20 classes.<br>",
+        "To improve model performance, I enhanced the CNN architecture by adding <strong>batch normalization</strong> and <strong>dropout layers</strong>(reduce overfitting). I also introduced a validation loop to monitor performance during training and saved the model with the lowest validation loss.<br>", 
+        "Finally, I performed <strong>hyperparameter tuning</strong> by experimenting with <strong>different optimizers, learning rates, and batch sizes</strong> to maximize classification accuracy on the test set.<br>", 
+        "Throughout the project, I visualized training and validation loss curves to analyze and guide model improvements.",
+        "<br>", 
+        "• CNN model design and implementation in PyTorch.",
+        "• Multi-class classification and evaluation.", 
+        "• Training optimization via architecture tuning, validation usage, and hyperparameter search.",
+        "• Visualization and interpretation of training dynamics."
+
+      ]
+    },
+    {
+      images: [
+        'assets/img/nbody-galaxy.jpg'
+      ],
+      title: 'Comparative Analysis of OpenMP vs CUDA in Hermite N-Body Simulations',
+      desc: 'A convolutional neural network (CNN) for animal classification using the LHI-Animal-Faces dataset. The model distinguishes between 19 animal classes and one human faces class, enabling robust multi-class image recognition.',
+      tech: ['<strong>Languages:</strong> C/C++, CUDA C',
+      '<strong>Frameworks/APIs:</strong> OpenMP, NVIDIA CUDA',
+      '<strong>Tools:</strong> gprof, Visual Studio Code',
+      '<strong>Hardware:</strong> Multi-core CPU, NVIDIA GPU (CUDA-enabled)'],
+      features: [
+        '4th-order Hermite integrator for N-body gravitational simulations',
+        'Parallelized force computation using OpenMP for CPU multi-threading',
+        'Parallelized force computation using CUDA for GPU acceleration',
+        'Performance benchmarking (speedup, memory usage, scalability)'
+      ],
+      github: 'https://github.com/clnchn/UofT-F22-AER1515-RobotPerception/blob/main/AER1515_Assignment1/code/train.py',
+      demo: 'https://github.com/clnchn/UofT-F22-AER1515-RobotPerception/blob/main/AER1515_Assignment1/AER1515_Assignment1Report.pdf',
+      briefs: [
+        "This project explores the performance and efficiency of two parallel computing frameworks—OpenMP and CUDA—for accelerating Hermite N-body simulations, a method used to model gravitational interactions among multiple particles. The simulation uses a 4th-order Hermite integration scheme and is implemented in both CPU-parallel (OpenMP) and GPU-parallel (CUDA) environments. The project compares execution time, scalability, accuracy, and resource utilization across various particle counts to determine the most effective approach for high-performance scientific computing tasks in astrophysics."
+      ]
     },
     {
       img: 'assets/img/omr.png',
