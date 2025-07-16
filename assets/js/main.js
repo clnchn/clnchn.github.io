@@ -274,6 +274,20 @@ document.addEventListener('DOMContentLoaded', function() {
       github: 'https://github.com/clnchn/MachineLearningProjects/tree/main/Stock%20Trading%20System',
       demo: 'https://github.com/clnchn/MachineLearningProjects/tree/main/Stock%20Trading%20System'
     },
+
+    {
+      img: 'assets/img/output_labeled_traffic_video.gif',
+      title: 'Traffic Light Handling',
+      desc: 'Traffic Light Detection on Video using pretrained YOLOv5 model.',
+      features: [
+        'Use a pretrained YOLOv5 model (e.g. yolov5s)',
+        'Detect traffic lights (some pretrained models have traffic light in classes)',
+        'Crop detected traffic lights and classify their color with HSV thresholding from above',
+        'Display detections + color + driving decision on video frames'
+      ],
+      github: 'https://github.com/clnchn/MachineLearningProjects/tree/main/Traffic%20Light%20Handling',
+      demo: 'https://github.com/clnchn/MachineLearningProjects/tree/main/Traffic%20Light%20Handling'
+    },
     {
       images: [
         'assets/img/animalclassifier.png',
@@ -289,8 +303,8 @@ document.addEventListener('DOMContentLoaded', function() {
         'Data augmentation',
         'Evaluation metrics and visualization'
       ],
-      github: 'https://github.com/your-repo',
-      demo: 'https://your-demo-link.com'
+      github: 'not-linked.html',
+      demo: 'not-linked.html'
     },
     {
       img: 'assets/img/OnlineAlbum.png',
