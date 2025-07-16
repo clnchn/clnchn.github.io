@@ -398,8 +398,8 @@ document.addEventListener('DOMContentLoaded', function() {
         'Parallelized force computation using CUDA for GPU acceleration',
         'Performance benchmarking (speedup, memory usage, scalability)'
       ],
-      github: 'https://github.com/clnchn/UofT-F22-AER1515-RobotPerception/blob/main/AER1515_Assignment1/code/train.py',
-      demo: 'https://github.com/clnchn/UofT-F22-AER1515-RobotPerception/blob/main/AER1515_Assignment1/AER1515_Assignment1Report.pdf',
+      github: 'https://github.com/clnchn/UofT-F22-ECE1747-ParallelProgramming/blob/main/ece1747_FinalProject/ece1747_termproject/ECE1747%20Final%20Project%20Report.pdf',
+      demo: 'https://github.com/clnchn/UofT-F22-ECE1747-ParallelProgramming/blob/main/ece1747_FinalProject/ece1747_termproject/ECE1747_N-body%20Presentation.pdf',
       briefs: [
         "This project explores the performance and efficiency of two parallel computing frameworks—OpenMP and CUDA—for accelerating Hermite N-body simulations, a method used to model gravitational interactions among multiple particles. The simulation uses a 4th-order Hermite integration scheme and is implemented in both CPU-parallel (OpenMP) and GPU-parallel (CUDA) environments. The project compares execution time, scalability, accuracy, and resource utilization across various particle counts to determine the most effective approach for high-performance scientific computing tasks in astrophysics."
       ]
