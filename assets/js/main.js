@@ -279,6 +279,7 @@ document.addEventListener('DOMContentLoaded', function() {
       img: 'assets/img/output_labeled_traffic_video.gif',
       title: 'Traffic Light Handling',
       desc: 'Traffic Light Detection on Video using pretrained YOLOv5 model.',
+      tech: 'Jupyter Notebook, Python, OpenCV, matplotlib',
       features: [
         'Use a pretrained YOLOv5 model (e.g. yolov5s)',
         'Detect traffic lights (some pretrained models have traffic light in classes)',
