@@ -387,7 +387,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'assets/img/nbody-galaxy.jpg'
       ],
       title: 'Comparative Analysis of OpenMP vs CUDA in Hermite N-Body Simulations',
-      desc: 'A convolutional neural network (CNN) for animal classification using the LHI-Animal-Faces dataset. The model distinguishes between 19 animal classes and one human faces class, enabling robust multi-class image recognition.',
+      desc: 'A performance comparison of OpenMP (CPU) and CUDA (GPU) in accelerating Hermite N-body simulations, highlighting speed, scalability, and efficiency in modeling gravitational systems.',
       tech: ['<strong>Languages:</strong> C/C++, CUDA C',
       '<strong>Frameworks/APIs:</strong> OpenMP, NVIDIA CUDA',
       '<strong>Tools:</strong> gprof, Visual Studio Code',
