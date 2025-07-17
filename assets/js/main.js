@@ -349,9 +349,7 @@ document.addEventListener('DOMContentLoaded', function () {
     ],
     github: 'https://drive.google.com/drive/folders/19iu8Gw-QRYk_K-uB9fweuGLEyTJPrLLe?usp=drive_link',
     demo: 'https://drive.google.com/file/d/19x91PpY0_d_EH8t9DB4vOO3id3FEf075/view?usp=drive_link',
-    briefs: [
-      "The prototype was able to go over the required terrain, extinguish a candle, and detect the food in the sand. However it failed to navigate itself to the lone and group survivors, due to the lack of ability of the robot to localize itself on the field when objects were present, which implies that the ability to navigate fully autonomously objective was not fully achieved. However, each core component, including traversing through and around various terrain, searching through each sand tile and detecting whether or not the food was present, generating a map with the locations of all objects from the robot’s starting position, and driving towards the candle and extinguishing it, were all successfully completed independently.Otherwise, the robot has achieve all of the other objectives. This was in part due to time constraints in the software and the issues described in section"
-    ]
+
   },
   {
     img: 'assets/img/Line-following.gif',
