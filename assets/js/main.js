@@ -357,7 +357,7 @@ document.addEventListener('DOMContentLoaded', function () {
     img: 'assets/img/Line-following.gif',
     title: 'Line Follower Robot',
     desc: 'An autonomous robot designed to follow a visual line path using sensors and real-time feedback control algorithms.',
-    tech: 'Arduino, C++, IR Sensors',
+    tech: 'Arduino, C++, IR Sensors, Hall Effect Sensors',
     features: ['Line following', 'Obstacle avoidance', 'PID control'],
     github: 'https://github.com/clnchn',
     demo: ''
