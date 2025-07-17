@@ -287,7 +287,10 @@ document.addEventListener('DOMContentLoaded', function() {
         'Display detections + color + driving decision on video frames'
       ],
       github: 'https://github.com/clnchn/MachineLearningProjects/tree/main/Traffic%20Light%20Handling',
-      demo: 'https://github.com/clnchn/MachineLearningProjects/tree/main/Traffic%20Light%20Handling'
+      demo: 'https://github.com/clnchn/MachineLearningProjects/tree/main/Traffic%20Light%20Handling', 
+      briefs: [
+        "Next Step: Train with aUToLights. aUToLights is a traffic light dataset that can be used to train, validate, and evaluate traffic light detection and tracking performance on a multi-camera setup. "
+      ]
     },
     {
       img: 'assets/img/OnlineAlbum.png',
@@ -360,7 +363,7 @@ document.addEventListener('DOMContentLoaded', function() {
       ],
       title: 'Animal Classifier',
       desc: 'A convolutional neural network (CNN) for animal classification using the LHI-Animal-Faces dataset. The model distinguishes between 19 animal classes and one human faces class, enabling robust multi-class image recognition.',
-      tech: 'Python, TensorFlow, Keras, CNN, LHI-Animal-Faces Dataset',
+      tech: 'Python, Pytorch, CNN, LHI-Animal-Faces Dataset',
       features: [
         '20-class image classification',
         'Convolutional neural network architecture',
@@ -388,10 +391,7 @@ document.addEventListener('DOMContentLoaded', function() {
       ],
       title: 'Comparative Analysis of OpenMP vs CUDA in Hermite N-Body Simulations',
       desc: 'A performance comparison of OpenMP (CPU) and CUDA (GPU) in accelerating Hermite N-body simulations, highlighting speed, scalability, and efficiency in modeling gravitational systems.',
-      tech: ['<strong>Languages:</strong> C/C++, CUDA C',
-      '<strong>Frameworks/APIs:</strong> OpenMP, NVIDIA CUDA',
-      '<strong>Tools:</strong> gprof, Visual Studio Code',
-      '<strong>Hardware:</strong> Multi-core CPU, NVIDIA GPU (CUDA-enabled)'],
+      tech: ["<strong>Languages:</strong> C/C++, CUDA C <br><strong>Frameworks/APIs:</strong> OpenMP, NVIDIA CUDA <br><strong>Tools:</strong> gprof, Visual Studio Code <br><strong>Hardware:</strong> Multi-core CPU, NVIDIA GPU (CUDA-enabled) <br>"],
       features: [
         '4th-order Hermite integrator for N-body gravitational simulations',
         'Parallelized force computation using OpenMP for CPU multi-threading',
