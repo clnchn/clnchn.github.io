@@ -261,6 +261,19 @@ document.addEventListener('DOMContentLoaded', function () {
     */
 
     {
+      img: 'assets/img/knowledge-distillation.png',
+      title: 'Knowledge Distillation for Building Lightweight Deep Learning Models in Visual Classification Tasks',
+      desc: 'Using transfer learning and knowledge distillation to train a lightweight model for mimicking a pre-trained larger model in a clinical histopathology dataset, “MHIST”',
+      tech: 'Tensorflow, Keras, Resnet',
+      features: [
+        'A conventional knowledge distillation frameworks as a model compression method for digit classification dataset, MNIST',
+        'A transfer learning and knowledge distillation to train a lightweight model for mimicking a pre-trained larger model in a clinical histopathology dataset, MHIST'
+      ],
+      github: '',
+      demo: ''
+    },
+
+    {
       img: 'assets/img/stock-trading-system.jpg',
       title: 'Stock Trading System',
       desc: 'A multithreaded C++ stock trading system implementing the Factory Pattern and Strategy Pattern for traders placing market and limit orders, with a market simulator.',
