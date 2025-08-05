@@ -269,8 +269,8 @@ document.addEventListener('DOMContentLoaded', function () {
         'A conventional knowledge distillation frameworks as a model compression method for digit classification dataset, MNIST',
         'A transfer learning and knowledge distillation to train a lightweight model for mimicking a pre-trained larger model in a clinical histopathology dataset, MHIST'
       ],
-      github: '',
-      demo: ''
+      github: 'https://github.com/clnchn/MachineLearningProjects/tree/main/Knowledge%20Distillation',
+      demo: 'https://github.com/clnchn/MachineLearningProjects/tree/main/Knowledge%20Distillation'
     },
 
     {
