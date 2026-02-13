@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>給 Larry 的情人節驚喜</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to bottom, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+            overflow: hidden;
+            font-family: 'Microsoft JhengHei', sans-serif;
+        }
+
+        /* 飄浮愛心特效 */
+        .heart {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.6);
+            user-select: none;
+            pointer-events: none;
+            animation: float 5s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) scale(0); opacity: 0; }
+            50% { opacity: 0.8; }
+            100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+        }
+
+        /* 賀卡容器 */
+        .card-container {
+            position: relative;
+            z-index: 10;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .envelope {
+            width: 300px;
+            height: 200px;
+            background-color: #ff4d6d;
+            border-radius: 0 0 10px 10px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.5s;
+        }
+
+        .envelope::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-left: 150px solid transparent;
+            border-right: 150px solid transparent;
+            border-top: 100px solid #ff758c;
+            transform-origin: top;
+            transition: transform 0.5s;
+        }
+
+        /* 打開信封的效果 */
+        .card-container.open .envelope::after {
+            transform: rotateX(180deg);
+            z-index: 0;
+        }
+
+        .letter {
+            position: absolute;
+            bottom: 0;
+            left: 10px;
+            width: 280px;
+            height: 180px;
+            background: white;
+            padding: 20px;
+            box-sizing: border-box;
+            transition: transform 0.5s;
+            z-index: -1;
+            border-radius: 5px;
+        }
+
+        .card-container.open .letter {
+            transform: translateY(-120px);
+            z-index: 5;
+            height: auto;
+            min-height: 200px;
+        }
+
+        h1 { color: #ff4d6d; font-size: 24px; }
+        p { color: #555; line-height: 1.6; }
+    </style>
+</head>
+<body>
+
+    <div class="card-container" onclick="openCard()">
+        <div class="envelope"></div>
+        <div class="letter">
+            <h1>Dear Larry,</h1>
+            <p id="typed-text"></p>
+        </div>
+    </div>
+
+    <script>
+        // 自動生成漂浮的心
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.fontSize = Math.random() * 20 + 10 + 'px';
+            heart.style.animationDuration = Math.random() * 3 + 2 + 's';
+            document.body.appendChild(heart);
+            
+            setTimeout(() => { heart.remove(); }, 5000);
+        }
+        setInterval(createHeart, 300);
+
+        // 打字機效果
+        const message = "你的屁股真的超級大! \n 情人節快樂！❤️";
+        let index = 0;
+
+        function typeWriter() {
+            if (index < message.length) {
+                document.getElementById("typed-text").innerHTML += message.charAt(index);
+                index++;
+                setTimeout(typeWriter, 150);
+            }
+        }
+
+        function openCard() {
+            const container = document.querySelector('.card-container');
+            if (!container.classList.contains('open')) {
+                container.classList.add('open');
+                setTimeout(typeWriter, 600);
+            }
+        }
+    </script>
+</body>
+</html>
+
