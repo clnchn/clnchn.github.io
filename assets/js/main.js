@@ -507,13 +507,34 @@ document.querySelectorAll('.projects__button').forEach((btn, idx) => {
     updateModalImage();
     modalTitle.textContent = data.title;
     modalDesc.textContent = data.desc;
-    modalTech.innerHTML = `<b>Tech Stack:</b> <span>${data.tech}</span>`;
-    modalFeatures.innerHTML = `<b>Features:</b><ul>${data.features.map(f => `<li>${f}</li>`).join('')}</ul>`;
 
-    // Update briefs
-    const briefsList = data.briefs ? data.briefs.map(brief => `<li>${brief}</li>`).join('') : '';
-    document.getElementById('project-modal-briefs').innerHTML =
-      `<b>Project Briefs:</b><ul>${briefsList}</ul>`;
+    // Tech stack (hide if missing)
+    if (data.tech) {
+      modalTech.innerHTML = `<b>Tech Stack:</b> <span>${data.tech}</span>`;
+      modalTech.style.display = '';
+    } else {
+      modalTech.innerHTML = '';
+      modalTech.style.display = 'none';
+    }
+
+    // Features (hide if missing)
+    if (data.features && data.features.length) {
+      modalFeatures.innerHTML = `<b>Features:</b><ul>${data.features.map(f => `<li>${f}</li>`).join('')}</ul>`;
+      modalFeatures.style.display = '';
+    } else {
+      modalFeatures.innerHTML = '';
+      modalFeatures.style.display = 'none';
+    }
+
+    // Briefs (hide if missing so we don't show an empty "Project Briefs:" heading)
+    const briefsEl = document.getElementById('project-modal-briefs');
+    if (data.briefs && data.briefs.length) {
+      briefsEl.innerHTML = `<b>Project Briefs:</b><ul>${data.briefs.map(brief => `<li>${brief}</li>`).join('')}</ul>`;
+      briefsEl.style.display = '';
+    } else {
+      briefsEl.innerHTML = '';
+      briefsEl.style.display = 'none';
+    }
 
     // Update button links
     const githubLink = document.getElementById('project-modal-github');
