@@ -97,49 +97,63 @@ window.addEventListener('scroll', scrollActive)
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
 const sr = ScrollReveal({
-  distance: '60px',
-  duration: 2000,
-  delay: 200,
-  reset: false // Set to true if you want animations to repeat on scroll up
+  distance: '40px',
+  duration: 1400,
+  delay: 150,
+  easing: 'cubic-bezier(0.2, 0.8, 0.2, 1)',
+  reset: false
 });
 
-// Home section: fade in from left
-sr.reveal('.home__data', { origin: 'left' });
-sr.reveal('.home__image', { origin: 'right', delay: 400 });
-sr.reveal('.home__social', { origin: 'bottom', interval: 100 });
+// Home: slightly staggered entrance with the hero name first
+sr.reveal('.home__data', { origin: 'left', distance: '20px' });
+sr.reveal('.home__image', { origin: 'right', delay: 350, scale: 0.96 });
+sr.reveal('.home__social', { origin: 'bottom', interval: 120, delay: 800 });
 
-// About section: fade in from bottom, stagger content
+// About: drop-cap paragraph reads in softly
 sr.reveal('.about__image', { origin: 'left', delay: 200 });
-sr.reveal('.about__content', { origin: 'right', delay: 400 });
-sr.reveal('.about__info > *', { origin: 'bottom', interval: 150, delay: 600 });
+sr.reveal('.about__content', { origin: 'right', delay: 300, distance: '30px' });
+sr.reveal('.about__info > *', { origin: 'bottom', interval: 100, delay: 500, distance: '24px' });
 
-// Services section: each card pops up with scale and stagger
-sr.reveal('.services__card', {
+// Section titles: gentle rise so the numbered chip lands first
+sr.reveal('.section__title-1, .section__title-2', {
   origin: 'bottom',
-  interval: 200,
-  scale: 0.85,
-  delay: 200
+  distance: '20px',
+  delay: 100
 });
 
-// Testimonial section: fade in from top, stagger cards
+// Education: cards drift up with a light stagger
+sr.reveal('.education__card', {
+  origin: 'bottom',
+  interval: 180,
+  delay: 200,
+  distance: '36px'
+});
+
+// Testimonials: each card blooms in with the pull-quote quote mark
 sr.reveal('.testimonial__card', {
-  origin: 'top',
-  interval: 200,
-  delay: 200
+  origin: 'bottom',
+  interval: 180,
+  delay: 200,
+  scale: 0.96
 });
 
-// Projects section: fade in from bottom, stagger cards
+// Projects: staggered cards; the scaling makes the teal overlay hover feel earned
 sr.reveal('.projects__card', {
   origin: 'bottom',
-  interval: 200,
-  delay: 200
+  interval: 140,
+  delay: 150,
+  distance: '30px',
+  scale: 0.97
 });
 
-// Contact section: fade in from left and right
+// Filter buttons rise together
+sr.reveal('.projects__filters', { origin: 'bottom', distance: '20px' });
+
+// Contact: form and info slide in from opposite sides
 sr.reveal('.contact__info', { origin: 'left', delay: 200 });
 sr.reveal('.contact__form-container', { origin: 'right', delay: 400 });
 
-// Footer: fade in from bottom
+// Footer
 sr.reveal('.footer__container', { origin: 'bottom', delay: 200 });
 
 /*=============== DARK LIGHT THEME ===============*/

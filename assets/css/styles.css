@@ -5,20 +5,23 @@
 :root {
   --header-height: 3.5rem;
 
-  /*========== Colors — Warm & editorial (light) ==========*/
+  /*========== Colors — Muted teal + sand (light) ==========*/
   /*Color mode HSL(hue, saturation, lightness)*/
-  --first-color: hsl(18, 58%, 48%);        /* warm terracotta accent */
-  --first-color-alt: hsl(18, 60%, 38%);    /* deeper rust for hover */
-  --first-color-soft: hsla(18, 58%, 48%, 0.16);
-  --black-color: hsl(24, 18%, 14%);        /* warm dark (replaces cold navy) */
-  --black-color-light: hsl(24, 12%, 32%);
-  --white-color: hsl(36, 40%, 98%);
-  --title-color: hsl(24, 22%, 14%);
-  --text-color: hsl(24, 10%, 32%);
-  --text-color-light: hsl(24, 10%, 55%);
-  --body-color: hsl(36, 33%, 97%);         /* warm cream background */
-  --container-color: hsl(32, 28%, 92%);    /* slightly deeper cream */
-  --border-color: hsl(30, 18%, 86%);
+  --first-color: hsl(185, 42%, 30%);        /* muted teal accent */
+  --first-color-alt: hsl(185, 50%, 22%);    /* deeper teal for hover */
+  --first-color-soft: hsla(185, 42%, 30%, 0.14);
+  --first-color-subtle: hsla(185, 42%, 30%, 0.08);
+  --black-color: hsl(200, 25%, 14%);        /* cool ink */
+  --black-color-light: hsl(200, 12%, 30%);
+  --white-color: hsl(38, 40%, 98%);
+  --title-color: hsl(200, 28%, 13%);
+  --text-color: hsl(200, 10%, 32%);
+  --text-color-light: hsl(200, 8%, 52%);
+  --body-color: hsl(38, 28%, 94%);          /* warm sand background */
+  --container-color: hsl(36, 22%, 89%);     /* slightly deeper sand */
+  --border-color: hsl(36, 14%, 83%);
+  --accent-shadow: hsla(185, 42%, 30%, 0.18);
+  --ink-shadow: hsla(200, 25%, 14%, 0.08);
 
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
@@ -42,17 +45,18 @@
   --z-tooltip: 10;
   --z-fixed: 100;
 
-  /* Dark theme — warm charcoal (replaces cold navy) */
-  --body-color-dark: hsl(24, 10%, 9%);     /* deep warm charcoal */
-  --container-color-dark: hsl(24, 8%, 13%);
-  --title-color-dark: hsl(36, 35%, 96%);
-  --text-color-dark: hsl(32, 15%, 82%);
-  --border-color-dark: hsl(24, 8%, 20%);
-  --nav-bg-dark: hsl(24, 9%, 11%);
-  --button-bg-dark: hsl(24, 8%, 18%);
-  --button-text-dark: hsl(36, 35%, 96%);
-  --first-color-dark: hsl(22, 75%, 62%);   /* brighter warm amber for dark */
-  --first-color-soft-dark: hsla(22, 75%, 62%, 0.18);
+  /* Dark theme — deep ink with bright teal */
+  --body-color-dark: hsl(200, 18%, 8%);     /* deep cool charcoal */
+  --container-color-dark: hsl(200, 15%, 12%);
+  --title-color-dark: hsl(38, 35%, 96%);
+  --text-color-dark: hsl(38, 12%, 82%);
+  --border-color-dark: hsl(200, 12%, 20%);
+  --nav-bg-dark: hsl(200, 17%, 10%);
+  --button-bg-dark: hsl(200, 13%, 18%);
+  --button-text-dark: hsl(38, 35%, 96%);
+  --first-color-dark: hsl(185, 55%, 55%);    /* brighter teal for dark */
+  --first-color-soft-dark: hsla(185, 55%, 55%, 0.18);
+  --accent-shadow-dark: hsla(185, 55%, 55%, 0.25);
 }
 
 /*========== Responsive typography ==========*/
@@ -85,8 +89,10 @@ body {
   background-color: var(--body-color);
   color: var(--text-color);
   line-height: 1.65;
+  counter-reset: section-counter;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "ss01", "kern", "liga";
 }
 
 body.dark-theme {
@@ -117,9 +123,44 @@ h1, h2,
 /* The hero headline gets the full editorial treatment */
 .home__name {
   font-weight: var(--font-bold);
-  letter-spacing: -0.025em;
+  letter-spacing: -0.03em;
   font-style: italic;
   font-variation-settings: "opsz" 144;
+  position: relative;
+}
+
+/* Decorative underline swash beneath the name — slowly breathes */
+.home__name::after {
+  content: "";
+  display: block;
+  width: 4.5rem;
+  height: 2px;
+  background: linear-gradient(90deg, var(--first-color), transparent);
+  margin-top: 1.25rem;
+  animation: swash-breathe 4.5s ease-in-out infinite;
+  transform-origin: left center;
+}
+
+@keyframes swash-breathe {
+  0%, 100% { transform: scaleX(1); opacity: 0.9; }
+  50%      { transform: scaleX(1.6); opacity: 1; }
+}
+
+/* Small-caps eyebrow above the name */
+.home__data::before {
+  content: "Portfolio — 2026";
+  display: block;
+  font-family: var(--body-font);
+  font-size: var(--smaller-font-size);
+  font-weight: var(--font-semi-bold);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--first-color);
+  margin-bottom: 1.5rem;
+}
+
+.dark-theme .home__data::before {
+  color: var(--first-color-dark);
 }
 
 .dark-theme h1,
@@ -155,12 +196,28 @@ img {
 
 .section {
   padding-block: 5.5rem 3rem;
+  position: relative;
 }
 
 @media screen and (min-width: 1150px) {
   .section {
     padding-block: 7rem 4rem;
   }
+}
+
+/* Decorative asterism (⁂) divider at top of each non-hero section */
+.section:not(#home):not(.section:first-of-type)::before {
+  content: "⁂";
+  position: absolute;
+  top: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--title-font);
+  font-size: 1.25rem;
+  color: var(--text-color-light);
+  opacity: 0.55;
+  letter-spacing: 0.4em;
+  pointer-events: none;
 }
 
 .section:nth-of-type(odd) {
@@ -181,25 +238,73 @@ img {
   position: relative;
   font-size: var(--h1-font-size);
   width: max-content;
-  margin: .75rem auto 2rem;
+  margin: 2.5rem auto 3rem;
+  counter-increment: section-counter;
+  padding-top: 2rem;
 }
 
 .section__title-1 span,
 .section__title-2 span {
   z-index: 5;
   position: relative;
+  font-style: italic;
+  font-variation-settings: "opsz" 144;
+}
+
+/* Section number eyebrow — tracked small-caps above the serif title */
+.section__title-1::before,
+.section__title-2::before {
+  content: counter(section-counter, decimal-leading-zero);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--body-font);
+  font-size: var(--smaller-font-size);
+  font-weight: var(--font-semi-bold);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--first-color);
+  font-style: normal;
+  font-variation-settings: normal;
+  white-space: nowrap;
+  padding: 0.35rem 0.9rem;
+  border: 1px solid var(--first-color);
+  border-radius: 999px;
+  background-color: var(--body-color);
+}
+
+.dark-theme .section__title-1::before,
+.dark-theme .section__title-2::before {
+  background-color: var(--body-color-dark);
+}
+
+/* Section:nth-of-type(even) sits on --container-color, so the chip bg must match */
+.section:nth-of-type(even) .section__title-1::before,
+.section:nth-of-type(even) .section__title-2::before {
+  background-color: var(--container-color);
+}
+
+.dark-theme .section:nth-of-type(even) .section__title-1::before,
+.dark-theme .section:nth-of-type(even) .section__title-2::before {
+  background-color: var(--container-color-dark);
+}
+
+.dark-theme .section__title-1::before,
+.dark-theme .section__title-2::before {
+  color: var(--first-color-dark);
 }
 
 .section__title-1::after,
 .section__title-2::after {
   content: "";
-  width: 44px;
-  height: 32px;
+  width: 48px;
+  height: 36px;
   background-color: var(--first-color-soft);
-  border-radius: 0.25rem;
+  border-radius: 0.3rem;
   position: absolute;
-  top: -6px;
-  right: -10px;
+  top: 1.75rem;
+  right: -12px;
   transform: rotate(-2deg);
 }
 
@@ -421,7 +526,32 @@ body.dark-theme .home__description b {
 
 .home__scroll-box {
   font-size: 1.25rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  color: var(--first-color);
+  transition: border-color .3s ease, color .3s ease, background-color .3s ease;
+}
+
+.home__scroll-box i {
   animation: scroll-down 3s infinite;
+}
+
+.home__scroll:hover .home__scroll-box {
+  background-color: var(--first-color);
+  border-color: var(--first-color);
+  color: var(--white-color);
+}
+
+.home__scroll-text {
+  font-family: var(--body-font);
+  font-size: var(--smaller-font-size);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-color);
 }
 
 /* Animate scroll icon */
@@ -449,13 +579,13 @@ body.dark-theme .home__description b {
   color: var(--white-color);
   font-weight: var(--font-semi-bold);
   transition: background-color .3s ease, transform .3s ease, box-shadow .3s ease;
-  box-shadow: 0 2px 8px hsla(24, 18%, 14%, 0.08);
+  box-shadow: 0 2px 8px var(--ink-shadow);
 }
 
 .button:hover {
   background-color: var(--first-color);
   transform: translateY(-2px);
-  box-shadow: 0 8px 18px hsla(18, 58%, 48%, 0.25);
+  box-shadow: 0 8px 18px var(--accent-shadow);
 }
 
 .button__ghost {
@@ -484,6 +614,26 @@ body.dark-theme .home__description b {
 
 .about__description {
   margin-bottom: 2.5rem;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  max-width: 64ch;
+}
+
+/* Editorial drop-cap on the first letter of the About description */
+.about__description::first-letter {
+  font-family: var(--title-font);
+  font-weight: var(--font-bold);
+  font-style: italic;
+  font-variation-settings: "opsz" 144;
+  float: left;
+  font-size: 4.25rem;
+  line-height: 0.85;
+  padding: 0.35rem 0.75rem 0 0;
+  color: var(--first-color);
+}
+
+.dark-theme .about__description::first-letter {
+  color: var(--first-color-dark);
 }
 
 .about__item {
@@ -623,8 +773,8 @@ body.dark-theme .home__description b {
 
 .projects__card:hover {
   border-color: var(--first-color);
-  box-shadow: 0 12px 28px hsla(24, 18%, 14%, 0.08);
-  transform: translateY(-2px) scale(1);
+  box-shadow: 0 14px 32px var(--ink-shadow);
+  transform: translateY(-4px) scale(1);
 }
 
 .dark-theme .projects__card {
@@ -644,11 +794,28 @@ body.dark-theme .home__description b {
 }
 
 .projects__img {
-  transition: transform .5s ease;
+  transition: transform .6s cubic-bezier(0.2, 0.8, 0.2, 1), filter .5s ease;
+  filter: saturate(0.92);
 }
 
 .projects__card:hover .projects__img {
-  transform: scale(1.04);
+  transform: scale(1.05);
+  filter: saturate(1.05);
+}
+
+/* Soft teal tint overlay that fades in on card hover */
+.projects__image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 55%, var(--first-color-soft));
+  opacity: 0;
+  transition: opacity .4s ease;
+  pointer-events: none;
+}
+
+.projects__card:hover .projects__image::after {
+  opacity: 1;
 }
 
 .projects__button {
@@ -659,7 +826,7 @@ body.dark-theme .home__description b {
   background-color: var(--first-color);
   color: var(--white-color);
   border-radius: 999px;
-  box-shadow: 0 4px 12px hsla(24, 18%, 14%, 0.15);
+  box-shadow: 0 4px 12px var(--accent-shadow);
   transition: background-color .3s ease, transform .3s ease;
 }
 
@@ -1213,10 +1380,10 @@ body.dark-theme .home__description b {
   transition: box-shadow 0.4s, border-color 0.4s;
 }
 
-/* Warm glow on hover */
+/* Teal glow on hover */
 .home__image:hover {
   box-shadow: 0 0 0 60px var(--first-color-soft),
-              0 20px 60px 0 hsla(24, 18%, 14%, 0.18);
+              0 20px 60px 0 var(--ink-shadow);
 }
 
 .home__img {
@@ -1280,10 +1447,31 @@ body.dark-theme .home__description b {
 }
 
 .testimonial__card {
+   position: relative;
    background-color: var(--white-color);
-   padding: 1.5rem 2rem;
+   padding: 2.5rem 2rem 1.75rem;
    border-radius: 1rem;
-   transition: background-color .4s;
+   border: 1px solid var(--border-color);
+   transition: background-color .4s, border-color .4s, transform .4s;
+}
+
+/* Decorative opening quote mark — pull-quote treatment */
+.testimonial__card::before {
+   content: "\201C";
+   position: absolute;
+   top: -0.4rem;
+   left: 1.25rem;
+   font-family: var(--title-font);
+   font-size: 5rem;
+   line-height: 1;
+   color: var(--first-color);
+   font-style: italic;
+   font-variation-settings: "opsz" 144;
+   opacity: 0.8;
+}
+
+.dark-theme .testimonial__card::before {
+   color: var(--first-color-dark);
 }
 
 .testimonial__header {
@@ -1300,13 +1488,17 @@ body.dark-theme .home__description b {
 }
 
 .testimonial__name {
-   font-size: var(--normal-font-size);
-   font-weight: var(--font-medium);
+   font-size: 1.125rem;
+   font-weight: var(--font-semi-bold);
 }
 
 .testimonial__role {
-   font-size: var(--small-font-size);
-   color: var(--text-color);
+   font-size: var(--smaller-font-size);
+   color: var(--text-color-light);
+   font-family: var(--body-font);
+   letter-spacing: 0.12em;
+   text-transform: uppercase;
+   font-weight: var(--font-medium);
 }
 
 .testimonial__rating {
@@ -1326,7 +1518,10 @@ body.dark-theme .home__description b {
 
 .testimonial__description {
    font-size: var(--small-font-size);
+   line-height: 1.7;
    margin-bottom: .5rem;
+   font-style: italic;
+   color: var(--text-color);
 }
 
 /* Add responsive styles */
@@ -1489,7 +1684,7 @@ body.dark-theme .highlight {
 .education__course-tag {
   background: var(--first-color-soft);
   color: var(--first-color-alt);
-  border: 1px solid hsla(18, 58%, 48%, 0.25);
+  border: 1px solid hsla(185, 42%, 30%, 0.25);
   font-size: var(--small-font-size);
   padding: 0.3em 0.85em;
   border-radius: 999px;
@@ -1508,7 +1703,7 @@ body.dark-theme .highlight {
 .dark-theme .education__course-tag {
   background: var(--first-color-soft-dark);
   color: var(--first-color-dark);
-  border-color: hsla(22, 75%, 62%, 0.3);
+  border-color: hsla(185, 55%, 55%, 0.3);
 }
 
 .dark-theme .education__course-tag:hover {
@@ -1887,7 +2082,7 @@ body.dark-theme {
 .dark-theme .button:hover {
   background-color: var(--first-color-dark);
   color: var(--body-color-dark);
-  box-shadow: 0 8px 18px hsla(22, 75%, 62%, 0.25);
+  box-shadow: 0 8px 18px var(--accent-shadow-dark);
 }
 
 .dark-theme .contact__form-input {
