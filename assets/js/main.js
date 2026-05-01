@@ -194,41 +194,54 @@ window.addEventListener('scroll', () => {
   const cards = document.querySelectorAll('.testimonial__card');
   const prevBtn = document.querySelector('.testimonial__slider-btn--prev');
   const nextBtn = document.querySelector('.testimonial__slider-btn--next');
+  const dotsContainer = document.querySelector('.testimonial__dots');
   let currentIndex = 0;
 
   function getCardsToShow() {
     if (window.innerWidth < 600) return 1;
-    if (window.innerWidth < 1000) return 2;
+    if (window.innerWidth < 900) return 2;
     return 3;
+  }
+
+  function getMaxIndex() {
+    return Math.max(0, cards.length - getCardsToShow());
+  }
+
+  // Build dots — one per slide position
+  function buildDots() {
+    dotsContainer.innerHTML = '';
+    const max = getMaxIndex();
+    for (let i = 0; i <= max; i++) {
+      const dot = document.createElement('button');
+      dot.classList.add('testimonial__dot');
+      dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+      dot.addEventListener('click', () => { currentIndex = i; updateSlider(); });
+      dotsContainer.appendChild(dot);
+    }
+  }
+
+  function updateDots() {
+    dotsContainer.querySelectorAll('.testimonial__dot').forEach((dot, i) => {
+      dot.classList.toggle('active', i === currentIndex);
+    });
   }
 
   function updateSlider() {
     const cardWidth = cards[0].offsetWidth + parseInt(getComputedStyle(slider).gap || 0);
-    const maxIndex = Math.max(0, cards.length - getCardsToShow());
+    const maxIndex = getMaxIndex();
     if (currentIndex > maxIndex) currentIndex = maxIndex;
     slider.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
     prevBtn.disabled = currentIndex === 0;
     nextBtn.disabled = currentIndex >= maxIndex;
+    updateDots();
   }
 
-  function showPrev() {
-    if (currentIndex > 0) {
-      currentIndex--;
-      updateSlider();
-    }
-  }
+  prevBtn.addEventListener('click', () => { if (currentIndex > 0) { currentIndex--; updateSlider(); } });
+  nextBtn.addEventListener('click', () => { if (currentIndex < getMaxIndex()) { currentIndex++; updateSlider(); } });
 
-  function showNext() {
-    if (currentIndex < cards.length - getCardsToShow()) {
-      currentIndex++;
-      updateSlider();
-    }
-  }
+  window.addEventListener('resize', () => { buildDots(); updateSlider(); });
 
-  prevBtn.addEventListener('click', showPrev);
-  nextBtn.addEventListener('click', showNext);
-
-  window.addEventListener('resize', updateSlider);
+  buildDots();
   updateSlider();
 })();
 
