@@ -205,20 +205,6 @@ img {
   }
 }
 
-/* Decorative asterism (⁂) divider at top of each non-hero section */
-.section:not(#home):not(.section:first-of-type)::before {
-  content: "⁂";
-  position: absolute;
-  top: 2.5rem;
-  left: 50%;
-  transform: translateX(-50%);
-  font-family: var(--title-font);
-  font-size: 1.25rem;
-  color: var(--text-color-light);
-  opacity: 0.55;
-  letter-spacing: 0.4em;
-  pointer-events: none;
-}
 
 .section:nth-of-type(odd) {
   background-color: var(--body-color);
