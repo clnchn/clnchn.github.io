@@ -189,61 +189,6 @@ window.addEventListener('scroll', () => {
 });
 
 /*=============== TESTIMONIAL SLIDER ===============*/
-(function () {
-  const slider = document.querySelector('.testimonial__slider');
-  const cards = document.querySelectorAll('.testimonial__card');
-  const prevBtn = document.querySelector('.testimonial__slider-btn--prev');
-  const nextBtn = document.querySelector('.testimonial__slider-btn--next');
-  const dotsContainer = document.querySelector('.testimonial__dots');
-  let currentIndex = 0;
-
-  function getCardsToShow() {
-    if (window.innerWidth < 600) return 1;
-    if (window.innerWidth < 900) return 2;
-    return 3;
-  }
-
-  function getMaxIndex() {
-    return Math.max(0, cards.length - getCardsToShow());
-  }
-
-  // Build dots — one per slide position
-  function buildDots() {
-    dotsContainer.innerHTML = '';
-    const max = getMaxIndex();
-    for (let i = 0; i <= max; i++) {
-      const dot = document.createElement('button');
-      dot.classList.add('testimonial__dot');
-      dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
-      dot.addEventListener('click', () => { currentIndex = i; updateSlider(); });
-      dotsContainer.appendChild(dot);
-    }
-  }
-
-  function updateDots() {
-    dotsContainer.querySelectorAll('.testimonial__dot').forEach((dot, i) => {
-      dot.classList.toggle('active', i === currentIndex);
-    });
-  }
-
-  function updateSlider() {
-    const cardWidth = cards[0].offsetWidth + parseInt(getComputedStyle(slider).gap || 0);
-    const maxIndex = getMaxIndex();
-    if (currentIndex > maxIndex) currentIndex = maxIndex;
-    slider.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-    prevBtn.disabled = currentIndex === 0;
-    nextBtn.disabled = currentIndex >= maxIndex;
-    updateDots();
-  }
-
-  prevBtn.addEventListener('click', () => { if (currentIndex > 0) { currentIndex--; updateSlider(); } });
-  nextBtn.addEventListener('click', () => { if (currentIndex < getMaxIndex()) { currentIndex++; updateSlider(); } });
-
-  window.addEventListener('resize', () => { buildDots(); updateSlider(); });
-
-  buildDots();
-  updateSlider();
-})();
 
 /*=============== PROJECT MODAL ===============*/
 document.addEventListener('DOMContentLoaded', function () {
@@ -626,6 +571,56 @@ modalOverlay.addEventListener('click', function (e) {
   if (e.target === modalOverlay) closeModal();
 });
 });
+
+/*=============== TESTIMONIAL SLIDER ===============*/
+(function () {
+  const slider = document.querySelector('.testimonial__slider');
+  const cards = document.querySelectorAll('.testimonial__card');
+  const prevBtn = document.querySelector('.testimonial__slider-btn--prev');
+  const nextBtn = document.querySelector('.testimonial__slider-btn--next');
+  const dotsContainer = document.querySelector('.testimonial__dots');
+  let currentIndex = 0;
+
+  function getCardsToShow() {
+    if (window.innerWidth < 500) return 1;
+    if (window.innerWidth < 900) return 2;
+    return 3;
+  }
+
+  function getMaxIndex() {
+    return Math.max(0, cards.length - getCardsToShow());
+  }
+
+  function buildDots() {
+    dotsContainer.innerHTML = '';
+    for (let i = 0; i <= getMaxIndex(); i++) {
+      const dot = document.createElement('button');
+      dot.classList.add('testimonial__dot');
+      dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+      dot.addEventListener('click', () => { currentIndex = i; updateSlider(); });
+      dotsContainer.appendChild(dot);
+    }
+  }
+
+  function updateSlider() {
+    const cardWidth = cards[0].offsetWidth + parseInt(getComputedStyle(slider).gap || 0);
+    const maxIndex = getMaxIndex();
+    if (currentIndex > maxIndex) currentIndex = maxIndex;
+    slider.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+    prevBtn.disabled = currentIndex === 0;
+    nextBtn.disabled = currentIndex >= maxIndex;
+    dotsContainer.querySelectorAll('.testimonial__dot').forEach((d, i) => {
+      d.classList.toggle('active', i === currentIndex);
+    });
+  }
+
+  prevBtn.addEventListener('click', () => { if (currentIndex > 0) { currentIndex--; updateSlider(); } });
+  nextBtn.addEventListener('click', () => { if (currentIndex < getMaxIndex()) { currentIndex++; updateSlider(); } });
+  window.addEventListener('resize', () => { buildDots(); updateSlider(); });
+
+  buildDots();
+  updateSlider();
+})();
 
 /*=============== PROJECT FILTERING ===============*/
 document.addEventListener('DOMContentLoaded', function () {
