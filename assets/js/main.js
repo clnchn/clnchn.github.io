@@ -203,11 +203,20 @@ window.addEventListener('scroll', () => {
   const prevBtn = document.querySelector('.testimonial__slider-btn--prev');
   const nextBtn = document.querySelector('.testimonial__slider-btn--next');
   let currentIndex = 0;
-  const cardsToShow = 3;
+
+  function getCardsToShow() {
+    if (window.innerWidth < 600) return 1;
+    if (window.innerWidth < 1000) return 2;
+    return 3;
+  }
 
   function updateSlider() {
     const cardWidth = cards[0].offsetWidth + parseInt(getComputedStyle(slider).gap || 0);
+    const maxIndex = Math.max(0, cards.length - getCardsToShow());
+    if (currentIndex > maxIndex) currentIndex = maxIndex;
     slider.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+    prevBtn.disabled = currentIndex === 0;
+    nextBtn.disabled = currentIndex >= maxIndex;
   }
 
   function showPrev() {
@@ -218,7 +227,7 @@ window.addEventListener('scroll', () => {
   }
 
   function showNext() {
-    if (currentIndex < cards.length - cardsToShow) {
+    if (currentIndex < cards.length - getCardsToShow()) {
       currentIndex++;
       updateSlider();
     }
