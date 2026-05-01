@@ -36,34 +36,26 @@ const shadowHeader = () => {
 }
 window.addEventListener('scroll', shadowHeader)
 
-/*=============== EMAIL JS ===============*/
+/*=============== CONTACT FORM ===============*/
 const contactForm = document.getElementById('contact-form'),
   contactMessage = document.getElementById('contact-message')
 
-const sendEmail = (e) => {
+contactForm.addEventListener('submit', (e) => {
   e.preventDefault()
+  const name = contactForm.user_name.value.trim()
+  const email = contactForm.user_email.value.trim()
+  const subject = contactForm.user_subject.value.trim()
+  const message = contactForm.user_message.value.trim()
 
-  // serviceID - templateID - #form - publicKey
-  emailjs.sendForm('service_your_id', 'template_your_id', '#contact-form', 'your_public_key')
-    .then(() => {
-      // Show sent message
-      contactMessage.textContent = 'Message sent successfully ✅'
+  const mailtoLink = `mailto:hsuan_ling@hotmail.com`
+    + `?subject=${encodeURIComponent(subject || 'Message from ' + name)}`
+    + `&body=${encodeURIComponent(`From: ${name} (${email})\n\n${message}`)}`
 
-      // Remove message after five seconds
-      setTimeout(() => {
-        contactMessage.textContent = ''
-      }, 5000)
-
-      // Clear input fields
-      contactForm.reset()
-
-    }, () => {
-      // Show error message
-      contactMessage.textContent = 'Message not sent (service error) ❌'
-    })
-}
-
-contactForm.addEventListener('submit', sendEmail)
+  window.location.href = mailtoLink
+  contactMessage.textContent = 'Opening your email client...'
+  setTimeout(() => { contactMessage.textContent = '' }, 4000)
+  contactForm.reset()
+})
 
 /*=============== SHOW SCROLL UP ===============*/
 const scrollUp = () => {
