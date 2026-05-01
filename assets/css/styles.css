@@ -45,18 +45,21 @@
   --z-tooltip: 10;
   --z-fixed: 100;
 
-  /* Dark theme — deep ink with bright teal */
-  --body-color-dark: hsl(200, 18%, 8%);     /* deep cool charcoal */
-  --container-color-dark: hsl(200, 15%, 12%);
-  --title-color-dark: hsl(38, 35%, 96%);
-  --text-color-dark: hsl(38, 12%, 82%);
-  --border-color-dark: hsl(200, 12%, 20%);
-  --nav-bg-dark: hsl(200, 17%, 10%);
-  --button-bg-dark: hsl(200, 13%, 18%);
-  --button-text-dark: hsl(38, 35%, 96%);
-  --first-color-dark: hsl(185, 55%, 55%);    /* brighter teal for dark */
-  --first-color-soft-dark: hsla(185, 55%, 55%, 0.18);
-  --accent-shadow-dark: hsla(185, 55%, 55%, 0.25);
+  /* Dark theme — 4-layer depth system */
+  --body-color-dark: hsl(215, 22%, 9%);       /* base bg */
+  --container-color-dark: hsl(215, 18%, 14%); /* section bg — 5% lighter */
+  --card-color-dark: hsl(215, 16%, 19%);      /* cards & elevated surfaces */
+  --input-color-dark: hsl(215, 14%, 24%);     /* inputs & button fills */
+  --title-color-dark: hsl(40, 20%, 96%);      /* warm near-white */
+  --text-color-dark: hsl(215, 8%, 80%);       /* body text */
+  --text-color-light-dark: hsl(215, 6%, 58%); /* secondary / muted text */
+  --border-color-dark: hsl(215, 12%, 28%);    /* visible borders */
+  --nav-bg-dark: hsl(215, 20%, 11%);
+  --button-bg-dark: hsl(215, 14%, 24%);
+  --button-text-dark: hsl(40, 20%, 96%);
+  --first-color-dark: hsl(185, 65%, 58%);     /* bright teal for dark bg */
+  --first-color-soft-dark: hsla(185, 65%, 58%, 0.15);
+  --accent-shadow-dark: hsla(185, 65%, 58%, 0.22);
 }
 
 /*========== Responsive typography ==========*/
@@ -96,6 +99,19 @@ body {
 }
 
 body.dark-theme {
+  --body-color: var(--body-color-dark);
+  --container-color: var(--container-color-dark);
+  --white-color: var(--card-color-dark);
+  --title-color: var(--title-color-dark);
+  --text-color: var(--text-color-dark);
+  --text-color-light: var(--text-color-light-dark);
+  --border-color: var(--border-color-dark);
+  --black-color: var(--input-color-dark);
+  --black-color-light: var(--input-color-dark);
+  --first-color: var(--first-color-dark);
+  --first-color-alt: hsl(185, 65%, 48%);
+  --first-color-soft: var(--first-color-soft-dark);
+  --ink-shadow: hsla(0, 0%, 0%, 0.35);
   background-color: var(--body-color-dark);
   color: var(--text-color-dark);
 }
@@ -273,7 +289,7 @@ img {
 
 .dark-theme .section:nth-of-type(even) .section__title-1::before,
 .dark-theme .section:nth-of-type(even) .section__title-2::before {
-  background-color: var(--container-color-dark);
+  background-color: var(--container-color-dark); /* section bg, correct */
 }
 
 .dark-theme .section__title-1::before,
@@ -487,8 +503,8 @@ img {
   }
 
   .dark-theme .nav__menu {
-    background-color: var(--container-color-dark);
-    box-shadow: -4px 0 20px hsla(0, 0%, 0%, 0.3);
+    background-color: var(--nav-bg-dark);
+    box-shadow: -4px 0 20px hsla(0, 0%, 0%, 0.4);
   }
 }
 
@@ -1719,7 +1735,7 @@ body.dark-theme .home__description b {
 }
 
 .dark-theme .testimonial__card {
-  background-color: var(--container-color-dark);
+  background-color: var(--card-color-dark);
   border-color: var(--border-color-dark);
 }
 
@@ -1868,7 +1884,7 @@ body.dark-theme .highlight {
 }
 
 .dark-theme .education__card {
-  background-color: var(--container-color-dark);
+  background-color: var(--card-color-dark);
 }
 
 .dark-theme .education__title {
@@ -2170,36 +2186,11 @@ body.dark-theme .highlight {
 }
 
 
-/* Dark theme specific styles */
-body.dark-theme {
-  background-color: var(--body-color-dark);
-  color: var(--text-color-dark);
-}
-
-.dark-theme .section:nth-of-type(even) {
-  background-color: var(--container-color-dark);
-}
-
-.dark-theme .services__card,
 .dark-theme .projects__card,
 .dark-theme .testimonial__card,
 .dark-theme .contact__info,
 .dark-theme .contact__form-container {
-  background-color: var(--container-color-dark);
-  border: 1px solid var(--border-color-dark);
-}
-
-.dark-theme .nav__link {
-  color: var(--text-color-dark);
-}
-
-.dark-theme .nav__link:hover {
-  color: var(--title-color-dark);
-}
-
-.dark-theme .button {
-  background-color: var(--button-bg-dark);
-  color: var(--button-text-dark);
+  background-color: var(--card-color-dark);
 }
 
 .dark-theme .button:hover {
@@ -2209,17 +2200,17 @@ body.dark-theme {
 }
 
 .dark-theme .contact__form-input {
-  background-color: var(--button-bg-dark);
+  background-color: var(--input-color-dark);
   color: var(--text-color-dark);
   border-color: var(--border-color-dark);
 }
 
 .dark-theme .contact__form-input:focus {
-  border-color: var(--first-color);
+  border-color: var(--first-color-dark);
 }
 
 .dark-theme .contact__form-input::placeholder {
-  color: var(--text-color-light);
+  color: var(--text-color-light-dark);
 }
 
 /* Dark theme adjustment */
@@ -2289,22 +2280,22 @@ body.dark-theme {
 
 /* Dark theme adjustments */
 .dark-theme .project-modal-slider-btn {
-  background: var(--container-color-dark);
-  color: var(--first-color);
-  border-color: var(--first-color);
+  background: var(--card-color-dark);
+  color: var(--first-color-dark);
+  border-color: var(--first-color-dark);
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .dark-theme .project-modal-slider-btn:hover {
-  background: var(--first-color);
-  color: var(--white-color);
+  background: var(--first-color-dark);
+  color: var(--body-color-dark);
   box-shadow: 0 6px 16px rgba(0,0,0,0.3);
 }
 
 .dark-theme .project-modal-slider-btn:disabled {
-  background: var(--container-color-dark);
-  color: var(--text-color-dark);
-  border-color: var(--text-color-dark);
+  background: var(--card-color-dark);
+  color: var(--text-color-light-dark);
+  border-color: var(--border-color-dark);
 }
 
 /* Responsive adjustments */
