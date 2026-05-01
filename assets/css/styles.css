@@ -662,6 +662,12 @@ body.dark-theme .home__description b {
 
 .about__container {
   row-gap: 2.5rem;
+  justify-items: center;
+  text-align: center;
+}
+
+.about__description {
+  margin-inline: auto;
 }
 
 .about__data {
@@ -669,14 +675,18 @@ body.dark-theme .home__description b {
 }
 
 .about__description {
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.25rem;
   font-size: 1.05rem;
   line-height: 1.8;
   max-width: 64ch;
 }
 
+.about__description:last-of-type {
+  margin-bottom: 1.75rem;
+}
+
 /* Editorial drop-cap on the first letter of the About description */
-.about__description::first-letter {
+.about__description:first-of-type::first-letter {
   font-family: var(--title-font);
   font-weight: var(--font-bold);
   font-style: italic;
@@ -688,12 +698,31 @@ body.dark-theme .home__description b {
   color: var(--first-color);
 }
 
-.dark-theme .about__description::first-letter {
+.dark-theme .about__description:first-of-type::first-letter {
   color: var(--first-color-dark);
 }
 
-.about__item {
-  margin-bottom: 3rem;
+.about__skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.about__skill-tag {
+  background-color: var(--first-color-soft);
+  color: var(--first-color);
+  border: 1px solid hsla(185, 42%, 30%, 0.25);
+  border-radius: 4rem;
+  padding: 0.3rem 0.85rem;
+  font-size: var(--smaller-font-size);
+  font-weight: var(--font-medium);
+}
+
+.dark-theme .about__skill-tag {
+  background-color: var(--first-color-soft-dark);
+  color: var(--first-color-dark);
+  border-color: hsla(185, 55%, 55%, 0.3);
 }
 
 .about__image {
@@ -1339,9 +1368,8 @@ body.dark-theme .home__description b {
   }
 
   .about__container {
-    grid-template-columns: 460px 400px;
-    gap: 3.5rem;
-    align-items: center;
+    grid-template-columns: 700px;
+    justify-content: center;
   }
 
   .about__data {
