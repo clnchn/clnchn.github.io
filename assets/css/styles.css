@@ -1325,7 +1325,7 @@ body.dark-theme .home__description b {
 }
 
 .testimonial__card {
-  flex: 0 0 calc(33.333% - 1rem);
+  flex-shrink: 0;
   box-sizing: border-box;
   min-height: 320px;
 }
@@ -1498,25 +1498,9 @@ body.dark-theme .home__description b {
   background-color: var(--first-color-dark);
 }
 
-@media screen and (max-width: 900px) {
-  .testimonial__card {
-    flex: 0 0 calc(50% - 0.75rem);
-  }
-}
-
 @media screen and (max-width: 500px) {
-  .testimonial__card {
-    flex: 0 0 100%;
-  }
-
   .testimonial__slider {
     gap: 1rem;
-  }
-
-  .testimonial__slider-btn {
-    width: 2rem;
-    height: 2rem;
-    font-size: 1rem;
   }
 }
 

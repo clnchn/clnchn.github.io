@@ -635,13 +635,21 @@ lightbox.addEventListener('click', function (e) {
   }
 
   function updateSlider() {
-    const gap = cards.length > 1
-      ? cards[1].getBoundingClientRect().left - cards[0].getBoundingClientRect().right
-      : 0;
-    const cardWidth = cards[0].offsetWidth + gap;
+    const cardsToShow = getCardsToShow();
+    const containerWidth = slider.parentElement.offsetWidth;
+    const gapPx = cardsToShow === 1 ? 16 : 24; // matches CSS gap (1rem / 1.5rem)
+    const cardWidth = (containerWidth - gapPx * (cardsToShow - 1)) / cardsToShow;
+
+    // Set explicit widths so cards are always the right size
+    cards.forEach(card => {
+      card.style.flexBasis = cardWidth + 'px';
+      card.style.maxWidth  = cardWidth + 'px';
+    });
+
+    const stepWidth = cardWidth + gapPx;
     const maxIndex = getMaxIndex();
     if (currentIndex > maxIndex) currentIndex = maxIndex;
-    slider.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+    slider.style.transform = `translateX(-${currentIndex * stepWidth}px)`;
     prevBtn.disabled = currentIndex === 0;
     nextBtn.disabled = currentIndex >= maxIndex;
     dotsContainer.querySelectorAll('.testimonial__dot').forEach((d, i) => {
