@@ -161,11 +161,13 @@ const selectedIcon = localStorage.getItem('selected-icon')
 const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light'
 const getCurrentIcon = () => themeButton.querySelector('i').classList.contains(iconTheme) ? 'ri-moon-line' : 'ri-sun-line'
 
-// We validate if the user previously chose a topic
+// Apply saved theme, or dark mode as default
 if (selectedTheme) {
-  // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
   document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
   themeButton.querySelector('i').classList[selectedIcon === 'ri-sun-line' ? 'add' : 'remove'](iconTheme)
+} else {
+  document.body.classList.add(darkTheme)
+  themeButton.querySelector('i').classList.add(iconTheme)
 }
 
 // Activate / deactivate the theme manually with the button
