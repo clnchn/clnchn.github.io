@@ -236,6 +236,7 @@ document.addEventListener('DOMContentLoaded', function () {
     */
 
     {
+      order: 4,
       img: 'assets/img/knowledge-distillation.png',
       title: 'Knowledge Distillation for Building Lightweight Deep Learning Models in Visual Classification Tasks',
       desc: 'Using transfer learning and knowledge distillation to train a lightweight model for mimicking a pre-trained larger model in a clinical histopathology dataset, “MHIST”',
@@ -249,6 +250,7 @@ document.addEventListener('DOMContentLoaded', function () {
     },
 
     {
+      order: 2,
       img: 'assets/img/stock-trading-system.jpg',
       title: 'Stock Trading System',
       desc: 'A multithreaded C++ stock trading system implementing the Factory Pattern and Strategy Pattern for traders placing market and limit orders, with a market simulator.',
@@ -264,6 +266,7 @@ document.addEventListener('DOMContentLoaded', function () {
     },
 
     {
+      order: 3,
       img: 'assets/img/output_labeled_traffic_video.gif',
       title: 'Traffic Light Handling',
       desc: 'Traffic Light Detection on Video using pretrained YOLOv5 model.',
@@ -281,6 +284,7 @@ document.addEventListener('DOMContentLoaded', function () {
       ]
     },
     {
+      order: 6,
       img: 'assets/img/OnlineAlbum.png',
       images: [
         'assets/img/OnlineAlbum.png',
@@ -300,6 +304,7 @@ document.addEventListener('DOMContentLoaded', function () {
       demo: 'assets/docs/OdysseySteps.pdf'
     },
     {
+      order: 1,
       img: 'assets/img/ignis-2.png',
       images: [
         'assets/img/ignisgif.gif',
@@ -324,6 +329,7 @@ document.addEventListener('DOMContentLoaded', function () {
       ]
 },
   {
+    order: 5,
     img: 'assets/img/SNR.gif',
     title: 'Multi-Terrain Autonomous S&R',
     desc: 'An autonomous search and rescue robot capable of navigating diverse terrains using advanced sensor fusion and AI-driven path planning.',
@@ -342,6 +348,7 @@ document.addEventListener('DOMContentLoaded', function () {
     ]
   },
   {
+    order: 10,
     img: 'assets/img/Line-following.gif',
     title: 'Line Follower Robot',
     desc: 'An autonomous robot designed to follow a visual line path using sensors and real-time feedback control algorithms.',
@@ -351,6 +358,7 @@ document.addEventListener('DOMContentLoaded', function () {
     demo: ''
   },
   {
+    order: 7,
     images: [
       'assets/img/animalclassifier.png',
       'assets/img/animalclassifier-2.png'
@@ -380,6 +388,7 @@ document.addEventListener('DOMContentLoaded', function () {
     ]
   },
   {
+    order: 9,
     images: [
       'assets/img/nbody-galaxy.jpg'
     ],
@@ -399,6 +408,7 @@ document.addEventListener('DOMContentLoaded', function () {
     ]
   },
   {
+    order: 8,
     img: 'assets/img/OMR.png',
     title: 'Optical Music Recognition',
     desc: 'This project investigates the application of deep learning to Optical Music Recognition (OMR), focusing on identifying handwritten musical symbols from images. By evaluating and fine-tuning top-performing convolutional neural networks (CNNs), the study aims to improve symbol classification accuracy on the HOMUS dataset. Ensemble models are also explored to enhance performance beyond individual architectures.',
@@ -416,6 +426,7 @@ document.addEventListener('DOMContentLoaded', function () {
     ]
   },
   {
+    order: 11,
     img: 'assets/img/iScore.jpg',
     title: 'iScore - Colour Musician',
     desc: 'A smart scoring application designed to automate and enhance the evaluation process for sports and academic competitions.',
@@ -425,6 +436,7 @@ document.addEventListener('DOMContentLoaded', function () {
     demo: ''
   },
   {
+    order: 12,
     img: 'assets/img/project-1.jpg',
     images: [
       'assets/img/restaurant-reviewer-0.png',
@@ -456,6 +468,23 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     return project;
   });
+
+// Sort projects by order field and reorder DOM cards to match
+(function () {
+  const container = document.querySelector('.projects__container');
+  if (!container) return;
+  const cards = Array.from(container.querySelectorAll('.projects__card'));
+
+  // Pair each data entry with its original DOM card
+  const paired = projectDetails.map((data, i) => ({ data, card: cards[i] }));
+  paired.sort((a, b) => (a.data.order ?? 99) - (b.data.order ?? 99));
+
+  // Update projectDetails in place to match sorted order
+  paired.forEach((item, i) => { projectDetails[i] = item.data; });
+
+  // Reorder DOM cards to match
+  paired.forEach(item => container.appendChild(item.card));
+})();
 
 // Open modal on project button click
 document.querySelectorAll('.projects__button').forEach((btn, idx) => {
