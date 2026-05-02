@@ -603,7 +603,10 @@ modalOverlay.addEventListener('click', function (e) {
   }
 
   function updateSlider() {
-    const cardWidth = cards[0].offsetWidth + parseInt(getComputedStyle(slider).gap || 0);
+    const gap = cards.length > 1
+      ? cards[1].getBoundingClientRect().left - cards[0].getBoundingClientRect().right
+      : 0;
+    const cardWidth = cards[0].offsetWidth + gap;
     const maxIndex = getMaxIndex();
     if (currentIndex > maxIndex) currentIndex = maxIndex;
     slider.style.transform = `translateX(-${currentIndex * cardWidth}px)`;

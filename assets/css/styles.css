@@ -1315,11 +1315,12 @@ body.dark-theme .home__description b {
 
 .testimonial__slider-container {
   overflow: hidden;
-  padding-top: 2rem;
+  padding-top: 0.75rem;
 }
 
 .testimonial__slider {
   display: flex;
+  align-items: stretch;
   gap: 1.5rem;
   transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: transform;
@@ -1382,6 +1383,7 @@ body.dark-theme .home__description b {
   gap: 0.875rem;
   padding-top: 1.25rem;
   border-top: 1px solid var(--border-color);
+  min-height: 4.5rem;
 }
 
 .testimonial__avatar {
@@ -1440,7 +1442,7 @@ body.dark-theme .home__description b {
   align-items: center;
   justify-content: center;
   gap: 1.25rem;
-  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .testimonial__slider-btn {
