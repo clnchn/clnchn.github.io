@@ -562,6 +562,15 @@ body.dark-theme .home__description b {
   color: var(--first-color-dark);
 }
 
+.home__buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 1rem;
+  flex-wrap: wrap;
+  row-gap: .75rem;
+  margin-bottom: 2rem;
+}
 
 .home__scroll {
   display: block;
@@ -1299,69 +1308,6 @@ body.dark-theme .home__description b {
   }
 }
 
-.home__image {
-  position: relative;
-  justify-self: center;
-  transition: box-shadow 0.4s, border-color 0.4s;
-  border: 35px solid transparent;
-  box-shadow: 0 0 0 0 rgba(0,0,0,0);
-  border-radius: 1.5rem;
-}
-
-.home__image:hover {
-  border-color: var(--first-color);
-  box-shadow: 0 20px 60px 0 rgba(0,0,0,0.25);
-  z-index: 2;
-  transition: box-shadow 0.4s, border-color 0.4s;
-}
-
-/* Teal glow on hover */
-.home__image:hover {
-  box-shadow: 0 0 0 60px var(--first-color-soft),
-              0 20px 60px 0 var(--ink-shadow);
-}
-
-.home__img {
-  width: 320px;
-  border-radius: 1rem;
-}
-
-.home__shadow {
-  width: 280px;
-  height: 360px;
-  background-color: var(--black-color);
-  position: absolute;
-  top: -2rem;
-  right: -2rem;
-  border-radius: 2.5rem;
-  z-index: -1;
-  opacity: 0.8;
-}
-
-.home__arrow {
-  position: absolute;
-  width: 50px;
-  left: 40%;
-  top: -100px;
-  transform: rotate(15deg);
-}
-
-.home__line {
-  position: absolute;
-  width: 50px;
-  right: -2rem;
-  bottom: -2rem;
-}
-
-/* Update for larger screens */
-@media screen and (min-width: 1150px) {
-  .home__arrow {
-    width: 70px;
-    left: 45%;
-    top: -120px;
-  }
-}
-
 /*=============== TESTIMONIAL ===============*/
 .testimonial {
   background-color: var(--container-color);
@@ -1650,12 +1596,16 @@ body.dark-theme .highlight {
 }
 
 .education__container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 2.5rem;
-  flex-wrap: wrap;
+}
+
+@media screen and (min-width: 900px) {
+  .education__container {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: start;
+  }
 }
 
 .education__card {
@@ -1663,15 +1613,12 @@ body.dark-theme .highlight {
   padding: 2.5rem 2rem;
   border-radius: 1rem;
   position: relative;
-  width: 750px;
+  width: 100%;
   min-height: 180px;
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   box-sizing: border-box;
-  height: 100%;
-  margin-bottom: 0;
-  max-width: 100%;
 }
 
 .education__border {
@@ -1695,6 +1642,26 @@ body.dark-theme .highlight {
   flex-direction: column;
   justify-content: center;
   z-index: 1;
+}
+
+.education__badge {
+  display: inline-block;
+  font-size: var(--smaller-font-size);
+  font-weight: var(--font-medium);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.25em 0.8em;
+  border-radius: 999px;
+  background: var(--first-color-soft);
+  color: var(--first-color-alt);
+  border: 1px solid hsla(185, 42%, 30%, 0.25);
+  margin-bottom: 0.6rem;
+}
+
+.dark-theme .education__badge {
+  background: var(--first-color-soft-dark);
+  color: var(--first-color-dark);
+  border-color: hsla(185, 55%, 55%, 0.3);
 }
 
 .education__title {
@@ -2058,11 +2025,7 @@ body.dark-theme .highlight {
   color: var(--text-color-light-dark);
 }
 
-/* Dark theme adjustment */
-.dark-theme .home__shadow {
-  background-color: #000000;
-  opacity: 0.9;
-}
+
 
 /* Project Modal Slider Styles */
 .project-modal-slider {

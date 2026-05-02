@@ -34,13 +34,13 @@
                      <a href="#home" class="nav__link active-link">Home</a>
                   </li>
                   <li class="nav__item">
-                     <a href="#about" class="nav__link">About Me</a>
-                  </li>
-                  <li class="nav__item">
                      <a href="#projects" class="nav__link">Projects</a>
                   </li>
                   <li class="nav__item">
                      <a href="#education" class="nav__link">Education</a>
+                  </li>
+                  <li class="nav__item">
+                     <a href="#testimonials" class="nav__link">Testimonials</a>
                   </li>
                   <li class="nav__item">
                      <a href="#contact" class="nav__link contact-button">Contact Me</a>
@@ -62,64 +62,33 @@
       <main class="main">
          <!--==================== HOME ====================-->
          <section class="home section" id="home">
-            <div class="home__container container grid">
-                  <div class="home__data">
+            <div class="home__container container">
+               <div class="home__data">
                   <h1 class="home__name">Hi, I'm Celene!</h1>
 
-                     <p class="home__description">
-                     <b>A warm welcome to my personal website!</b>As an enthusiast in innovative technologies and machine learning, I am thrilled to share my journey with you. On this website, you'll uncover my passion for machine learning, computer vision, along with a glimpse into my personal hobbies.
-                     </p>
+                  <p class="home__description">
+                     I am a <b>C++ and Python</b> software developer specializing in automating solutions and future-focused system design. My expertise spans <b>real-time streaming, sensor data analysis, image processing, and embedded systems</b>, with growing depth in <b>Big Data, cloud, and distributed systems.</b>
+                  </p>
 
-                     <a href="#about" class="home__scroll">
-                        <div class="home__scroll-box">
-                           <i class="ri-arrow-down-s-line"></i>
-                        </div>
-                        <span class="home__scroll-text">Scroll Down</span>
-                     </a>
-                  </div>
+                  <p class="home__description">
+                     Currently working on <b>autonomous driving algorithms</b>, applying machine learning to real-world challenges. I hold a Bachelor's in Mechatronics Engineering from the <b>University of Waterloo</b> and a Master's in Computer Engineering from the <b>University of Toronto</b>, where I specialized in machine learning and data analytics.
+                  </p>
 
-                  <div class="home__image">
-                  <img src="assets/img/first.jpg" alt="Home image" class="home__img">
-                     <div class="home__shadow"></div>
-
-                     <img src="assets/img/curved-arrow.svg" alt="" class="home__arrow">
-                     <img src="assets/img/random-lines.svg" alt="" class="home__line">
-                     
-                     <div class="geometric-box"></div>
-                  </div>
-               </div>
-
-         </section>
-
-         <!--==================== ABOUT ====================-->
-         <section class="about section" id="about">
-            <div class="about__container container">
-               <div class="about__content">
-                  <h2 class="section__title-1">
-                     <span>About Me.</span>
-                  </h2>
-
-                  <div class="about__info">
-                     <p class="about__description">
-                        I am a <b>C++ and Python</b> software developer specializing in automating solutions and future-focused system design. My expertise spans <b>real-time streaming, sensor data analysis, image processing, and embedded systems</b>, with growing depth in <b>Big Data, cloud, and distributed systems.</b>
-                     </p>
-
-                     <p class="about__description">
-                        Currently working on <b>autonomous driving algorithms</b>, applying machine learning to real-world challenges. I hold a Bachelor's in Mechatronics Engineering from the <b>University of Waterloo</b> and a Master's in Computer Engineering from the <b>University of Toronto</b>, where I specialized in machine learning and data analytics.
-                     </p>
-
-                  </div>
-
-                  <div class="about__buttons">
-                     <a href="#contact" class="button">
-                        Contact Me
-                     </a>
-
+                  <div class="home__buttons">
+                     <a href="#contact" class="button">Contact Me</a>
                      <a href="https://www.linkedin.com/in/celenechen/" target="_blank" class="button button__ghost">
                         <i class="ri-linkedin-box-line"></i>
                      </a>
                   </div>
+
+                  <a href="#projects" class="home__scroll">
+                     <div class="home__scroll-box">
+                        <i class="ri-arrow-down-s-line"></i>
+                     </div>
+                     <span class="home__scroll-text">Scroll Down</span>
+                  </a>
                </div>
+
             </div>
          </section>
 
@@ -504,7 +473,7 @@
                   <div class="education__content">
                      <h2 class="education__title">Bachelor of Applied Science in Mechatronics Engineering</h2>
                      <p class="education__description">
-                        University of Waterloo<br>
+                        University of Waterloo
                      </p>
                      <div class="education__courses">
                         <span class="education__course-tag">Linear Algebra</span>
@@ -528,7 +497,7 @@
                      </p>
                      <div class="education__courses">
                         <span class="education__course-tag">Perception for Robotics</span>
-                        <span class="education__course-tag">Digital Image Processing and Applications</span>
+                        <span class="education__course-tag">Digital Image Processing</span>
                         <span class="education__course-tag">Parallel Programming</span>
                         <span class="education__course-tag">Cloud Computing</span>
                         <span class="education__course-tag">Computer Security</span>
@@ -542,7 +511,7 @@
          </section>
 
          <!--==================== TESTIMONIAL ====================-->
-         <section class="testimonial section">
+         <section class="testimonial section" id="testimonials">
             <h2 class="section__title-2">
                <span>Testimonial</span>
             </h2>
@@ -698,9 +667,6 @@
             <ul class="footer__links">
                <li>
                   <a href="#home" class="footer__link">Home</a>
-               </li>
-               <li>
-                  <a href="#about" class="footer__link">About</a>
                </li>
                <li>
                   <a href="#projects" class="footer__link">Projects</a>
