@@ -385,7 +385,7 @@ document.addEventListener('DOMContentLoaded', function () {
     ],
     title: 'Comparative Analysis of OpenMP vs CUDA in Hermite N-Body Simulations',
     desc: 'A performance comparison of OpenMP (CPU) and CUDA (GPU) in accelerating Hermite N-body simulations, highlighting speed, scalability, and efficiency in modeling gravitational systems.',
-    tech: ["<strong>Languages:</strong> C/C++, CUDA C <br><strong>Frameworks/APIs:</strong> OpenMP, NVIDIA CUDA <br><strong>Tools:</strong> gprof, Visual Studio Code <br><strong>Hardware:</strong> Multi-core CPU, NVIDIA GPU (CUDA-enabled) <br>"],
+    tech: 'C/C++, CUDA C, OpenMP, NVIDIA CUDA, gprof, Visual Studio Code',
     features: [
       '4th-order Hermite integrator for N-body gravitational simulations',
       'Parallelized force computation using OpenMP for CPU multi-threading',
@@ -402,25 +402,10 @@ document.addEventListener('DOMContentLoaded', function () {
     img: 'assets/img/OMR.png',
     title: 'Optical Music Recognition',
     desc: 'This project investigates the application of deep learning to Optical Music Recognition (OMR), focusing on identifying handwritten musical symbols from images. By evaluating and fine-tuning top-performing convolutional neural networks (CNNs), the study aims to improve symbol classification accuracy on the HOMUS dataset. Ensemble models are also explored to enhance performance beyond individual architectures.',
-    tech: `Programming Language:
-• Python
-
-Libraries & Frameworks:
-• TensorFlow / Keras – for building and training CNN models
-• NumPy, Pandas – for data handling and preprocessing
-• Matplotlib / Seaborn – for visualization
-
-Model Architectures:
-• Inception v3
-• Inception-ResNet v2
-• Xception
-• NASNet
-
-Evaluation Method: 10-fold Cross-Validation
-Dataset: HOMUS Dataset`,
-    features: ['• Handwritten Music Symbol Recognition - Classifies 32 different types of handwritten musical symbols.',
-      '• Model Comparison - Benchmarks multiple high-performing CNNs to identify the most effective architecture.',
-      '• Ensemble Learning - Combines multiple models to boost recognition accuracy.'],
+    tech: 'Python, TensorFlow/Keras, NumPy, Pandas, Matplotlib, Inception v3, Inception-ResNet v2, Xception, NASNet',
+    features: ['Handwritten Music Symbol Recognition - Classifies 32 different types of handwritten musical symbols.',
+      'Model Comparison - Benchmarks multiple high-performing CNNs to identify the most effective architecture.',
+      'Ensemble Learning - Combines multiple models to boost recognition accuracy.'],
     github: 'https://github.com/clnchn/MachineLearningProjects/tree/main/Optical%20Music%20Recognition',
     demo: 'https://github.com/clnchn/MachineLearningProjects/blob/main/Optical%20Music%20Recognition/Report.docx',
     briefs: [
@@ -450,11 +435,11 @@ Dataset: HOMUS Dataset`,
     desc: 'An AI-powered restaurant recommendation tool that combines Retrieval-Augmented Generation (RAG) with local AI Agent to deliver smart, location-based dining insights. The system analyzes user preferences, reviews, and location data to provide personalized restaurant recommendations.',
     tech: 'Python, LangChain, Ollama (mxbai-embed-large), ChromaDB, Pandas',
     features: [
-      '• AI-powered restaurant recommendations using RAG',
-      '• Realistic Review Parsing - Loads and processes restaurant reviews from a real-world CSV dataset with metadata like rating and date.',
-      '• Smart Embedding with Ollama - Uses a local, high-quality embedding model (mxbai-embed-large) to transform reviews into dense vector representations.',
-      '• Semantic Retrieval Engine - Retrieves the most relevant reviews for a given query using vector similarity, not just keyword matching.',
-      '• Persistent Vector Store - Chroma stores embeddings locally, allowing reusability without reprocessing on every run.'
+      'AI-powered restaurant recommendations using RAG',
+      'Realistic Review Parsing - Loads and processes restaurant reviews from a real-world CSV dataset with metadata like rating and date.',
+      'Smart Embedding with Ollama - Uses a local, high-quality embedding model (mxbai-embed-large) to transform reviews into dense vector representations.',
+      'Semantic Retrieval Engine - Retrieves the most relevant reviews for a given query using vector similarity, not just keyword matching.',
+      'Persistent Vector Store - Chroma stores embeddings locally, allowing reusability without reprocessing on every run.'
     ],
     github: 'https://github.com/clnchn/MachineLearningProjects/tree/main/RestaurantReviewer_LocalAIAgentWithRAG',
     demo: '',
@@ -483,33 +468,30 @@ document.querySelectorAll('.projects__button').forEach((btn, idx) => {
     modalTitle.textContent = data.title;
     modalDesc.textContent = data.desc;
 
-    // Tech stack (hide if missing)
+    // Tech stack — rendered as chips
     if (data.tech) {
-      modalTech.innerHTML = `<b>Tech Stack:</b> <span>${data.tech}</span>`;
+      const chips = data.tech.split(',').map(t => `<span class="modal-tech-chip">${t.trim()}</span>`).join('');
+      modalTech.innerHTML = `<b>Tech Stack</b><div class="modal-tech-chips">${chips}</div>`;
       modalTech.style.display = '';
     } else {
       modalTech.innerHTML = '';
       modalTech.style.display = 'none';
     }
 
-    // Features (hide if missing)
-    if (data.features && data.features.length) {
-      modalFeatures.innerHTML = `<b>Features:</b><ul>${data.features.map(f => `<li>${f}</li>`).join('')}</ul>`;
+    // Details: merge features and briefs into one unified section
+    const allDetails = [...(data.features || []), ...(data.briefs || [])];
+    if (allDetails.length) {
+      modalFeatures.innerHTML = `<b>Details:</b><ul>${allDetails.map(f => `<li>${f}</li>`).join('')}</ul>`;
       modalFeatures.style.display = '';
     } else {
       modalFeatures.innerHTML = '';
       modalFeatures.style.display = 'none';
     }
 
-    // Briefs (hide if missing so we don't show an empty "Project Briefs:" heading)
+    // Briefs section hidden — content merged into Details above
     const briefsEl = document.getElementById('project-modal-briefs');
-    if (data.briefs && data.briefs.length) {
-      briefsEl.innerHTML = `<b>Project Briefs:</b><ul>${data.briefs.map(brief => `<li>${brief}</li>`).join('')}</ul>`;
-      briefsEl.style.display = '';
-    } else {
-      briefsEl.innerHTML = '';
-      briefsEl.style.display = 'none';
-    }
+    briefsEl.innerHTML = '';
+    briefsEl.style.display = 'none';
 
     // Update button links
     const githubLink = document.getElementById('project-modal-github');
@@ -531,6 +513,7 @@ document.querySelectorAll('.projects__button').forEach((btn, idx) => {
 
     modalOverlay.style.display = 'flex';
     document.body.style.overflow = 'hidden';
+    document.querySelector('.project-modal').scrollTop = 0;
   });
 });
 
@@ -571,6 +554,24 @@ function closeModal() {
 modalClose.addEventListener('click', closeModal);
 modalOverlay.addEventListener('click', function (e) {
   if (e.target === modalOverlay) closeModal();
+});
+
+// Lightbox
+const lightbox = document.getElementById('img-lightbox');
+const lightboxImg = document.getElementById('img-lightbox-img');
+const lightboxClose = document.getElementById('img-lightbox-close');
+
+document.getElementById('project-modal-zoom').addEventListener('click', function () {
+  lightboxImg.src = modalImg.src;
+  lightbox.style.display = 'flex';
+});
+
+function closeLightbox() {
+  lightbox.style.display = 'none';
+}
+lightboxClose.addEventListener('click', closeLightbox);
+lightbox.addEventListener('click', function (e) {
+  if (e.target === lightbox) closeLightbox();
 });
 });
 

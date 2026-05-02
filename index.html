@@ -124,8 +124,8 @@
                      <h3 class="projects__subtitle">Web App</h3>
                      <h2 class="projects__title">Fast Food App</h2>
                      <p class="projects__description">
-                        Project that you carry out in the design 
-                        and structure of the layout, showing the 
+                        Project that you carry out in the design
+                        and structure of the layout, showing the
                         design at the client's request.
                      </p>
                   </div>
@@ -153,8 +153,8 @@
                      <h3 class="projects__subtitle">Web App</h3>
                      <h2 class="projects__title">Yoga App</h2>
                      <p class="projects__description">
-                        Project that you carry out in the design 
-                        and structure of the layout, showing the 
+                        Project that you carry out in the design
+                        and structure of the layout, showing the
                         design at the client's request.
                      </p>
                   </div>
@@ -188,9 +188,6 @@
                      <a href="https://github.com/clnchn/MachineLearningProjects/tree/main/Knowledge%20Distillation" target="_blank" class="projects__link">
                         <i class="ri-github-line"></i> View
                      </a>
-                     <a href="https://github.com/clnchn/MachineLearningProjects/tree/main/Knowledge%20Distillation" target="_blank" class="projects__link">
-                        <i class="ri-dribbble-line"></i> View
-                     </a>
                   </div>
                </article>
 
@@ -212,9 +209,6 @@
                   <div class="projects__buttons">
                      <a href="https://github.com/clnchn/MachineLearningProjects/tree/main/Stock%20Trading%20System" target="_blank" class="projects__link">
                         <i class="ri-github-line"></i> View
-                     </a>
-                     <a href="https://github.com/clnchn/MachineLearningProjects/tree/main/Stock%20Trading%20System" target="_blank" class="projects__link">
-                        <i class="ri-dribbble-line"></i> View
                      </a>
                   </div>
                </article>
@@ -690,32 +684,57 @@
 <!--=============== MAIN JS ===============-->
       <script src="assets/js/main.js"></script>
 
+      <!-- Image Lightbox -->
+      <div id="img-lightbox" class="img-lightbox" style="display:none;">
+         <button class="img-lightbox__close" id="img-lightbox-close" aria-label="Close">
+            <i class="ri-close-line"></i>
+         </button>
+         <img id="img-lightbox-img" src="" alt="Zoomed image" class="img-lightbox__img">
+      </div>
+
       <!-- Project Details Modal -->
       <div id="project-modal-overlay" class="project-modal-overlay" style="display:none;">
          <div class="project-modal">
-            <button class="project-modal-close" id="project-modal-close" aria-label="Close">&times;</button>
+            <button class="project-modal-close" id="project-modal-close" aria-label="Close">
+               <i class="ri-close-line"></i>
+            </button>
             <div class="project-modal-content">
-               <div class="project-modal-header">
-                  <h2 id="project-modal-title"></h2>
-                  <p id="project-modal-description"></p>
+               <!-- Left: image + links -->
+               <div class="project-modal-left">
+                  <div class="project-modal-slider">
+                     <button class="project-modal-slider-btn" id="project-modal-prev">
+                        <i class="ri-arrow-left-s-line"></i>
+                     </button>
+                     <div class="project-modal-img-wrap">
+                        <img id="project-modal-img" src="" alt="Project image" class="project-modal-img">
+                        <button class="project-modal-zoom-btn" id="project-modal-zoom" aria-label="Zoom image">
+                           <i class="ri-zoom-in-line"></i>
+                        </button>
+                     </div>
+                     <button class="project-modal-slider-btn" id="project-modal-next">
+                        <i class="ri-arrow-right-s-line"></i>
+                     </button>
+                  </div>
+                  <div class="project-modal-buttons">
+                     <a href="#" class="project-modal-link" id="project-modal-github">
+                        <i class="ri-github-line"></i> GitHub
+                     </a>
+                     <a href="#" class="project-modal-link" id="project-modal-demo">
+                        <i class="ri-external-link-line"></i> Demo
+                     </a>
+                  </div>
                </div>
-               <div class="project-modal-slider">
-                  <button class="project-modal-slider-btn" id="project-modal-prev">&lt;</button>
-                  <img id="project-modal-img" src="" alt="Project image" class="project-modal-img">
-                  <button class="project-modal-slider-btn" id="project-modal-next">&gt;</button>
-               </div>
-               <div class="project-modal-buttons">
-                  <a href="#" class="projects__link" id="project-modal-github">
-                     <i class="ri-github-line"></i> View
-                  </a>
-                  <a href="#" class="projects__link" id="project-modal-demo">
-                     <i class="ri-dribbble-line"></i> View
-                  </a>
-               </div>
-               <div class="project-modal-details">
-                  <div id="project-modal-techstack"></div>
-                  <div id="project-modal-features"></div>
-                  <div id="project-modal-briefs"></div>
+               <!-- Right: info -->
+               <div class="project-modal-right">
+                  <div class="project-modal-header">
+                     <h2 id="project-modal-title"></h2>
+                     <p id="project-modal-description"></p>
+                  </div>
+                  <div class="project-modal-details">
+                     <div id="project-modal-techstack"></div>
+                     <div id="project-modal-features"></div>
+                     <div id="project-modal-briefs" style="display:none;"></div>
+                  </div>
                </div>
             </div>
          </div>
