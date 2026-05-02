@@ -637,21 +637,24 @@ document.addEventListener('DOMContentLoaded', function () {
   function filterProjects(filterValue) {
     projectCards.forEach(card => {
       const subtitle = card.querySelector('.projects__subtitle').textContent.trim();
+      const matches = filterValue === 'all' || subtitle === filterValue;
 
-      if (filterValue === 'all' || subtitle === filterValue) {
+      if (matches) {
+        // Make visible first, then animate in (double rAF ensures paint happens before transition)
         card.style.display = 'block';
-        // Add a small delay for animation
-        setTimeout(() => {
-          card.style.opacity = '1';
-          card.style.transform = 'scale(1)';
-        }, 50);
-      } else {
         card.style.opacity = '0';
-        card.style.transform = 'scale(0.8)';
-        // Wait for animation to complete before hiding
-        setTimeout(() => {
-          card.style.display = 'none';
-        }, 300);
+        card.style.transform = 'scale(0.95)';
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'scale(1)';
+          });
+        });
+      } else {
+        // Hide immediately — no gap left in grid
+        card.style.display = 'none';
+        card.style.opacity = '0';
+        card.style.transform = 'scale(0.95)';
       }
     });
   }
