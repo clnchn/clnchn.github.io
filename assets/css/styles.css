@@ -1604,7 +1604,7 @@ body.dark-theme .highlight {
 @media screen and (min-width: 900px) {
   .education__container {
     grid-template-columns: repeat(2, 1fr);
-    align-items: start;
+    align-items: stretch;
   }
 }
 
