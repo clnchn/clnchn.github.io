@@ -1328,6 +1328,7 @@ body.dark-theme .home__description b {
 .testimonial__card {
   flex: 0 0 calc(33.333% - 1rem);
   box-sizing: border-box;
+  min-height: 320px;
 }
 
 .testimonial__card {
@@ -1341,6 +1342,7 @@ body.dark-theme .home__description b {
   justify-content: space-between;
   transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
   overflow: hidden;
+  min-height: 320px;
 }
 
 .testimonial__card:hover {
@@ -1349,19 +1351,17 @@ body.dark-theme .home__description b {
   border-color: var(--first-color);
 }
 
-/* Large decorative quote mark in the background */
+/* Large decorative quote mark */
 .testimonial__card::before {
   content: "\201C";
   position: absolute;
-  top: -1rem;
-  right: 1.25rem;
-  font-family: var(--title-font);
-  font-size: 8rem;
+  top: 1rem;
+  left: 1.5rem;
+  font-family: Georgia, serif;
+  font-size: 5rem;
   line-height: 1;
   color: var(--first-color);
-  font-style: italic;
-  font-variation-settings: "opsz" 144;
-  opacity: 0.07;
+  opacity: 0.25;
   pointer-events: none;
   user-select: none;
 }
@@ -1373,6 +1373,7 @@ body.dark-theme .home__description b {
   color: var(--text-color);
   flex: 1;
   margin-bottom: 1.5rem;
+  padding-top: 3rem;
 }
 
 .testimonial__footer {
