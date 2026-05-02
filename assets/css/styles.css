@@ -514,32 +514,36 @@ img {
 }
 
 .home__container {
-  row-gap: 4rem;
+  row-gap: 2rem;
   padding-block: 1rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
 .home__data {
-  text-align: left;
+  text-align: center;
   row-gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .home__name {
   font-size: var(--biggest-font-size);
-  text-align: left;
+  text-align: center;
   margin-bottom: 1.25rem;
   line-height: 1.05;
 }
 
 .home__description {
-  text-align: left;
+  text-align: center;
   font-size: 1.05rem;
   line-height: 1.75;
   color: var(--text-color);
-  max-width: 46ch;
-  margin-bottom: 6rem;
+  max-width: 52ch;
+  margin-bottom: 2rem;
 }
 
 .home__description b {
@@ -558,19 +562,6 @@ body.dark-theme .home__description b {
   color: var(--first-color-dark);
 }
 
-.home__social {
-  position: fixed;
-  right: 2rem;
-  display: flex;
-  flex-direction: column;
-  row-gap: 1rem;
-}
-
-.home__social-link {
-  color: var(--text-color);
-  font-size: 1.25rem;
-  transition: color .4s;
-}
 
 .home__scroll {
   display: block;
@@ -704,28 +695,6 @@ body.dark-theme .home__description b {
   color: var(--first-color-dark);
 }
 
-.about__skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.about__skill-tag {
-  background-color: var(--first-color-soft);
-  color: var(--first-color);
-  border: 1px solid hsla(185, 42%, 30%, 0.25);
-  border-radius: 4rem;
-  padding: 0.3rem 0.85rem;
-  font-size: var(--smaller-font-size);
-  font-weight: var(--font-medium);
-}
-
-.dark-theme .about__skill-tag {
-  background-color: var(--first-color-soft-dark);
-  color: var(--first-color-dark);
-  border-color: hsla(185, 55%, 55%, 0.3);
-}
 
 .about__image {
   position: relative;
@@ -755,89 +724,6 @@ body.dark-theme .home__description b {
   justify-content: center;
 }
 
-/*=============== SERVICES ===============*/
-.services__container {
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  gap: 2.5rem;
-  flex-wrap: wrap;
-}
-
-.services__card {
-  background-color: var(--container-color);
-  padding: 4.5rem 2rem 2rem;
-  border-radius: 1rem;
-  position: relative;
-  width: 320px;
-  min-height: 340px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  box-sizing: border-box;
-  height: 100%;
-}
-
-.services__content {
-  flex: 1 1 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-.services__border {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border: 4px solid var(--black-color);
-  top: 0;
-  left: 0;
-  border-radius: 1rem;
-  transition: transform .4s;
-}
-
-.services__card:hover .services__border {
-  transform: translate(.75rem, .75rem);
-}
-
-.services__icon {
-  position: relative;
-  display: inline-block;
-}
-
-.services__icon i {
-  font-size: 2rem;
-  color: var(--black-color);
-  position: relative;
-  z-index: 5;
-}
-
-.services__box {
-  position: absolute;
-  width: 24px;
-  height: 24px;
-  background-color: var(--first-color);
-  right: -2px;
-  top: -2px;
-}
-
-.services__title {
-  font-size: var(--h2-font-size);
-  margin-bottom: 1.25rem;
-}
-
-/* Responsive: stack cards on small screens */
-@media screen and (max-width: 1000px) {
-  .services__container {
-    flex-direction: column;
-    align-items: center;
-  }
-  .services__card {
-    width: 100%;
-    max-width: 400px;
-    min-height: 300px;
-  }
-}
 
 /*=============== PROJECTS ===============*/
 .projects {
@@ -1162,12 +1048,6 @@ body.dark-theme .home__description b {
     text-align: center;
   }
   
-  .home__social {
-    position: static;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 2rem;
-  }
 }
 
 /*=============== FOOTER ===============*/
@@ -1257,9 +1137,6 @@ body.dark-theme .home__description b {
     font-size: 1.75rem;
   }
 
-  .services__container {
-    grid-template-columns: 1fr;
-  }
 }
 
 /* For medium devices */
@@ -1339,29 +1216,7 @@ body.dark-theme .home__description b {
   }
 
   .home__container {
-    grid-template-columns: repeat(2, 460px);
-    gap: 2rem;
-    align-items: center;
     padding-block: 5.5rem;
-  }
-
-  .home__data {
-    text-align: initial;
-  }
-
-  .home__name {
-    text-align: initial;
-    font-size: var(--biggest-font-size);
-  }
-
-  .home__info {
-    display: flex;
-    align-items: flex-start;
-    gap: 1.5rem;
-  }
-
-  .home__description {
-    margin-bottom: 0;
   }
 
   .home__scroll {
@@ -1385,16 +1240,6 @@ body.dark-theme .home__description b {
   .about__shadow {
     width: 300px;
     height: 360px;
-  }
-
-  .services__container {
-    grid-template-columns: repeat(3, 282px);
-    column-gap: 5rem;
-    padding-block: 3rem 4rem;
-  }
-
-  .services__card {
-    padding-block: 5rem;
   }
 
   .projects__container {
