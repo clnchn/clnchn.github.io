@@ -96,15 +96,8 @@ const sr = ScrollReveal({
   reset: false
 });
 
-// Home: slightly staggered entrance with the hero name first
+// Home: hero text slides in from the left
 sr.reveal('.home__data', { origin: 'left', distance: '20px' });
-sr.reveal('.home__image', { origin: 'right', delay: 350, scale: 0.96 });
-sr.reveal('.home__social', { origin: 'bottom', interval: 120, delay: 800 });
-
-// About: drop-cap paragraph reads in softly
-sr.reveal('.about__image', { origin: 'left', delay: 200 });
-sr.reveal('.about__content', { origin: 'right', delay: 300, distance: '30px' });
-sr.reveal('.about__info > *', { origin: 'bottom', interval: 100, delay: 500, distance: '24px' });
 
 // Section titles: gentle rise so the numbered chip lands first
 sr.reveal('.section__title-1, .section__title-2', {
@@ -121,12 +114,12 @@ sr.reveal('.education__card', {
   distance: '36px'
 });
 
-// Testimonials: each card blooms in with the pull-quote quote mark
-sr.reveal('.testimonial__card', {
+// Testimonials: reveal the whole slider container — individual cards are clipped
+// by overflow:hidden and never enter the viewport, so ScrollReveal would freeze them hidden.
+sr.reveal('.testimonial__slider-container', {
   origin: 'bottom',
-  interval: 180,
   delay: 200,
-  scale: 0.96
+  distance: '30px'
 });
 
 // Projects: staggered cards; the scaling makes the teal overlay hover feel earned
