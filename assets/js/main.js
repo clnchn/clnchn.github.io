@@ -559,24 +559,75 @@ modalOverlay.addEventListener('click', function (e) {
 });
 document.addEventListener('keydown', function (e) {
   if (e.key === 'Escape') {
+    if (lightbox.style.display === 'flex') { closeLightbox(); return; }
     closeModal();
-    closeLightbox();
+  }
+  if (lightbox.style.display === 'flex') {
+    if (e.key === 'ArrowLeft' && lightboxIndex > 0) {
+      lightboxIndex--; currentImgIdx = lightboxIndex; updateModalImage(); updateLightbox();
+    } else if (e.key === 'ArrowRight' && lightboxIndex < currentImages.length - 1) {
+      lightboxIndex++; currentImgIdx = lightboxIndex; updateModalImage(); updateLightbox();
+    }
   }
 });
 
 // Lightbox
-const lightbox = document.getElementById('img-lightbox');
-const lightboxImg = document.getElementById('img-lightbox-img');
-const lightboxClose = document.getElementById('img-lightbox-close');
+const lightbox       = document.getElementById('img-lightbox');
+const lightboxImg    = document.getElementById('img-lightbox-img');
+const lightboxClose  = document.getElementById('img-lightbox-close');
+const lightboxPrev   = document.getElementById('img-lightbox-prev');
+const lightboxNext   = document.getElementById('img-lightbox-next');
+const lightboxCounter = document.getElementById('img-lightbox-counter');
+let lightboxIndex = 0;
 
-document.getElementById('project-modal-zoom').addEventListener('click', function () {
-  lightboxImg.src = modalImg.src;
+function updateLightbox() {
+  lightboxImg.src = currentImages[lightboxIndex];
+  const total = currentImages.length;
+  const multi = total > 1;
+  lightboxPrev.style.display  = multi ? '' : 'none';
+  lightboxNext.style.display  = multi ? '' : 'none';
+  lightboxCounter.style.display = multi ? '' : 'none';
+  if (multi) {
+    lightboxPrev.disabled = lightboxIndex === 0;
+    lightboxNext.disabled = lightboxIndex === total - 1;
+    lightboxCounter.textContent = `${lightboxIndex + 1} / ${total}`;
+  }
+}
+
+function openLightbox(index) {
+  lightboxIndex = index;
+  updateLightbox();
   lightbox.style.display = 'flex';
-});
+}
 
 function closeLightbox() {
   lightbox.style.display = 'none';
 }
+
+document.getElementById('project-modal-zoom').addEventListener('click', function () {
+  openLightbox(currentImgIdx);
+});
+
+lightboxPrev.addEventListener('click', function (e) {
+  e.stopPropagation();
+  if (lightboxIndex > 0) {
+    lightboxIndex--;
+    currentImgIdx = lightboxIndex;   // keep modal slider in sync
+    updateModalImage();
+    updateLightbox();
+  }
+});
+
+lightboxNext.addEventListener('click', function (e) {
+  e.stopPropagation();
+  if (lightboxIndex < currentImages.length - 1) {
+    lightboxIndex++;
+    currentImgIdx = lightboxIndex;   // keep modal slider in sync
+    updateModalImage();
+    updateLightbox();
+  }
+});
+
 lightboxClose.addEventListener('click', closeLightbox);
 lightbox.addEventListener('click', function (e) {
   if (e.target === lightbox) closeLightbox();
