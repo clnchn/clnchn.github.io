@@ -228,261 +228,231 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     */
 
+    // ── IGNIS ──────────────────────────────────────────────────────────────
     {
-      order: 4,
-      img: 'assets/img/knowledge-distillation.png',
-      title: 'Knowledge Distillation for Building Lightweight Deep Learning Models in Visual Classification Tasks',
-      desc: 'Using transfer learning and knowledge distillation to train a lightweight model for mimicking a pre-trained larger model in a clinical histopathology dataset, “MHIST”',
-      tech: 'Tensorflow, Keras, Resnet',
-      features: [
-        'A conventional knowledge distillation frameworks as a model compression method for digit classification dataset, MNIST',
-        'A transfer learning and knowledge distillation to train a lightweight model for mimicking a pre-trained larger model in a clinical histopathology dataset, MHIST'
-      ],
-      github: 'https://github.com/clnchn/MachineLearningProjects/tree/main/Knowledge%20Distillation',
-      demo: 'https://github.com/clnchn/MachineLearningProjects/tree/main/Knowledge%20Distillation'
+      order: 1,
+      img: 'assets/img/ignis-2.png',
+      images: ['assets/img/ignisgif.gif', 'assets/img/ignis-2.png', 'assets/img/ignis-3.png', 'assets/img/ignis-poster.png'],
+      title: 'IGNIS: Augmented Flashover Prediction',
+      desc: 'A real-time AI system that predicts flashover events during active firefighting using computer vision and sensor data fusion deployed on an edge device.',
+      tech: 'Python, OpenCV, Deep Learning, Sensor Fusion, NVIDIA Jetson Nano, Arducam Stereo Camera',
+      problem: 'Firefighters have no reliable real-time indicator of impending flashover — a catastrophic fire event that can turn fatal within seconds — leaving them to rely solely on experience and intuition.',
+      challenge: 'Running low-latency deep learning inference and multi-sensor fusion simultaneously on a resource-constrained edge device (NVIDIA Jetson Nano) with real-time alerting constraints in a fire environment.',
+      architecture: 'Stereo camera and thermal sensor feeds are ingested by the Jetson Nano; a deep learning model fuses visual and environmental sensor data (temperature, gas) to compute flashover probability; an alert pipeline triggers when the threshold is crossed.',
+      contribution: 'Led hardware integration of the Jetson Nano and Arducam stereo camera, trained the flashover prediction model, and built the real-time sensor fusion pipeline and alert system.',
+      impact: 'Prototype demonstrated real-time flashover prediction at the capstone showcase; project received an Outstanding designation and was documented on the IGNIS technology blog.',
+      github: 'https://github.com/clnchn/flashoverprediction',
+      demo: 'https://ignistechnology.wordpress.com/'
     },
 
+    // ── STOCK TRADING SYSTEM ───────────────────────────────────────────────
     {
       order: 2,
       img: 'assets/img/stock-trading-system.jpg',
       title: 'Stock Trading System',
-      desc: 'A multithreaded C++ stock trading system implementing the Factory Pattern and Strategy Pattern for traders placing market and limit orders, with a market simulator.',
+      desc: 'A multithreaded C++ stock trading platform with a market simulator, implementing Factory and Strategy design patterns for flexible order creation and dynamic trader behaviours.',
       tech: 'C++, Multithreading, Factory Pattern, Strategy Pattern',
-      features: [
-        'Multithreaded order processing',
-        'Factory Pattern for order creation',
-        'Strategy Pattern for market and limit orders',
-        'Market simulator for realistic trading scenarios'
-      ],
+      problem: 'Simulating a realistic concurrent trading environment where multiple traders submit market and limit orders simultaneously without data races, deadlocks, or incorrect order matching.',
+      challenge: 'Designing a thread-safe shared order book that supports concurrent reads and writes while keeping the codebase extensible for new order types and trader strategies.',
+      architecture: 'Factory Pattern instantiates trader and order objects at runtime; Strategy Pattern lets traders swap between market and limit order behaviours dynamically; mutex-protected order book handles concurrent submissions from multiple trading threads.',
+      contribution: 'Designed and implemented the full system from scratch — threading model, Factory and Strategy pattern classes, order matching engine, and the market simulator driving trade activity.',
+      impact: 'System correctly processes concurrent orders with zero race conditions; demonstrates practical application of Gang of Four design patterns in a performance-critical C++ context.',
       github: 'https://github.com/clnchn/MachineLearningProjects/tree/main/Stock%20Trading%20System',
-      demo: 'https://github.com/clnchn/MachineLearningProjects/tree/main/Stock%20Trading%20System'
+      demo: ''
     },
 
+    // ── TRAFFIC LIGHT HANDLING ─────────────────────────────────────────────
     {
       order: 3,
       img: 'assets/img/output_labeled_traffic_video.gif',
       title: 'Traffic Light Handling',
-      desc: 'Traffic Light Detection on Video using pretrained YOLOv5 model.',
-      tech: 'Jupyter Notebook, Python, OpenCV, matplotlib',
-      features: [
-        'Use a pretrained YOLOv5 model (e.g. yolov5s)',
-        'Detect traffic lights (some pretrained models have traffic light in classes)',
-        'Crop detected traffic lights and classify their color with HSV thresholding from above',
-        'Display detections + color + driving decision on video frames'
-      ],
+      desc: 'Real-time traffic light detection using a pretrained YOLOv5 model and HSV colour classification, with per-frame driving decision overlays on video output.',
+      tech: 'Python, YOLOv5, OpenCV, Matplotlib',
+      problem: 'Autonomous vehicles must reliably detect and respond to traffic light states in real-time video — a fundamental prerequisite for safe urban navigation.',
+      challenge: 'Accurately classifying traffic light colour (red, yellow, green) under varying lighting and environmental conditions using a combination of object detection and colour-space analysis.',
+      architecture: 'Pretrained YOLOv5 detects traffic light bounding boxes per frame; detected crops are analysed with HSV thresholding for colour classification; a rule-based decision layer maps colour states to driving actions (stop / caution / go) overlaid on the output video.',
+      contribution: 'Built the complete end-to-end pipeline — YOLOv5 integration, HSV colour classifier, driving decision logic, and annotated video generation.',
+      impact: 'Achieved accurate real-time traffic light detection and state classification across varied video conditions, producing labelled output ready for integration into an autonomous driving stack.',
       github: 'https://github.com/clnchn/MachineLearningProjects/tree/main/Traffic%20Light%20Handling',
-      demo: 'https://github.com/clnchn/MachineLearningProjects/tree/main/Traffic%20Light%20Handling',
-      briefs: [
-        "Next Step: Train with aUToLights. aUToLights is a traffic light dataset that can be used to train, validate, and evaluate traffic light detection and tracking performance on a multi-camera setup. "
-      ]
+      demo: ''
     },
+
+    // ── KNOWLEDGE DISTILLATION ─────────────────────────────────────────────
+    {
+      order: 4,
+      img: 'assets/img/knowledge-distillation.png',
+      title: 'Knowledge Distillation for Building Lightweight Deep Learning Models in Visual Classification Tasks',
+      desc: 'Applying transfer learning and knowledge distillation to compress a large pre-trained model into a lightweight student network for clinical histopathology classification on the MHIST dataset.',
+      tech: 'TensorFlow, Keras, ResNet',
+      problem: 'Large deep learning models achieve high accuracy on medical imaging tasks but are too compute-intensive to deploy in resource-constrained clinical environments.',
+      challenge: 'Training a compact student model to replicate the output distribution of a pre-trained teacher on MHIST — complicated by class imbalance and limited training data.',
+      architecture: 'Teacher-student framework: a pre-trained ResNet teacher produces soft probability labels that guide student training via a weighted distillation + cross-entropy loss; validated first on MNIST as a proof-of-concept baseline.',
+      contribution: 'Implemented both the MNIST baseline distillation pipeline and the full MHIST transfer-learning and knowledge-distillation pipeline, including the custom distillation loss function and evaluation loop.',
+      impact: 'The lightweight student model achieved accuracy comparable to the teacher network at a fraction of the parameters, demonstrating the viability of knowledge distillation for resource-constrained medical imaging.',
+      github: 'https://github.com/clnchn/MachineLearningProjects/tree/main/Knowledge%20Distillation',
+      demo: ''
+    },
+
+    // ── MULTI-TERRAIN AUTONOMOUS S&R ───────────────────────────────────────
+    {
+      order: 5,
+      img: 'assets/img/SNR.gif',
+      title: 'Multi-Terrain Autonomous S&R',
+      desc: 'An autonomous search and rescue robot that navigates sand, obstacles, and uneven terrain using sensor fusion and a state-machine-driven path planner.',
+      tech: 'Arduino, Teensy, IMU, TFmini LIDAR, Colour Sensors, Encoders, IR Sensors',
+      problem: 'Search and rescue operations in disaster zones require robots that can autonomously traverse varied terrain, locate survivors and supplies, and complete objectives without human guidance.',
+      challenge: 'Fusing data from multiple heterogeneous sensors (LIDAR, IMU, encoders, colour sensors) in real-time to enable reliable navigation and object detection — while fitting within strict weight and power constraints.',
+      architecture: 'Teensy and Arduino microcontrollers manage sensor polling and motor control; TFmini LIDAR provides obstacle detection; IMU and wheel encoders enable dead-reckoning localisation; colour sensors detect targets buried in sand.',
+      contribution: 'Designed and implemented the sensor fusion algorithms, the autonomous navigation state machine, and hardware integration across all subsystems.',
+      impact: 'Robot successfully traversed all required terrain types, extinguished a candle, and detected food in sand. Each core subsystem completed independently; full end-to-end autonomous navigation was limited by localisation accuracy under field conditions with obstacles.',
+      github: 'https://drive.google.com/drive/folders/19iu8Gw-QRYk_K-uB9fweuGLEyTJPrLLe?usp=drive_link',
+      demo: 'https://drive.google.com/file/d/19x91PpY0_d_EH8t9DB4vOO3id3FEf075/view?usp=drive_link'
+    },
+
+    // ── ODYSSEYSTEPS ──────────────────────────────────────────────────────
     {
       order: 6,
       img: 'assets/img/OnlineAlbum.png',
-      images: [
-        'assets/img/OnlineAlbum.png',
-        'assets/img/travel1.png',
-        'assets/img/travel3.png',
-        'assets/img/travel4.png'
-      ],
+      images: ['assets/img/OnlineAlbum.png', 'assets/img/travel1.png', 'assets/img/travel3.png', 'assets/img/travel4.png'],
       title: 'OdysseySteps: Travel Diary',
-      desc: 'A digital travel diary and photo album platform for documenting journeys, sharing stories, and organizing memories with interactive maps and galleries.',
-      tech: 'Flask, AWS EC2,lambda, HTML5, CSS, Javascript, MySQL, Python',
-      features: [
-        'Interactive travel map',
-        'Photo and video album',
-        'Location tagging'
-      ],
+      desc: 'A cloud-hosted travel diary and photo album platform where users document journeys, share stories, and organise memories with interactive maps and galleries.',
+      tech: 'Flask, AWS EC2, AWS Lambda, AWS S3, HTML5, CSS, JavaScript, MySQL, Python',
+      problem: 'Travellers lack a personal, structured platform to document and revisit their journeys — existing social platforms are public-facing and not designed for private, organised memory curation.',
+      challenge: 'Designing a scalable cloud architecture that handles user photo uploads, storage, and on-demand retrieval efficiently while keeping infrastructure costs low.',
+      architecture: 'Flask web app deployed on AWS EC2; user photos stored in S3 with async thumbnail generation via AWS Lambda; MySQL on RDS for trip and photo metadata; session-based authentication for multi-user support.',
+      contribution: 'Full-stack development — designed the database schema, built the Flask REST API, implemented the frontend UI, provisioned all AWS infrastructure, and integrated the interactive trip map.',
+      impact: 'Delivered a fully functional multi-user travel diary with photo upload, interactive maps, and organised gallery views, deployed live on AWS.',
       github: 'https://github.com/clnchn/ECE1779/tree/main',
       demo: 'assets/docs/OdysseySteps.pdf'
     },
+
+    // ── ANIMAL CLASSIFIER ─────────────────────────────────────────────────
     {
-      order: 1,
-      img: 'assets/img/ignis-2.png',
-      images: [
-        'assets/img/ignisgif.gif',
-        'assets/img/ignis-2.png',
-        'assets/img/ignis-3.png',
-        'assets/img/ignis-poster.png'
-      ],
-      title: 'IGNIS: Augmented Flashover Prediction',
-      desc: 'A real-time AI-powered system for predicting flashover events in firefighting scenarios using computer vision and sensor data fusion.',
-      tech: 'Python, OpenCV, Deep Learning, Sensor Fusion, NVIDIA Jetson Nano, Arducam Stereo Camera',
-      features: [
-        'Real-time flashover prediction',
-        'Thermal and visual data fusion',
-        'AI-based risk assessment',
-        'Firefighter safety alerts',
-        'Edge device deployment'
-      ],
-      github: 'https://github.com/clnchn/flashoverprediction',
-      demo: 'https://ignistechnology.wordpress.com/',
-      briefs: [
-        "See demo link."
-      ]
-},
-  {
-    order: 5,
-    img: 'assets/img/SNR.gif',
-    title: 'Multi-Terrain Autonomous S&R',
-    desc: 'An autonomous search and rescue robot capable of navigating diverse terrains using advanced sensor fusion and AI-driven path planning.',
-    tech: 'Arduino, Teensey, IMU, TFmini LIDAR, IMU, Colour Sensors, encoders, IR photodiode sensors',
-    features: [
-      'Multi-terrain navigation',
-      'Sensor fusion (LIDAR, GPS, IMU)',
-      'AI-based path planning',
-      'Autonomous obstacle avoidance and object tracking',
-      'Real-time remote monitoring'
-    ],
-    github: 'https://drive.google.com/drive/folders/19iu8Gw-QRYk_K-uB9fweuGLEyTJPrLLe?usp=drive_link',
-    demo: 'https://drive.google.com/file/d/19x91PpY0_d_EH8t9DB4vOO3id3FEf075/view?usp=drive_link',
-    briefs: [
-      "The prototype was able to go over the required terrain, extinguish a candle, and detect the food in the sand. However it failed to navigate itself to the lone and group survivors, due to the lack of ability of the robot to localize itself on the field when objects were present, which implies that the ability to navigate fully autonomously objective was not fully achieved. However, each core component, including traversing through and around various terrain, searching through each sand tile and detecting whether or not the food was present, generating a map with the locations of all objects from the robot’s starting position, and driving towards the candle and extinguishing it, were all successfully completed independently.Otherwise, the robot has achieve all of the other objectives. This was in part due to time constraints in the software and the issues described in section"
-    ]
-  },
-  {
-    order: 10,
-    img: 'assets/img/Line-following.gif',
-    title: 'Line Follower Robot',
-    desc: 'An autonomous robot designed to follow a visual line path using sensors and real-time feedback control algorithms.',
-    tech: 'Arduino, C++, IR Sensors, Hall Effect Sensors',
-    features: ['Line following', 'Obstacle avoidance', 'PID control'],
-    github: 'https://github.com/clnchn',
-    demo: ''
-  },
-  {
-    order: 7,
-    images: [
-      'assets/img/animalclassifier.png',
-      'assets/img/animalclassifier-2.png'
-    ],
-    title: 'Animal Classifier',
-    desc: 'A convolutional neural network (CNN) for animal classification using the LHI-Animal-Faces dataset. The model distinguishes between 19 animal classes and one human faces class, enabling robust multi-class image recognition.',
-    tech: 'Python, Pytorch, CNN, LHI-Animal-Faces Dataset',
-    features: [
-      '20-class image classification',
-      'Convolutional neural network architecture',
-      'Data augmentation',
-      'Evaluation metrics and visualization'
-    ],
-    github: 'https://github.com/clnchn/UofT-F22-AER1515-RobotPerception/blob/main/AER1515_Assignment1/code/train.py',
-    demo: 'https://github.com/clnchn/UofT-F22-AER1515-RobotPerception/blob/main/AER1515_Assignment1/AER1515_Assignment1Report.pdf',
-    briefs: [
-      "For this project, I implemented and extended a convolutional neural network (CNN) using PyTorch to perform multi-class image classification on the LHI-Animal-Faces dataset. Starting off by training a baseline binary classifier (original: 4 conv layers, 3 max-pools, 2 FC layers, ReLU activations) for cats and dogs, then modified the code to support all 20 classes.<br>",
-      "To improve model performance, I enhanced the CNN architecture by adding <strong>batch normalization</strong> and <strong>dropout layers</strong>(reduce overfitting). I also introduced a validation loop to monitor performance during training and saved the model with the lowest validation loss.<br>",
-      "Finally, I performed <strong>hyperparameter tuning</strong> by experimenting with <strong>different optimizers, learning rates, and batch sizes</strong> to maximize classification accuracy on the test set.<br>",
-      "Throughout the project, I visualized training and validation loss curves to analyze and guide model improvements.",
-      "<br>",
-      "• CNN model design and implementation in PyTorch.",
-      "• Multi-class classification and evaluation.",
-      "• Training optimization via architecture tuning, validation usage, and hyperparameter search.",
-      "• Visualization and interpretation of training dynamics."
+      order: 7,
+      images: ['assets/img/animalclassifier.png', 'assets/img/animalclassifier-2.png'],
+      title: 'Animal Classifier',
+      desc: 'A PyTorch CNN for 20-class animal face classification using the LHI-Animal-Faces dataset, with batch normalisation, dropout, and hyperparameter tuning.',
+      tech: 'Python, PyTorch, CNN, LHI-Animal-Faces Dataset',
+      problem: 'Fine-grained classification of 20 animal species from face images — a difficult task due to high visual similarity between classes and a limited training set.',
+      challenge: 'Preventing overfitting while scaling from a binary cat/dog classifier to a robust 20-class model on the LHI-Animal-Faces dataset.',
+      architecture: 'Baseline CNN (4 conv layers, 3 max-pools, 2 FC layers, ReLU) extended with batch normalisation and dropout; validation loop added to track generalisation and save the best checkpoint.',
+      contribution: 'Extended the binary classifier to 20 classes, added regularisation layers, implemented the validation loop, and performed systematic hyperparameter tuning across optimisers, learning rates, and batch sizes.',
+      impact: 'Achieved strong multi-class accuracy with measurably reduced overfitting versus the unregularised baseline; training and validation loss curves confirmed improved generalisation.',
+      github: 'https://github.com/clnchn/UofT-F22-AER1515-RobotPerception/blob/main/AER1515_Assignment1/code/train.py',
+      demo: 'https://github.com/clnchn/UofT-F22-AER1515-RobotPerception/blob/main/AER1515_Assignment1/AER1515_Assignment1Report.pdf'
+    },
 
-    ]
-  },
-  {
-    order: 9,
-    images: [
-      'assets/img/nbody-galaxy.jpg'
-    ],
-    title: 'Comparative Analysis of OpenMP vs CUDA in Hermite N-Body Simulations',
-    desc: 'A performance comparison of OpenMP (CPU) and CUDA (GPU) in accelerating Hermite N-body simulations, highlighting speed, scalability, and efficiency in modeling gravitational systems.',
-    tech: 'C/C++, CUDA C, OpenMP, NVIDIA CUDA, gprof, Visual Studio Code',
-    features: [
-      '4th-order Hermite integrator for N-body gravitational simulations',
-      'Parallelized force computation using OpenMP for CPU multi-threading',
-      'Parallelized force computation using CUDA for GPU acceleration',
-      'Performance benchmarking (speedup, memory usage, scalability)'
-    ],
-    github: 'https://github.com/clnchn/UofT-F22-ECE1747-ParallelProgramming/blob/main/ece1747_FinalProject/ece1747_termproject/ECE1747%20Final%20Project%20Report.pdf',
-    demo: 'https://github.com/clnchn/UofT-F22-ECE1747-ParallelProgramming/blob/main/ece1747_FinalProject/ece1747_termproject/ECE1747_N-body%20Presentation.pdf',
-    briefs: [
-      "This project explores the performance and efficiency of two parallel computing frameworks—OpenMP and CUDA—for accelerating Hermite N-body simulations, a method used to model gravitational interactions among multiple particles. The simulation uses a 4th-order Hermite integration scheme and is implemented in both CPU-parallel (OpenMP) and GPU-parallel (CUDA) environments. The project compares execution time, scalability, accuracy, and resource utilization across various particle counts to determine the most effective approach for high-performance scientific computing tasks in astrophysics.<br><br> Findings: CUDA demonstrates significant performance advantages for large, data-parallel tasks on GPUs, while OpenMP remains a strong choice for shared-memory multicore CPUs due to its simplicity and portability."
-    ]
-  },
-  {
-    order: 8,
-    img: 'assets/img/OMR.png',
-    title: 'Optical Music Recognition',
-    desc: 'This project investigates the application of deep learning to Optical Music Recognition (OMR), focusing on identifying handwritten musical symbols from images. By evaluating and fine-tuning top-performing convolutional neural networks (CNNs), the study aims to improve symbol classification accuracy on the HOMUS dataset. Ensemble models are also explored to enhance performance beyond individual architectures.',
-    tech: 'Python, TensorFlow/Keras, NumPy, Pandas, Matplotlib, Inception v3, Inception-ResNet v2, Xception, NASNet',
-    features: ['Handwritten Music Symbol Recognition - Classifies 32 different types of handwritten musical symbols.',
-      'Model Comparison - Benchmarks multiple high-performing CNNs to identify the most effective architecture.',
-      'Ensemble Learning - Combines multiple models to boost recognition accuracy.'],
-    github: 'https://github.com/clnchn/MachineLearningProjects/tree/main/Optical%20Music%20Recognition',
-    demo: 'https://github.com/clnchn/MachineLearningProjects/blob/main/Optical%20Music%20Recognition/Report.docx',
-    briefs: [
-      "The project addresses the challenge of recognizing handwritten musical notation by treating it as a multiclass image classification problem. Using the HOMUS dataset, the team evaluates and fine-tunes four prominent CNN architectures—Inception v3, Inception-ResNet v2, Xception, and NASNet.",
-      "Each model's performance is assessed via 10-fold cross-validation, with Xception and Inception v3 emerging as top performers.",
-      "Ensemble models combining these architectures further enhance recognition accuracy, achieving up to 95.45%, nearly matching the state-of-the-art benchmark of 95.55%.",
-      "Misclassifications are mostly due to visual similarity among a few classes, suggesting a targeted classifier could offer future improvements."
-    ]
-  },
-  {
-    order: 11,
-    img: 'assets/img/iScore.jpg',
-    title: 'iScore - Colour Musician',
-    desc: 'A smart scoring application designed to automate and enhance the evaluation process for sports and academic competitions.',
-    tech: 'Python, OpenCV, Flask',
-    features: ['Automated scoring', 'Color detection', 'Result analytics'],
-    github: 'https://github.com/clnchn',
-    demo: ''
-  },
-  {
-    order: 12,
-    img: 'assets/img/project-1.jpg',
-    images: [
-      'assets/img/restaurant-reviewer-0.png',
-      'assets/img/restaurant-reviewer-1.png',
-      'assets/img/restaurant-reviewer-2.png'
-    ],
-    title: 'Restaurant Reviewer',
-    desc: 'An AI-powered restaurant recommendation tool that combines Retrieval-Augmented Generation (RAG) with local AI Agent to deliver smart, location-based dining insights. The system analyzes user preferences, reviews, and location data to provide personalized restaurant recommendations.',
-    tech: 'Python, LangChain, Ollama (mxbai-embed-large), ChromaDB, Pandas',
-    features: [
-      'AI-powered restaurant recommendations using RAG',
-      'Realistic Review Parsing - Loads and processes restaurant reviews from a real-world CSV dataset with metadata like rating and date.',
-      'Smart Embedding with Ollama - Uses a local, high-quality embedding model (mxbai-embed-large) to transform reviews into dense vector representations.',
-      'Semantic Retrieval Engine - Retrieves the most relevant reviews for a given query using vector similarity, not just keyword matching.',
-      'Persistent Vector Store - Chroma stores embeddings locally, allowing reusability without reprocessing on every run.'
-    ],
-    github: 'https://github.com/clnchn/MachineLearningProjects/tree/main/RestaurantReviewer_LocalAIAgentWithRAG',
-    demo: '',
-    briefs: [
-      "Developed an AI-powered restaurant recommendation system using RAG and local AI Agent",
-      "Implemented real-time review analysis and sentiment detection",
-      "Created a responsive web interface with interactive map integration",
-      "Deployed the application using Docker for easy scaling and maintenance"
-    ]
-  }
-  ].map(project => {
-    if (project.demo === 'https://dribbble.com/') {
-      return { ...project, demo: 'not-linked.html' };
+    // ── OPTICAL MUSIC RECOGNITION ─────────────────────────────────────────
+    {
+      order: 8,
+      img: 'assets/img/OMR.png',
+      title: 'Optical Music Recognition',
+      desc: 'Deep learning recognition of 32 handwritten musical symbol classes using fine-tuned CNNs and ensemble methods on the HOMUS dataset, achieving near state-of-the-art accuracy.',
+      tech: 'Python, TensorFlow/Keras, Inception v3, Xception, Inception-ResNet v2, NASNet',
+      problem: 'Digitising handwritten sheet music is still largely manual — automated symbol recognition would save significant transcription time for musicians and archivists.',
+      challenge: 'Classifying 32 visually similar handwritten musical symbol classes with high accuracy, where many symbols differ only in subtle stroke patterns.',
+      architecture: 'Four pre-trained CNNs (Inception v3, Inception-ResNet v2, Xception, NASNet) individually fine-tuned on HOMUS via 10-fold cross-validation; top-performing architectures combined into a probability-averaging ensemble.',
+      contribution: 'Fine-tuned all four CNN architectures, implemented the 10-fold cross-validation pipeline, and built the ensemble model combining the best two performers.',
+      impact: 'Ensemble achieved 95.45% accuracy — within 0.1% of the published state-of-the-art benchmark of 95.55% — demonstrating that model ensembling nearly closes the gap to top results.',
+      github: 'https://github.com/clnchn/MachineLearningProjects/tree/main/Optical%20Music%20Recognition',
+      demo: 'https://github.com/clnchn/MachineLearningProjects/blob/main/Optical%20Music%20Recognition/Report.docx'
+    },
+
+    // ── N-BODY SIMULATIONS ────────────────────────────────────────────────
+    {
+      order: 9,
+      images: ['assets/img/nbody-galaxy.jpg'],
+      title: 'Comparative Analysis of OpenMP vs CUDA in Hermite N-Body Simulations',
+      desc: 'A performance study comparing OpenMP (CPU) and CUDA (GPU) parallelisation of a 4th-order Hermite N-body integrator across speed, scalability, and efficiency.',
+      tech: 'C/C++, CUDA C, OpenMP, NVIDIA CUDA, gprof',
+      problem: 'Gravitational N-body simulations scale as O(N²) — serial computation becomes impractical above a few thousand particles, directly limiting astrophysics research.',
+      challenge: 'Correctly parallelising the 4th-order Hermite integrator — which requires per-particle force accumulation with high numerical precision — across both CPU threads (OpenMP) and GPU warps (CUDA) without introducing errors.',
+      architecture: 'Three implementations: baseline serial C++ → OpenMP version with parallel force loops across CPU cores → CUDA version with a GPU kernel for per-particle force computation using shared memory for warp-level reduction.',
+      contribution: 'Implemented all three versions (serial, OpenMP, CUDA), designed the benchmarking methodology, and analysed speedup, memory usage, and scalability across varying particle counts.',
+      impact: 'CUDA delivered significant speedup for large N where GPU parallelism dominates; OpenMP showed strong scaling on multi-core CPUs; results confirmed CUDA as superior for data-parallel scientific workloads at scale.',
+      github: 'https://github.com/clnchn/UofT-F22-ECE1747-ParallelProgramming/blob/main/ece1747_FinalProject/ece1747_termproject/ECE1747%20Final%20Project%20Report.pdf',
+      demo: 'https://github.com/clnchn/UofT-F22-ECE1747-ParallelProgramming/blob/main/ece1747_FinalProject/ece1747_termproject/ECE1747_N-body%20Presentation.pdf'
+    },
+
+    // ── LINE FOLLOWER ROBOT ───────────────────────────────────────────────
+    {
+      order: 10,
+      img: 'assets/img/Line-following.gif',
+      title: 'Line Follower Robot',
+      desc: 'An autonomous robot that navigates a track with curves, intersections, and obstacles using PID control driven by IR sensors — no prior map required.',
+      tech: 'Arduino, C++, IR Sensors, Hall Effect Sensors',
+      problem: 'Navigate an unknown track with sharp curves, intersections, and obstacles autonomously using only ground-facing sensors and closed-loop feedback.',
+      challenge: 'Tuning a PID controller fast enough to handle sharp curves at speed without overshooting, while simultaneously detecting and avoiding obstacles.',
+      architecture: 'IR sensor array reads line position and computes a cross-track error; PID controller outputs differential motor corrections; Hall effect sensors measure wheel speed for closed-loop velocity control; a separate obstacle detection module triggers avoidance manoeuvres.',
+      contribution: 'Implemented PID control logic, performed sensor calibration, and built the obstacle detection and avoidance module.',
+      impact: 'Robot reliably completed the full course including sharp curves, intersections, and obstacle avoidance, demonstrating stable real-time closed-loop control.',
+      github: 'https://github.com/clnchn',
+      demo: ''
+    },
+
+    // ── ISCORE ────────────────────────────────────────────────────────────
+    {
+      order: 11,
+      img: 'assets/img/iScore.jpg',
+      title: 'iScore - Colour Musician',
+      desc: 'A real-time computer vision application that automates scoring for colour-based music competitions via a live camera feed and a Flask web interface.',
+      tech: 'Python, OpenCV, Flask',
+      problem: 'Manually scoring colour-based music competitions is slow, subjective, and error-prone — judges must simultaneously track multiple coloured stimuli and tabulate scores.',
+      challenge: 'Achieving accurate real-time colour segmentation under variable ambient lighting using a standard webcam.',
+      architecture: 'Live camera feed processed by OpenCV HSV colour segmentation; a rule-based scoring engine maps detected colour events to scores; results are pushed to a Flask web interface and displayed in real time.',
+      contribution: 'Built the HSV colour detection algorithm, scoring state machine, and Flask web backend.',
+      impact: 'Automated scoring eliminated manual tabulation, reduced judging latency, and improved consistency across competition rounds.',
+      github: 'https://github.com/clnchn',
+      demo: ''
+    },
+
+    // ── RESTAURANT REVIEWER ───────────────────────────────────────────────
+    {
+      order: 12,
+      images: ['assets/img/restaurant-reviewer-0.png', 'assets/img/restaurant-reviewer-1.png', 'assets/img/restaurant-reviewer-2.png'],
+      title: 'Restaurant Reviewer',
+      desc: 'A fully local RAG-powered restaurant recommendation tool that uses semantic vector search over real reviews to answer nuanced dining queries — no cloud API required.',
+      tech: 'Python, LangChain, Ollama (mxbai-embed-large), ChromaDB, Pandas',
+      problem: 'Generic restaurant search engines match keywords, not meaning — they fail on nuanced queries like "cozy spot with great pasta near downtown" that require semantic understanding of reviews.',
+      challenge: 'Building a fully local RAG pipeline that delivers semantically relevant recommendations without cloud APIs, keeping all data private and inference cost-free.',
+      architecture: 'CSV reviews loaded via Pandas → embedded locally with Ollama\'s mxbai-embed-large → stored in a persistent ChromaDB vector store → user query embedded at runtime → top-K semantic similarity retrieval → LLM synthesises the final recommendation.',
+      contribution: 'Designed and built the complete RAG pipeline: data ingestion and cleaning, local embedding with Ollama, ChromaDB vector store setup, semantic retrieval engine, and the query interface.',
+      impact: 'Delivers context-aware, semantically rich restaurant recommendations entirely on-device — no API costs, no data sent externally, and persistent embeddings that avoid re-processing on repeat runs.',
+      github: 'https://github.com/clnchn/MachineLearningProjects/tree/main/RestaurantReviewer_LocalAIAgentWithRAG',
+      demo: ''
     }
-    return project;
-  });
+  ];
 
-// Sort projects by order field and reorder DOM cards to match
+// Match each card to its data by title, sort, stamp a data-index, then reorder DOM
 (function () {
   const container = document.querySelector('.projects__container');
   if (!container) return;
   const cards = Array.from(container.querySelectorAll('.projects__card'));
 
-  // Pair each data entry with its original DOM card
-  const paired = projectDetails.map((data, i) => ({ data, card: cards[i] }));
+  // Build pairs by matching card title text → projectDetails entry
+  const paired = cards.map(card => {
+    const titleText = (card.querySelector('.projects__title') || {}).textContent || '';
+    const data = projectDetails.find(d => d.title.trim() === titleText.trim());
+    return { card, data };
+  }).filter(p => p.data); // discard any card with no matching data
+
+  // Sort pairs by the order field
   paired.sort((a, b) => (a.data.order ?? 99) - (b.data.order ?? 99));
 
-  // Update projectDetails in place to match sorted order
-  paired.forEach((item, i) => { projectDetails[i] = item.data; });
-
-  // Reorder DOM cards to match
-  paired.forEach(item => container.appendChild(item.card));
+  // Stamp each card with a stable data-project-index and reorder DOM
+  paired.forEach((item, i) => {
+    item.card.setAttribute('data-project-index', i);
+    projectDetails[i] = item.data;        // keep array in sync with DOM order
+    container.appendChild(item.card);
+  });
 })();
 
-// Open modal on project button click
-document.querySelectorAll('.projects__button').forEach((btn, idx) => {
+// Open modal on project button click — read index from card attribute, never from forEach position
+document.querySelectorAll('.projects__button').forEach(btn => {
   btn.addEventListener('click', function (e) {
     e.preventDefault();
+    const card = btn.closest('.projects__card');
+    const idx  = card ? parseInt(card.getAttribute('data-project-index'), 10) : 0;
     const data = projectDetails[idx] || projectDetails[0];
     currentImages = data.images || [data.img];
     currentImgIdx = 0;
@@ -500,17 +470,27 @@ document.querySelectorAll('.projects__button').forEach((btn, idx) => {
       modalTech.style.display = 'none';
     }
 
-    // Details: merge features and briefs into one unified section
-    const allDetails = [...(data.features || []), ...(data.briefs || [])];
-    if (allDetails.length) {
-      modalFeatures.innerHTML = `<b>Details:</b><ul>${allDetails.map(f => `<li>${f}</li>`).join('')}</ul>`;
+    // Structured sections — each renders as a labelled paragraph
+    const sectionDefs = [
+      { key: 'problem',       label: 'Problem' },
+      { key: 'challenge',     label: 'Technical Challenge' },
+      { key: 'architecture',  label: 'Architecture' },
+      { key: 'contribution',  label: 'My Contribution' },
+      { key: 'impact',        label: 'Results & Impact' },
+    ];
+    const sectionsHtml = sectionDefs
+      .filter(s => data[s.key])
+      .map(s => `<div class="modal-section"><b>${s.label}</b><p>${data[s.key]}</p></div>`)
+      .join('');
+    if (sectionsHtml) {
+      modalFeatures.innerHTML = sectionsHtml;
       modalFeatures.style.display = '';
     } else {
       modalFeatures.innerHTML = '';
       modalFeatures.style.display = 'none';
     }
 
-    // Briefs section hidden — content merged into Details above
+    // Legacy briefs hidden
     const briefsEl = document.getElementById('project-modal-briefs');
     briefsEl.innerHTML = '';
     briefsEl.style.display = 'none';

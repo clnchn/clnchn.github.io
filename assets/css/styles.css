@@ -1930,11 +1930,21 @@ body.dark-theme .highlight {
 }
 
 .project-modal-details b {
-  font-size: var(--small-font-size);
+  font-size: var(--smaller-font-size);
   font-weight: var(--font-semi-bold);
   text-transform: uppercase;
   letter-spacing: .08em;
   color: var(--first-color);
+}
+
+.project-modal-details p {
+  font-size: var(--small-font-size);
+  line-height: 1.7;
+  color: var(--text-color);
+}
+
+body.dark-theme .project-modal-details p {
+  color: var(--text-color-dark);
 }
 
 .project-modal-details ul {
