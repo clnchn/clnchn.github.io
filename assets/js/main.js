@@ -577,6 +577,12 @@ modalClose.addEventListener('click', closeModal);
 modalOverlay.addEventListener('click', function (e) {
   if (e.target === modalOverlay) closeModal();
 });
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') {
+    closeModal();
+    closeLightbox();
+  }
+});
 
 // Lightbox
 const lightbox = document.getElementById('img-lightbox');

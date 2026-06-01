@@ -1,5 +1,4 @@
-/*=============== GOOGLE FONTS ===============*/
-@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&display=swap");
+/* Google Fonts loaded via <link> in HTML for faster parallel fetching */
 
 /*=============== VARIABLES CSS ===============*/
 :root {
@@ -1065,14 +1064,15 @@ body.dark-theme .home__description b {
 }
 
 .footer__container {
-  row-gap: 2rem;
   text-align: center;
 }
 
 .footer__links {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   column-gap: 2rem;
+  row-gap: 0.75rem;
 }
 
 .footer__link {
@@ -1178,8 +1178,7 @@ body.dark-theme .home__description b {
   }
 
   .footer__container {
-    grid-template-columns: repeat(2, max-content);
-    justify-content: space-between;
+    justify-content: center;
   }
 }
 
@@ -1283,10 +1282,6 @@ body.dark-theme .home__description b {
 
   .footer {
     padding-block: 5rem;
-  }
-
-  .footer__container {
-    grid-template-columns: repeat(3, max-content);
   }
 
   .footer__links {

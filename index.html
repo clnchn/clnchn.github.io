@@ -7,6 +7,14 @@
       <!--=============== FAVICON ===============-->
       <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
 
+      <!--=============== PRECONNECT (speeds up external resource fetches) ===============-->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+      <!--=============== GOOGLE FONTS (moved from CSS @import — avoids render-blocking chain) ===============-->
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&display=swap">
+
       <!--=============== REMIXICONS ===============-->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.4.0/remixicon.css" crossorigin="">
 
@@ -115,7 +123,7 @@
                <!--
                <article class="projects__card">
                   <div class="projects__image">
-                     <img src="assets/img/project-3.jpg" alt="projects image" class="projects__img">
+                     <img src="assets/img/project-3.jpg" alt="projects image" class="projects__img" loading="lazy">
                      <a href="#" class="projects__button button">
                         <i class="ri-arrow-right-line"></i>
                      </a>
@@ -144,7 +152,7 @@
                <!--
                <article class="projects__card">
                   <div class="projects__image">
-                     <img src="assets/img/project-2.jpg" alt="projects image" class="projects__img">
+                     <img src="assets/img/project-2.jpg" alt="projects image" class="projects__img" loading="lazy">
                      <a href="#" class="projects__button button">
                         <i class="ri-arrow-right-line"></i>
                      </a>
@@ -172,7 +180,7 @@
                <!-- Knowledge Distillation for Building Lightweight Deep Learning Models in Visual Classification Tasks -->
                <article class="projects__card">
                   <div class="projects__image">
-                     <img src="assets/img/knowledge-distillation.png" alt="Knowledge Distillation project image" class="projects__img">
+                     <img src="assets/img/knowledge-distillation.png" alt="Knowledge Distillation project image" class="projects__img" loading="lazy">
                      <a href="#" class="projects__button button">
                         <i class="ri-arrow-right-line"></i>
                      </a>
@@ -194,7 +202,7 @@
                <!-- Stock Trading System -->
                <article class="projects__card">
                   <div class="projects__image">
-                     <img src="assets/img/stock-trading-system.jpg" alt="Stock Trading System project image" class="projects__img">
+                     <img src="assets/img/stock-trading-system.jpg" alt="Stock Trading System project image" class="projects__img" loading="lazy">
                      <a href="#" class="projects__button button">
                         <i class="ri-arrow-right-line"></i>
                      </a>
@@ -217,7 +225,7 @@
                <!-- Traffic Light Handling -->
                <article class="projects__card">
                   <div class="projects__image">
-                     <img src="assets/img/output_labeled_traffic_video.gif" alt="Traffic Light Handling project image" class="projects__img">
+                     <img src="assets/img/output_labeled_traffic_video.gif" alt="Traffic Light Handling project image" class="projects__img" loading="lazy">
                      <a href="#" class="projects__button button">
                         <i class="ri-arrow-right-line"></i>
                      </a>
@@ -239,7 +247,7 @@
                <!-- OdysseySteps: Travel Diary -->
                <article class="projects__card">
                   <div class="projects__image">
-                     <img src="assets/img/OnlineAlbum.png" alt="OdysseySteps: Travel Diary project image" class="projects__img">
+                     <img src="assets/img/OnlineAlbum.png" alt="OdysseySteps: Travel Diary project image" class="projects__img" loading="lazy">
                      <a href="#" class="projects__button button">
                         <i class="ri-arrow-right-line"></i>
                      </a>
@@ -264,7 +272,7 @@
                <!-- IGNIS: Augmented Flashover Prediction -->
                <article class="projects__card">
                   <div class="projects__image">
-                     <img src="assets/img/ignisgif.gif" alt="IGNIS: Augmented Flashover Prediction project image" class="projects__img">
+                     <img src="assets/img/ignisgif.gif" alt="IGNIS: Augmented Flashover Prediction project image" class="projects__img" loading="lazy">
                      <a href="#" class="projects__button button">
                         <i class="ri-arrow-right-line"></i>
                      </a>
@@ -289,7 +297,7 @@
                <!-- Multi-Terrain Autonomous S&R -->
                <article class="projects__card">
                   <div class="projects__image">
-                     <img src="assets/img/SNR.gif" alt="Multi-Terrain Autonomous S&R project image" class="projects__img">
+                     <img src="assets/img/SNR.gif" alt="Multi-Terrain Autonomous S&R project image" class="projects__img" loading="lazy">
                      <a href="#" class="projects__button button">
                         <i class="ri-arrow-right-line"></i>
                      </a>
@@ -311,7 +319,7 @@
                <!-- Line Follower Robot -->
                <article class="projects__card">
                   <div class="projects__image">
-                     <img src="assets/img/Line-following.gif" alt="Line Follower Robot project image" class="projects__img">
+                     <img src="assets/img/Line-following.gif" alt="Line Follower Robot project image" class="projects__img" loading="lazy">
                      <a href="#" class="projects__button button">
                         <i class="ri-arrow-right-line"></i>
                      </a>
@@ -333,7 +341,7 @@
                <!-- Animal Classifier -->
                <article class="projects__card">
                   <div class="projects__image">
-                     <img src="assets/img/animalclassifier.png" alt="Animal Classifier project image" class="projects__img">
+                     <img src="assets/img/animalclassifier.png" alt="Animal Classifier project image" class="projects__img" loading="lazy">
                      <a href="#" class="projects__button button">
                         <i class="ri-arrow-right-line"></i>
                      </a>
@@ -359,7 +367,7 @@
                <!-- Comparative Analysis of OpenMP and CUDA for Parallel Computing on Multicore and Manycore Architectures  -->
                <article class="projects__card">
                   <div class="projects__image">
-                     <img src="assets/img/nbody-galaxy.jpg" alt="Comparative Analysis of OpenMP and CUDA in Hermite N-Body Simulations" class="projects__img">
+                     <img src="assets/img/nbody-galaxy.jpg" alt="Comparative Analysis of OpenMP and CUDA in Hermite N-Body Simulations" class="projects__img" loading="lazy">
                      <a href="#" class="projects__button button">
                         <i class="ri-arrow-right-line"></i>
                      </a>
@@ -386,7 +394,7 @@
                <!-- Optical Music Recognition -->
                <article class="projects__card">
                   <div class="projects__image">
-                     <img src="assets/img/OMR.png" alt="Optical Music Recognition project image" class="projects__img">
+                     <img src="assets/img/OMR.png" alt="Optical Music Recognition project image" class="projects__img" loading="lazy">
                      <a href="#" class="projects__button button">
                         <i class="ri-arrow-right-line"></i>
                      </a>
@@ -411,7 +419,7 @@
                <!-- iScore - Colour Musician -->
                <article class="projects__card">
                   <div class="projects__image">
-                     <img src="assets/img/iScore.jpg" alt="iScore project image" class="projects__img">
+                     <img src="assets/img/iScore.jpg" alt="iScore project image" class="projects__img" loading="lazy">
                      <a href="#" class="projects__button button">
                         <i class="ri-arrow-right-line"></i>
                      </a>
@@ -433,7 +441,7 @@
                <!-- Restaurant Reviewer (oldest) -->
                <article class="projects__card">
                   <div class="projects__image">
-                     <img src="assets/img/restaurant-reviewer-0.png" alt="Restaurant Reviewer project image" class="projects__img">
+                     <img src="assets/img/restaurant-reviewer-0.png" alt="Restaurant Reviewer project image" class="projects__img" loading="lazy">
                      <a href="#" class="projects__button button">
                         <i class="ri-arrow-right-line"></i>
                      </a>
@@ -462,7 +470,7 @@
             <div class="education__container container">
                <article class="education__card">
                   <div class="education__border"></div>
-                  <img src="assets/img/uofw-logo.png" alt="University of Waterloo Logo" class="education__logo">
+                  <img src="assets/img/uofw-logo.png" alt="University of Waterloo Logo" class="education__logo" loading="lazy">
                   <div class="education__content">
                      <h2 class="education__title">Bachelor of Applied Science in Mechatronics Engineering</h2>
                      <p class="education__description">
@@ -481,7 +489,7 @@
                </article>
                <article class="education__card">
                   <div class="education__border"></div>
-                  <img src="assets/img/uoft-logo.png" alt="University of Toronto Logo" class="education__logo">
+                  <img src="assets/img/uoft-logo.png" alt="University of Toronto Logo" class="education__logo" loading="lazy">
                   <div class="education__content">
                      <h2 class="education__title">Master of Engineering in Computer Engineering</h2>
                      <p class="education__description">
@@ -656,20 +664,14 @@
 
       <!--==================== FOOTER ====================-->
       <footer class="footer">
-         <div class="footer__container container grid">
+         <div class="footer__container container">
             <ul class="footer__links">
-               <li>
-                  <a href="#home" class="footer__link">Home</a>
-               </li>
-               <li>
-                  <a href="#projects" class="footer__link">Projects</a>
-               </li>
+               <li><a href="#home" class="footer__link">Home</a></li>
+               <li><a href="#projects" class="footer__link">Projects</a></li>
+               <li><a href="#education" class="footer__link">Education</a></li>
+               <li><a href="#testimonials" class="footer__link">Testimonials</a></li>
+               <li><a href="#contact" class="footer__link">Contact Me</a></li>
             </ul>
-
-            <span class="footer__copy">
-               Template inspired by 
-               <a href="#">Bedimcode.</a>
-            </span>
          </div>
       </footer>
 
@@ -679,10 +681,10 @@
       </a>
 
       <!--=============== SCROLLREVEAL ===============-->
-      <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
-      
-<!--=============== MAIN JS ===============-->
-      <script src="assets/js/main.js"></script>
+      <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js" defer></script>
+
+      <!--=============== MAIN JS ===============-->
+      <script src="assets/js/main.js" defer></script>
 
       <!-- Image Lightbox -->
       <div id="img-lightbox" class="img-lightbox" style="display:none;">
