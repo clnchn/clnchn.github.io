@@ -250,8 +250,9 @@ document.addEventListener('DOMContentLoaded', function () {
     // ── NEURODEGENERATION SIMULATION ──────────────────────────────────────
     {
       order: 2.5,
-      img: 'assets/img/neuro-cross-disease.png',
+      img: 'assets/img/neuro-degen cover.png',
       images: [
+        'assets/img/neuro-degen cover.png',
         'assets/img/neuro-cross-disease.png',
         'assets/img/neuro-degradation.png',
         'assets/img/neuro-compensation-bar.png',
