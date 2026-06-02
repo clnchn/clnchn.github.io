@@ -775,6 +775,37 @@ body.dark-theme .home__description b {
   height: 200px;
 }
 
+.projects__featured {
+  position: absolute;
+  top: .65rem;
+  left: .65rem;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: .3em;
+  background: var(--first-color);
+  color: hsl(0, 0%, 100%);
+  font-size: var(--smaller-font-size);
+  font-weight: var(--font-semi-bold);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  padding: .3em .7em;
+  border-radius: .4rem;
+  pointer-events: none;
+  box-shadow: 0 2px 8px hsla(185, 42%, 20%, 0.35);
+}
+
+.projects__featured i {
+  font-size: .7rem;
+  opacity: .9;
+}
+
+body.dark-theme .projects__featured {
+  background: var(--first-color-dark);
+  color: hsl(215, 22%, 9%);
+  box-shadow: 0 2px 10px hsla(185, 65%, 40%, 0.4);
+}
+
 .projects__img {
   width: 100%;
   height: 100%;
