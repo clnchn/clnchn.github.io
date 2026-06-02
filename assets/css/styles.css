@@ -1996,6 +1996,50 @@ body.dark-theme .modal-tech-chip {
   border-color: hsla(185, 55%, 55%, 0.25);
 }
 
+/* ── Architecture diagram section ── */
+.project-modal-diagram-section {
+  border-top: 1px solid var(--border-color);
+  margin-top: 1.75rem;
+  padding: 1.5rem 2rem 1.25rem;
+}
+
+body.dark-theme .project-modal-diagram-section {
+  border-top-color: var(--border-color-dark);
+}
+
+.project-modal-diagram-label {
+  display: block;
+  font-size: var(--smaller-font-size);
+  font-weight: var(--font-semi-bold);
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--first-color);
+  margin-bottom: 1.1rem;
+}
+
+body.dark-theme .project-modal-diagram-label {
+  color: var(--first-color-dark);
+}
+
+.project-modal-diagram {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: .5rem;
+}
+
+.project-modal-diagram svg {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.diagram-loading {
+  font-size: var(--small-font-size);
+  color: var(--text-color-light);
+  font-style: italic;
+}
+
 /* Add to your existing CSS */
 .projects__filters {
    display: flex;

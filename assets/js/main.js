@@ -190,13 +190,15 @@ document.addEventListener('DOMContentLoaded', function () {
   const modalOverlay = document.getElementById('project-modal-overlay');
   const modalClose = document.getElementById('project-modal-close');
   const modalImg = document.getElementById('project-modal-img');
-  const modalTitle = document.getElementById('project-modal-title');
-  const modalDesc = document.getElementById('project-modal-description');
-  const modalTech = document.getElementById('project-modal-techstack');
-  const modalFeatures = document.getElementById('project-modal-features');
-  const modalBriefs = document.getElementById('project-modal-briefs');
-  const prevBtn = document.getElementById('project-modal-prev');
-  const nextBtn = document.getElementById('project-modal-next');
+  const modalTitle      = document.getElementById('project-modal-title');
+  const modalDesc       = document.getElementById('project-modal-description');
+  const modalTech       = document.getElementById('project-modal-techstack');
+  const modalFeatures   = document.getElementById('project-modal-features');
+  const modalBriefs     = document.getElementById('project-modal-briefs');
+  const prevBtn         = document.getElementById('project-modal-prev');
+  const nextBtn         = document.getElementById('project-modal-next');
+  const diagramSection  = document.getElementById('project-modal-diagram-section');
+  const diagramContainer = document.getElementById('project-modal-diagram');
   let currentImgIdx = 0;
   let currentImages = [];
 
@@ -423,6 +425,150 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   ];
 
+// ── Architecture diagrams (Mermaid flowchart) keyed by project title ──────────
+const projectDiagrams = {
+  'IGNIS: Augmented Flashover Prediction':
+    'flowchart LR\n' +
+    '  A["Stereo Camera"] --> C["Jetson Nano"]\n' +
+    '  B["Env Sensors"] --> C\n' +
+    '  C --> D["Fusion Model"]\n' +
+    '  D --> E{Risk}\n' +
+    '  E -->|High| F["Alert System"]\n' +
+    '  E -->|Low| G["Monitor"]',
+
+  'Stock Trading System':
+    'flowchart LR\n' +
+    '  A["Traders"] --> B["Factory Pattern"]\n' +
+    '  B --> C["Market Order"]\n' +
+    '  B --> D["Limit Order"]\n' +
+    '  C --> E["Order Book"]\n' +
+    '  D --> E\n' +
+    '  E --> F["Match Engine"]\n' +
+    '  F --> G["Trade Executed"]',
+
+  'Traffic Light Handling':
+    'flowchart LR\n' +
+    '  A["Video Frame"] --> B["YOLOv5"]\n' +
+    '  B --> C["Crop ROI"]\n' +
+    '  C --> D["HSV Classifier"]\n' +
+    '  D --> E["Decision Logic"]\n' +
+    '  E --> F["Annotated Output"]',
+
+  'Knowledge Distillation for Building Lightweight Deep Learning Models in Visual Classification Tasks':
+    'flowchart TB\n' +
+    '  A["Training Data"] --> B["Teacher ResNet"]\n' +
+    '  A --> D["Student Network"]\n' +
+    '  B --> C["Soft Labels"]\n' +
+    '  C --> D\n' +
+    '  D --> E["Compressed Model"]',
+
+  'Multi-Terrain Autonomous S&R':
+    'flowchart LR\n' +
+    '  A["LIDAR"] --> D["Sensor Fusion"]\n' +
+    '  B["IMU + Encoders"] --> D\n' +
+    '  C["Colour Sensors"] --> D\n' +
+    '  D --> E["Nav State Machine"]\n' +
+    '  E --> F["Motor Drive"]',
+
+  'OdysseySteps: Travel Diary':
+    'flowchart LR\n' +
+    '  A["Browser"] --> B["Flask / EC2"]\n' +
+    '  B --> C["MySQL RDS"]\n' +
+    '  B --> D["AWS S3"]\n' +
+    '  D --> E["Lambda"]\n' +
+    '  B --> F["Session Auth"]',
+
+  'Animal Classifier':
+    'flowchart LR\n' +
+    '  A["Image Input"] --> B["Augmentation"]\n' +
+    '  B --> C["4 Conv Layers"]\n' +
+    '  C --> D["BatchNorm + Dropout"]\n' +
+    '  D --> E["FC Layers"]\n' +
+    '  E --> F["20-Class Output"]',
+
+  'Optical Music Recognition':
+    'flowchart LR\n' +
+    '  A["HOMUS Dataset"] --> B["4 Fine-tuned CNNs"]\n' +
+    '  B --> C["10-fold CV"]\n' +
+    '  C --> D["Top 2 Models"]\n' +
+    '  D --> E["Ensemble Average"]\n' +
+    '  E --> F["95.45% Accuracy"]',
+
+  'Comparative Analysis of OpenMP vs CUDA in Hermite N-Body Simulations':
+    'flowchart TB\n' +
+    '  A["N-Body Input"] --> B["Serial C++"]\n' +
+    '  A --> C["OpenMP CPU"]\n' +
+    '  A --> D["CUDA GPU"]\n' +
+    '  B --> E["Benchmark"]\n' +
+    '  C --> E\n' +
+    '  D --> E',
+
+  'Line Follower Robot':
+    'flowchart LR\n' +
+    '  A["IR Array"] --> B["Error Compute"]\n' +
+    '  C["Hall Sensors"] --> D["Speed Feedback"]\n' +
+    '  B --> E["PID Controller"]\n' +
+    '  D --> E\n' +
+    '  E --> F["Motor Drive"]',
+
+  'iScore - Colour Musician':
+    'flowchart LR\n' +
+    '  A["Camera"] --> B["HSV Segmentation"]\n' +
+    '  B --> C["Color Events"]\n' +
+    '  C --> D["Scoring Engine"]\n' +
+    '  D --> E["Flask Web UI"]',
+
+  'Restaurant Reviewer':
+    'flowchart LR\n' +
+    '  A["CSV Reviews"] --> B["Ollama Embed"]\n' +
+    '  B --> C["ChromaDB"]\n' +
+    '  D["User Query"] --> E["Query Embed"]\n' +
+    '  E --> C\n' +
+    '  C --> F["Top-K Retrieval"]\n' +
+    '  F --> G["LLM Response"]',
+};
+
+// ── Mermaid render helper ──────────────────────────────────────────────────────
+async function renderDiagram(code, container, section) {
+  if (typeof mermaid === 'undefined') { section.style.display = 'none'; return; }
+  container.innerHTML = '<p class="diagram-loading">Loading diagram...</p>';
+  const isDark = document.body.classList.contains('dark-theme');
+  mermaid.initialize({
+    startOnLoad: false,
+    theme: 'base',
+    themeVariables: isDark ? {
+      background: 'transparent',
+      primaryColor: '#1e2d3e',
+      primaryTextColor: '#f0ece4',
+      primaryBorderColor: '#3d9c9c',
+      lineColor: '#4dbdbd',
+      secondaryColor: '#162230',
+      edgeLabelBackground: '#1e2d3e',
+      tertiaryColor: '#162230',
+      fontFamily: '"Bai Jamjuree", sans-serif',
+      fontSize: '13px',
+    } : {
+      background: 'transparent',
+      primaryColor: '#e4ddd3',
+      primaryTextColor: '#1a2a36',
+      primaryBorderColor: '#2a8080',
+      lineColor: '#3a9090',
+      secondaryColor: '#d8d0c5',
+      edgeLabelBackground: '#e4ddd3',
+      tertiaryColor: '#d8d0c5',
+      fontFamily: '"Bai Jamjuree", sans-serif',
+      fontSize: '13px',
+    },
+  });
+  try {
+    const { svg } = await mermaid.render('md' + Date.now(), code);
+    container.innerHTML = svg;
+  } catch (e) {
+    container.innerHTML = '';
+    section.style.display = 'none';
+  }
+}
+
 // Match each card to its data by title, sort, stamp a data-index, then reorder DOM
 (function () {
   const container = document.querySelector('.projects__container');
@@ -449,7 +595,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Open modal on project button click — read index from card attribute, never from forEach position
 document.querySelectorAll('.projects__button').forEach(btn => {
-  btn.addEventListener('click', function (e) {
+  btn.addEventListener('click', async function (e) {
     e.preventDefault();
     const card = btn.closest('.projects__card');
     const idx  = card ? parseInt(card.getAttribute('data-project-index'), 10) : 0;
@@ -511,6 +657,16 @@ document.querySelectorAll('.projects__button').forEach(btn => {
       demoLink.style.display = 'inline-flex';
     } else {
       demoLink.style.display = 'none';
+    }
+
+    // Architecture diagram
+    const diagram = projectDiagrams[data.title];
+    if (diagram) {
+      diagramSection.style.display = '';
+      renderDiagram(diagram, diagramContainer, diagramSection);
+    } else {
+      diagramSection.style.display = 'none';
+      diagramContainer.innerHTML = '';
     }
 
     modalOverlay.style.display = 'flex';
