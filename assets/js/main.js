@@ -247,6 +247,28 @@ document.addEventListener('DOMContentLoaded', function () {
       demo: 'https://ignistechnology.wordpress.com/'
     },
 
+    // ── NEURODEGENERATION SIMULATION ──────────────────────────────────────
+    {
+      order: 2.5,
+      img: 'assets/img/neuro-cross-disease.png',
+      images: [
+        'assets/img/neuro-cross-disease.png',
+        'assets/img/neuro-degradation.png',
+        'assets/img/neuro-compensation-bar.png',
+        'assets/img/neuro-pipeline-recovery.png'
+      ],
+      title: 'Neural Network Neurodegeneration Simulation',
+      desc: 'A pure-NumPy simulation of how neural networks degrade under Alzheimer\'s, Parkinson\'s, and stroke disease models across ten severity stages, with five compensation strategies evaluated.',
+      tech: 'Python, NumPy, Matplotlib',
+      problem: 'Neurodegenerative diseases progressively destroy synaptic connections and neural pathways — but how would analogous damage patterns affect an artificial neural network\'s accuracy and weight structure?',
+      challenge: 'Designing biologically motivated damage functions for three distinct diseases (Alzheimer\'s synaptic decay, Parkinson\'s motor pathway disruption, stroke-induced connectivity loss) that produce meaningfully different degradation curves without a framework to lean on.',
+      architecture: 'A pure-NumPy MLP is trained from scratch on a structured 10-class synthetic dataset, then subjected to each disease\'s damage function at 10 severity stages; five compensation strategies (Reweighting, Neurogenesis, Fine-Tuning, Full Pipeline) are applied and evaluated at every stage; results feed a visualisation and HTML reporting pipeline.',
+      contribution: 'Implemented the full simulation from scratch in NumPy — MLP forward/backward pass, Adam optimiser, all three disease damage models, all five compensation strategies, the metrics pipeline, and the automated HTML report generator.',
+      impact: 'Quantified accuracy degradation across three disease profiles at 10 severity levels; demonstrated that the Full Pipeline compensation (Reweighting → Neurogenesis → Fine-Tuning) recovers the majority of lost accuracy across all disease types.',
+      github: 'https://github.com/clnchn/Neurodegeneration-Abstration',
+      demo: ''
+    },
+
     // ── STOCK TRADING SYSTEM ───────────────────────────────────────────────
     {
       order: 2,
@@ -435,6 +457,16 @@ const projectDiagrams = {
     '  D --> E{Risk}\n' +
     '  E -->|High| F["Alert System"]\n' +
     '  E -->|Low| G["Monitor"]',
+
+  'Neural Network Neurodegeneration Simulation':
+    'flowchart LR\n' +
+    '  A["Train MLP"] --> B["Alzheimer\'s Model"]\n' +
+    '  A --> C["Parkinson\'s Model"]\n' +
+    '  A --> D["Stroke Model"]\n' +
+    '  B --> E["5 Compensation Strategies"]\n' +
+    '  C --> E\n' +
+    '  D --> E\n' +
+    '  E --> F["Metrics + Report"]',
 
   'Stock Trading System':
     'flowchart LR\n' +
